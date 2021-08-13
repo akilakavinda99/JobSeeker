@@ -6,4 +6,5 @@
     <string name="tv_job">Software Engineer</string>
     <string name="tv_time">Full-time</string>
     <string name="tv_location">Malabe,Colombo</string>
+    <string name="tv_title">My Saved Jobs</string>
 </resources>

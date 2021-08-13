@@ -15,9 +15,18 @@
             android:layout_width="37dp"
             android:layout_height="31dp"
             android:layout_centerVertical="true"
-            android:src="@drawable/ic_baseline_menu_24"
-            android:layout_editor_absoluteX="9dp"
-            android:layout_editor_absoluteY="16dp" />
+            android:src="@drawable/ic_baseline_menu_24"/>
+
+        <ImageView
+            android:id="@+id/logo_icon"
+            android:layout_width="195dp"
+            android:layout_height="99dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/jslogo"/>
+
+
 
 
 
