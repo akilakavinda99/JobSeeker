@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/JobSeeker/app/src/main/res/drawable/border1.xml" value="0.165234375" />
+        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/JobSeeker/app/src/main/res/drawable/border2.xml" value="0.165234375" />
+        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/JobSeeker/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.165234375" />
+        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/JobSeeker/app/src/main/res/layout/activity_homepage.xml" value="0.18" />
         <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/JobSeeker/app/src/main/res/layout/activity_main.xml" value="0.153125" />
-        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/JobSeeker/app/src/main/res/layout/save_jobs.xml" value="0.1" />
+        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/JobSeeker/app/src/main/res/layout/save_jobs.xml" value="0.153125" />
         <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/JobSeeker/app/src/main/res/layout/toolbar1.xml" value="0.153125" />
         <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/MySaved/app/src/main/res/drawable/border.xml" value="0.2203125" />
         <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/MySaved/app/src/main/res/drawable/border1.xml" value="0.2203125" />
@@ -21,12 +25,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.1" />
-      </ProjectState>
-    </option>
   </component>
 </project>
