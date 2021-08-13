@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DesignSurface">
-    <option name="filePathToZoomLevelMap">
-      <map>
-        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/JobSeeker/app/src/main/res/drawable/border1.xml" value="0.165234375" />
-        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/JobSeeker/app/src/main/res/drawable/border2.xml" value="0.165234375" />
-        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/JobSeeker/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.165234375" />
-        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/JobSeeker/app/src/main/res/layout/activity_homepage.xml" value="0.18" />
-        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/JobSeeker/app/src/main/res/layout/activity_main.xml" value="0.153125" />
-        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/JobSeeker/app/src/main/res/layout/save_jobs.xml" value="0.153125" />
-        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/JobSeeker/app/src/main/res/layout/toolbar1.xml" value="0.153125" />
-        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/MySaved/app/src/main/res/drawable/border.xml" value="0.2203125" />
-        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/MySaved/app/src/main/res/drawable/border1.xml" value="0.2203125" />
-        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/MySaved/app/src/main/res/drawable/border2.xml" value="0.1" />
-        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/MySaved/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/MySaved/app/src/main/res/layout/allsave.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/MySaved/app/src/main/res/layout/toolbar.xml" value="0.19166666666666668" />
-        <entry key="..\:/Users/Damru Ravihara/AndroidStudioProjects/MySaved/app/src/main/res/layout/toolbar1.xml" value="0.1" />
-      </map>
-    </option>
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
