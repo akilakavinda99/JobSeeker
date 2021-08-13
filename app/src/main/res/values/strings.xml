@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Saved</string>
+    <string name="my_saved">My Saved</string>
+    <string name="tv_allsaved">All Saved</string>
+    <string name="tv_count">1</string>
+    <string name="tv_job">Software Engineer</string>
+    <string name="tv_time">Full-time</string>
+    <string name="tv_location">Malabe,Colombo</string>
+</resources>
