@@ -3,8 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white">
-
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,7 +14,6 @@
             android:layout_height="31dp"
             android:layout_centerVertical="true"
             android:src="@drawable/ic_baseline_menu_24"/>
-
         <ImageView
             android:id="@+id/logo_icon"
             android:layout_width="195dp"
@@ -25,13 +22,5 @@
             android:layout_alignParentEnd="true"
             android:scaleType="centerCrop"
             android:src="@drawable/jslogo"/>
-
-
-
-
-
-
-
-
     </RelativeLayout>
 </RelativeLayout>

@@ -1,4 +1,5 @@
 <resources>
+    <!-- Damru's Strings-->
     <string name="app_name">My Saved</string>
     <string name="my_saved">My Saved</string>
     <string name="tv_allsaved">All Saved</string>
@@ -7,7 +8,6 @@
     <string name="tv_time">Full-time</string>
     <string name="tv_location">Malabe,Colombo</string>
     <string name="tv_title">My Saved Jobs</string>
-    <!--Akilas Strings-->
     <string name="et_name_reg">Enter Name</string>
     <string name="tv_Register">Register</string>
     <string name="et_email_reg">Enter Email</string>
@@ -47,4 +47,32 @@
     <string name="et_email_editjob">Email</string>
     <string name="et_phone_editjob">Phone Number</string>
     <string name="btn_editjob">Edit</string>
+    <string name="tv_job2">Software Engineer</string>
+    <string name="tv_time2">Full Time</string>
+    <string name="tv_location2">Malabe,Colombo</string>
+    <string name="tv_job3">Graphic Design</string>
+    <string name="tv_job4">.NET Engineer</string>
+    <string name="tv_time3">Part time</string>
+    <string name="tv_time4">Full Time</string>
+    <string name="tv_location3">Keselwatta,Panadura</string>
+    <string name="tv_job5">HR.Intern</string>
+    <string name="tv_time5">Full Time</string>
+    <string name="tv_location4">Horethuduwa,Moratuwa</string>
+    <string name="tv_location5">Kaluwella,Galle</string>
+    <string name="tv_title2">Requested Jods</string>
+    <string name="btn_rq_jobs">Request a job</string>
+    <string name="tv_job6">Iam open to work as a full stack developer</string>
+    <string name="tv_gender">Male</string>
+    <string name="tv_age">28 years old</string>
+    <string name="tv_job7">I am looking for software engineering job </string>
+    <string name="tv_gender2">Female</string>
+    <string name="tv_age2">27 years old</string>
+    <string name="tv_job8">Searching for a graphic designer job</string>
+    <string name="tv_age3">24 years old</string>
+    <string name="img_company1">picture of Company1</string>
+    <string name="img_company2">picture of company2</string>
+    <string name="img_company3">picture of company3</string>
+    <string name="img_company4">picture of company4</string>
+
 </resources>
+
