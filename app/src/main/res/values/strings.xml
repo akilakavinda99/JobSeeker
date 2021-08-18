@@ -15,4 +15,30 @@
     <string name="tv_job4">.NET Engineer</string>
     <string name="tv_time3">Part time</string>
     <string name="tv_time4">Full Time</string>
+
+    <!-- Amila's Strings-->
+
+    <string name="tv_createajob">Create a Job</string>
+    <string name="et_company">Enter Company Name</string>
+    <string name="et_title">Enter Job Title</string>
+    <string name="et_salary">Enter Salary</string>
+    <string name="et_description">Enter Job Description</string>
+    <string name="et_email">Enter Email Address</string>
+    <string name="et_phone">Enter Phone Number</string>
+    <string name="tv_addimg">Add Image</string>
+    <string name="btn_create">Create</string>
+    <string name="tv_editjob">Edit Job</string>
+    <string name="et_companyed">Enter Company Name</string>
+    <string name="et_titleed">Enter Job Title</string>
+    <string name="et_salaryed">Enter Salary</string>
+    <string name="et_descriptioned">Enter Job Description</string>
+    <string name="et_emailed">Enter Email Address</string>
+    <string name="et_phoneed">Enter Phone Number</string>
+    <string name="tv_addimged">Add Image</string>
+    <string name="btn_edit">Edit</string>
+    <string name="tv_mjl1">My Job Listings</string>
+    <string name="btn_cn">Create New</string>
+    <string name="tv_mrjl">My Requested Jobs</string>
+    <string name="btn_newreq">New Request</string>
+
 </resources>

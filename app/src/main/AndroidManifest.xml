@@ -9,18 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MySaved">
-        <activity
-            android:name=".Homepage"
-            android:exported="true" />
-        <activity
-            android:name=".SaveJobs"
-            android:exported="true">
+        <activity android:name=".MyRequestedJobs" android:exported="true">>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MyJobListings"></activity>
+        <activity
+            android:name=".EditJob"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".CreateJob"
+            android:exported="true"></activity>
     </application>
 
 </manifest>
