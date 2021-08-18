@@ -13,13 +13,13 @@
     <string name="et_email_reg">Enter Email</string>
     <string name="tv_spinnerD">Enter District</string>
     <string name="tv_city">Enter City</string>
-    <string name="tv_gender">Enter Gender</string>
+    
     <string name="et_mobile">Enter Mobile Number</string>
     <string name="et_password">Enter Password</string>
     <string name="btn_acCeate">Create Account</string>
     <string name="tv_req_job_title">Request job title</string>
     <string name="tv_name">Name</string>
-    <string name="tv_age">Age</string>
+    
     <string name="tv_genderreqjob">Gender</string>
     <string name="tv_DescriptionReq">Description</string>
     <string name="btn_sendmail_reqjob">Email Me</string>
