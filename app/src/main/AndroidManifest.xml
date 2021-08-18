@@ -17,7 +17,7 @@
             android:name=".ViewJob"
             android:exported="true">
         </activity>
-      <activity>
+      <activity
       android:name=".Request_jobs_home"
             android:exported="true"/>
         <activity
