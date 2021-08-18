@@ -34,7 +34,7 @@ public class CreateJob extends AppCompatActivity {
         salary = findViewById(R.id.et_salary);
         job_description = findViewById(R.id.et_description);
         email = findViewById(R.id.et_email);
-        phone = findViewById(R.id.et_email);
+        phone = findViewById(R.id.et_phone);
         type_spinner = (Spinner)findViewById(R.id.et_jobtype);
         district_spinner = (Spinner)findViewById(R.id.et_dis);
         city_spinner = (Spinner)findViewById(R.id.et_city);
