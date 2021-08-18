@@ -9,15 +9,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MySaved">
+        <activity android:name=".EditJob"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".ViewJob"
+            android:exported="true">
+
+
+        </activity>
+        <activity
+            android:name=".ViewReqJob"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".RegisterUserActivity"
+            android:exported="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".SaveJobs"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="true" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
