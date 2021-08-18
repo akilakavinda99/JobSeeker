@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/editjob"
+    tools:context=".EditJob">
+
+    <TextView
+        android:id="@+id/tv_editjob"
+        android:layout_width="189dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/actor"
+        android:text="@string/tv_editjob"
+        android:textColor="#070707"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_dlt"
+        android:layout_width="45dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/deletebtn"
+        tools:ignore="VectorDrawableCompat" />
+
+    <EditText
+        android:id="@+id/et_jobtitle_editjob"
+        android:layout_width="269dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded_view_register"
+        android:ems="10"
+        android:hint="@string/et_name_editjob"
+        android:inputType="textPersonName"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_editjob" />
+
+    <EditText
+        android:id="@+id/et_name_editjob"
+        android:layout_width="269dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/rounded_view_register"
+        android:ems="10"
+        android:hint="@string/et_name_editjob1"
+        android:inputType="textPersonName"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_editjob" />
+
+    <EditText
+        android:id="@+id/et_gender_editjob"
+        android:layout_width="117dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded_view_register"
+        android:ems="10"
+        android:hint="@string/et_gender_editjob"
+        android:inputType="textPersonName"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_name_editjob" />
+
+    <EditText
+        android:id="@+id/et_age_editjob"
+        android:layout_width="125dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded_view_register"
+        android:ems="10"
+        android:hint="@string/et_age_editjob"
+        android:inputType="number"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_name_editjob" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_name_editjob"
+        app:srcCompat="@drawable/dropdown_arrow"
+        tools:ignore="VectorDrawableCompat" />
+
+    <EditText
+        android:id="@+id/et_description_editjob"
+        android:layout_width="260dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="68dp"
+        android:background="@drawable/rounded_view_register"
+        android:ems="10"
+        android:hint="@string/et_description_editjob"
+        android:inputType="textPersonName"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_name_editjob" />
+
+    <EditText
+        android:id="@+id/et_qualifications_editjob"
+        android:layout_width="260dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="88dp"
+        android:background="@drawable/rounded_view_register"
+        android:ems="10"
+        android:hint="@string/et_qualifications_editjob"
+        android:inputType="textPersonName"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_description_editjob" />
+
+    <EditText
+        android:id="@+id/et_email_editjob"
+        android:layout_width="260dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_view_register"
+        android:ems="10"
+        android:hint="@string/et_email_editjob"
+        android:inputType="textEmailAddress"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_qualifications_editjob" />
+
+    <EditText
+        android:id="@+id/et_phone_editjob"
+        android:layout_width="260dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/rounded_view_register"
+        android:ems="10"
+        android:hint="@string/et_phone_editjob"
+        android:inputType="phone"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_email_editjob" />
+
+    <Button
+        android:id="@+id/btn_editjob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/btn_editjob"
+        app:backgroundTint="@color/modern_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="80dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/border2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/et_phone_editjob"
+        app:srcCompat="@drawable/addicon"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="40dp"
+        android:text="Add Image"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_phone_editjob" />
+</androidx.constraintlayout.widget.ConstraintLayout>
