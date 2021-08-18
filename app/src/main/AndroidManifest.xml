@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MySaved">
         <activity
+            android:name=".Test"
+            android:exported="true" />
+        <activity
             android:name=".Request_jobs_home"
             android:exported="true" />
         <activity
