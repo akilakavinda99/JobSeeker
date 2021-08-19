@@ -5,16 +5,40 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="JobSeeker"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MySaved">
 
-        <activity android:name=".MyRequestedJobs" android:exported="true">>
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-        <activity android:name=".EditJob"
+        <activity android:name=".MyRequestedJobs" android:exported="true" ></activity>
+
+
+        <activity android:name=".EditJob" android:exported="true" ></activity>
+
+        <activity android:name=".UserloginActivity"
+           android:exported="true"/>
+          
+      
+        <activity android:name=".EditprofileActivity"
+            android:exported="true"/>
+      
+        <activity android:name=".ProfileviewActivity"
+            android:exported="true"/>
+      
+        <activity android:name=".NavigationBarActivity"
+            android:exported="true"/>
+      
+        <activity android:name=".ProfileActivity"
+            android:exported="true"/>
+      
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+
+
+        <activity android:name=".EditjobReq"
+
             android:exported="true">
 
         </activity>
@@ -45,6 +69,7 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
         </activity>
+
 
         <activity android:name=".MyJobListings"
                   android:exported="true"></activity>
