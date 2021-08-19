@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/editjob"
-    tools:context=".EditJob">
+    tools:context=".EditjobReq">
 
     <TextView
         android:id="@+id/tv_editjob"
