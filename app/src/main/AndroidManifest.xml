@@ -14,10 +14,10 @@
             android:exported="true" />
         <activity
             android:name=".EditJob"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ViewJob"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Request_jobs_home"
             android:exported="true" />
