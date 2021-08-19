@@ -13,13 +13,13 @@
     <string name="et_email_reg">Enter Email</string>
     <string name="tv_spinnerD">Enter District</string>
     <string name="tv_city">Enter City</string>
-    
+
     <string name="et_mobile">Enter Mobile Number</string>
     <string name="et_password">Enter Password</string>
     <string name="btn_acCeate">Create Account</string>
     <string name="tv_req_job_title">Request job title</string>
     <string name="tv_name">Name</string>
-    
+
     <string name="tv_genderreqjob">Gender</string>
     <string name="tv_DescriptionReq">Description</string>
     <string name="btn_sendmail_reqjob">Email Me</string>
@@ -37,7 +37,7 @@
     <string name="btn_sendemail_jv">Send Email</string>
     <string name="btn_call_jv">Call</string>
     <string name="btn_email_jv">Send Email</string>
-    <string name="tv_editjob">Edit Job</string>
+    <string name="tv_editjobc">Edit Job</string>
     <string name="et_name_editjob">Job title you want to request</string>
     <string name="et_name_editjob1">Name</string>
     <string name="et_age_editjob">Age</string>
@@ -67,7 +67,7 @@
     <string name="et_phone">Enter Phone Number</string>
     <string name="tv_addimg">Add Image</string>
     <string name="btn_create">Create</string>
-    <string name="tv_editjob">Edit Job</string>
+
     <string name="et_companyed">Enter Company Name</string>
     <string name="et_titleed">Enter Job Title</string>
     <string name="et_salaryed">Enter Salary</string>
@@ -80,7 +80,6 @@
     <string name="btn_cn">Create New</string>
     <string name="tv_mrjl">My Requested Jobs</string>
     <string name="btn_newreq">New Request</string>
-
 
 
     <string name="tv_location3">Keselwatta,Panadura</string>
@@ -102,6 +101,8 @@
     <string name="img_company2">picture of company2</string>
     <string name="img_company3">picture of company3</string>
     <string name="img_company4">picture of company4</string>
+    <string name="editjb">Edit Job</string>
+
 
 </resources>
 

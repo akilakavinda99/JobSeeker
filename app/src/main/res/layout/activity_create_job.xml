@@ -178,24 +178,27 @@
 
     <ImageView
         android:id="@+id/imageView_jobtype"
-        android:layout_width="29dp"
-        android:layout_height="68dp"
-        android:layout_marginEnd="5dp"
+        android:layout_width="14dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/et_jobtype"
         app:layout_constraintEnd_toEndOf="@+id/et_jobtype"
         app:layout_constraintTop_toTopOf="@+id/et_jobtype"
-        app:srcCompat="@drawable/drop"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/drop_down"
         tools:ignore="VectorDrawableCompat" />
 
     <ImageView
         android:id="@+id/imageView_dis"
-        android:layout_width="25dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="5dp"
+        android:layout_width="14dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/et_dis"
         app:layout_constraintEnd_toEndOf="@+id/et_dis"
         app:layout_constraintTop_toTopOf="@+id/et_dis"
-        app:srcCompat="@drawable/drop"
+        app:srcCompat="@drawable/drop_down"
         tools:ignore="VectorDrawableCompat" />
 
     <EditText
@@ -236,13 +239,14 @@
 
     <ImageView
         android:id="@+id/imageView_city"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
-        android:layout_marginEnd="4dp"
+        android:layout_width="14dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/et_city"
         app:layout_constraintEnd_toEndOf="@+id/et_city"
         app:layout_constraintTop_toTopOf="@+id/et_city"
-        app:srcCompat="@drawable/drop"
+        app:srcCompat="@drawable/drop_down"
         tools:ignore="VectorDrawableCompat" />
 
     <TextView
