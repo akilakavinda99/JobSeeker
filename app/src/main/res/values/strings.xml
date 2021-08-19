@@ -1,4 +1,79 @@
 <resources>
+    <!-- Damru's Strings-->
+    <string name="app_name">My Saved</string>
+    <string name="my_saved">My Saved</string>
+    <string name="tv_allsaved">All Saved</string>
+    <string name="tv_count">1</string>
+    <string name="tv_job">Software Engineer</string>
+    <string name="tv_time">Full-time</string>
+    <string name="tv_location">Malabe,Colombo</string>
+    <string name="tv_title">My Saved Jobs</string>
+    <string name="et_name_reg">Enter Name</string>
+    <string name="tv_Register">Register</string>
+    <string name="et_email_reg">Enter Email</string>
+    <string name="tv_spinnerD">Enter District</string>
+    <string name="tv_city">Enter City</string>
+    
+    <string name="et_mobile">Enter Mobile Number</string>
+    <string name="et_password">Enter Password</string>
+    <string name="btn_acCeate">Create Account</string>
+    <string name="tv_req_job_title">Request job title</string>
+    <string name="tv_name">Name</string>
+    
+    <string name="tv_genderreqjob">Gender</string>
+    <string name="tv_DescriptionReq">Description</string>
+    <string name="btn_sendmail_reqjob">Email Me</string>
+    <string name="btn_call_reqjob">Call Me</string>
+    <string name="jobtitle">Jobtitle</string>
+    <string name="tv_location_job">location</string>
+    <string name="tv_jobtype_vjob">Job Type</string>
+    <string name="tv_company_jv">Company</string>
+    <string name="tv_salary_jv">Salary</string>
+    <string name="tv_description_jobv">Description</string>
+    <string name="tv_requiremnts_jv">Requirements</string>
+    <string name="tv_publishdate">"Publish Date : "</string>
+    <string name="tv_publishdate1">Publish Date</string>
+    <string name="tv_email_jv">Email</string>
+    <string name="btn_sendemail_jv">Send Email</string>
+    <string name="btn_call_jv">Call</string>
+    <string name="btn_email_jv">Send Email</string>
+    <string name="tv_editjob">Edit Job</string>
+    <string name="et_name_editjob">Job title you want to request</string>
+    <string name="et_name_editjob1">Name</string>
+    <string name="et_age_editjob">Age</string>
+    <string name="et_gender_editjob">Gender</string>
+    <string name="et_description_editjob">Description</string>
+    <string name="et_qualifications_editjob">Qualifications</string>
+    <string name="et_email_editjob">Email</string>
+    <string name="et_phone_editjob">Phone Number</string>
+    <string name="btn_editjob">Edit</string>
+    <string name="tv_job2">Software Engineer</string>
+    <string name="tv_time2">Full Time</string>
+    <string name="tv_location2">Malabe,Colombo</string>
+    <string name="tv_job3">Graphic Design</string>
+    <string name="tv_job4">.NET Engineer</string>
+    <string name="tv_time3">Part time</string>
+    <string name="tv_time4">Full Time</string>
+    <string name="tv_location3">Keselwatta,Panadura</string>
+    <string name="tv_job5">HR.Intern</string>
+    <string name="tv_time5">Full Time</string>
+    <string name="tv_location4">Horethuduwa,Moratuwa</string>
+    <string name="tv_location5">Kaluwella,Galle</string>
+    <string name="tv_title2">Requested Jods</string>
+    <string name="btn_rq_jobs">Request a job</string>
+    <string name="tv_job6">Iam open to work as a full stack developer</string>
+    <string name="tv_gender">Male</string>
+    <string name="tv_age">28 years old</string>
+    <string name="tv_job7">I am looking for software engineering job </string>
+    <string name="tv_gender2">Female</string>
+    <string name="tv_age2">27 years old</string>
+    <string name="tv_job8">Searching for a graphic designer job</string>
+    <string name="tv_age3">24 years old</string>
+    <string name="img_company1">picture of Company1</string>
+    <string name="img_company2">picture of company2</string>
+    <string name="img_company3">picture of company3</string>
+    <string name="img_company4">picture of company4</string>
+
     <!--    Pankaja's Strings-->
     <string name="txt_sign_in">Sign In</string>
     <string name="log_password_txt">Password</string>
@@ -24,8 +99,6 @@
     <string name="txt_city">City</string>
     <string name="txt_email">Email</string>
     <string name="edit_user_btn">Edit</string>
-
-    
     <string name="txt_editprofile">Edit Profile</string>
     <string name="edit_name_txt">Name</string>
     <string name="edit_Mno_txt">Mobile No</string>
@@ -42,3 +115,4 @@
     <string name="nav_profile_txt">Profile</string>
     <!--    Pankaja's Strings-->
 </resources>
+
