@@ -1,21 +1,4 @@
 <resources>
-    <!-- Damru's Strings-->
-    <string name="app_name">My Saved</string>
-    <string name="my_saved">My Saved</string>
-    <string name="tv_allsaved">All Saved</string>
-    <string name="tv_count">1</string>
-    <string name="tv_job">Software Engineer</string>
-    <string name="tv_time">Full-time</string>
-    <string name="tv_location">Malabe,Colombo</string>
-    <string name="tv_title">My Saved Jobs</string>
-    <string name="tv_job2">Software Engineer</string>
-    <string name="tv_time2">Full Time</string>
-    <string name="tv_location2">Malabe,Colombo</string>
-    <string name="tv_job3">Graphic Design</string>
-    <string name="tv_job4">.NET Engineer</string>
-    <string name="tv_time3">Part time</string>
-    <string name="tv_time4">Full Time</string>
-
     <!-- Amila's Strings-->
 
     <string name="tv_createajob">Create a Job</string>
