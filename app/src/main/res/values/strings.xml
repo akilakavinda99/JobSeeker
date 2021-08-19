@@ -68,7 +68,7 @@
     <string name="tv_addimg">Add Image</string>
     <string name="btn_create">Create</string>
 
-    <string name="editjb">Edit Job</string>
+    <string name="tv_editjob">Edit Job</string>
     <string name="et_companyed">Enter Company Name</string>
     <string name="et_titleed">Enter Job Title</string>
     <string name="et_salaryed">Enter Salary</string>
@@ -82,6 +82,7 @@
     <string name="tv_mrjl">My Requested Jobs</string>
     <string name="btn_newreq">New Request</string>
 
+    <!-- Amila's Strings-->
 
     <string name="tv_location3">Keselwatta,Panadura</string>
     <string name="tv_job5">HR.Intern</string>
@@ -143,6 +144,7 @@
     <string name="nav_myreqjobs_txt">My Requested Jobs</string>
     <string name="nav_savedjobs_txt">Saved Jobs</string>
     <string name="nav_profile_txt">Profile</string>
+
     <!--    Pankaja's Strings-->
 
 </resources>
