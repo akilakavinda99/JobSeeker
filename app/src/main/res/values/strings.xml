@@ -74,6 +74,7 @@
     <string name="img_company3">picture of company3</string>
     <string name="img_company4">picture of company4</string>
 
+
     <!--    Pankaja's Strings-->
     <string name="txt_sign_in">Sign In</string>
     <string name="log_password_txt">Password</string>
@@ -114,5 +115,6 @@
     <string name="nav_savedjobs_txt">Saved Jobs</string>
     <string name="nav_profile_txt">Profile</string>
     <!--    Pankaja's Strings-->
+
 </resources>
 

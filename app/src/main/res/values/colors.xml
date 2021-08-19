@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+   
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -12,4 +13,11 @@
     <color name="nav">#545454</color>
     <color name="Light_black">#2A2A2A</color>
     <color name="grayy">#9F9F9F9F</color>
+    <color name="Gray79">#C9C9C9</color>
+    <color name="Gray89">#9f9f9f</color>
+    <color name="modern_blue">#1464F6</color>
+    <color name="modern_blue_1">#004cd6</color>
+    <color name="transparent">#0000ffff</color>
+
 </resources>
+

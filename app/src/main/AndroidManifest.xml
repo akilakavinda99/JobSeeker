@@ -9,19 +9,59 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MySaved">
+
         <activity android:name=".UserloginActivity"
             android:exported="true" ></activity>
+      
         <activity android:name=".EditprofileActivity"
             android:exported="true"/>
+      
         <activity android:name=".ProfileviewActivity"
             android:exported="true"/>
+      
         <activity android:name=".NavigationBarActivity"
             android:exported="true"/>
+      
         <activity android:name=".ProfileActivity"
             android:exported="true"/>
+      
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
+
+
+        <activity android:name=".EditjobReq"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".ViewJob"
+            android:exported="true">
+        </activity>
+      <activity
+      android:name=".Request_jobs_home"
+            android:exported="true"/>
+        <activity
+            android:name=".Homepage"
+            android:exported="true"/>
+        <activity
+            android:name=".SaveJobs"
+            android:exported="true"/>      
+        <activity
+            android:name=".ViewReqJob"
+            android:exported="true"/>
+
+       
+        <activity
+            android:name=".RegisterUserActivity"
+            android:exported="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
 
         <meta-data
             android:name="preloaded_fonts"

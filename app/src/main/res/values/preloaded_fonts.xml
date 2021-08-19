@@ -3,5 +3,7 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/actor</item>
         <item>@font/cardo_bold</item>
+        <item>@font/advent_pro_thin</item>
+
     </array>
 </resources>
