@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MySaved">
-        <activity android:name=".EditJob"
+        <activity android:name=".EditjobReq"
             android:exported="true">
 
         </activity>
