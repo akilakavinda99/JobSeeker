@@ -67,7 +67,7 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textColor="#000000"
-        android:textColorHint="#404040"
+        android:textColorHint="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -86,7 +86,7 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textColor="#000000"
-        android:textColorHint="#404040"
+        android:textColorHint="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -105,7 +105,7 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textColor="#000000"
-        android:textColorHint="#404040"
+        android:textColorHint="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -118,7 +118,9 @@
         android:layout_height="39dp"
         android:layout_marginTop="7dp"
         android:background="@drawable/border2"
-        android:paddingStart="15dp"
+        android:entries="@array/job_type_sm"
+        android:paddingStart="8dp"
+        android:paddingTop="7dp"
         android:paddingEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
@@ -127,34 +129,20 @@
 
     <Spinner
         android:id="@+id/et_dis"
-        android:layout_width="138dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="324dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="7dp"
         android:layout_marginBottom="25dp"
         android:background="@drawable/border2"
-        android:paddingStart="15dp"
+        android:entries="@array/districts_sm"
+        android:paddingStart="8dp"
+        android:paddingTop="7dp"
         android:paddingEnd="15dp"
         app:layout_constraintBottom_toTopOf="@+id/imageButton_addimage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_phone" />
-
-    <Spinner
-        android:id="@+id/et_city"
-        android:layout_width="138dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="25dp"
-        android:background="@drawable/border2"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton_addimage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_phone"
-        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/et_description"
@@ -169,7 +157,7 @@
         android:paddingEnd="15dp"
         android:paddingBottom="56dp"
         android:textColor="#000000"
-        android:textColorHint="#404040"
+        android:textColorHint="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
@@ -213,7 +201,7 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textColor="#000000"
-        android:textColorHint="#404040"
+        android:textColorHint="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -231,23 +219,11 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textColor="#000000"
-        android:textColorHint="#404040"
+        android:textColorHint="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_email" />
-
-    <ImageView
-        android:id="@+id/imageView_city"
-        android:layout_width="14dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/et_city"
-        app:layout_constraintEnd_toEndOf="@+id/et_city"
-        app:layout_constraintTop_toTopOf="@+id/et_city"
-        app:srcCompat="@drawable/drop_down"
-        tools:ignore="VectorDrawableCompat" />
 
     <TextView
         android:id="@+id/tv_addimg"
@@ -295,5 +271,16 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton_addimage" />
+
+    <ProgressBar
+        android:id="@+id/progressBar_cj"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton_addimage"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton_addimage"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="@+id/imageButton_addimage"
+        app:layout_constraintTop_toTopOf="@+id/imageButton_addimage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
