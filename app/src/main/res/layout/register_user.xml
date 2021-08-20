@@ -7,24 +7,11 @@
     android:background="@drawable/regbackground"
     tools:context=".RegisterUserActivity">
 
-    <TextView
-        android:id="@+id/tv_spinnerD2"
-        android:layout_width="159dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="20dp"
-        android:hint="@string/tv_spinnerD"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email_reg2" />
-
     <EditText
         android:id="@+id/et_email_reg2"
         android:layout_width="275dp"
         android:layout_height="44dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/rounded_view_register"
         android:ems="10"
         android:hint="@string/et_email_reg"
@@ -32,6 +19,7 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_name_reg" />
 
@@ -39,7 +27,7 @@
         android:id="@+id/et_name_reg"
         android:layout_width="275dp"
         android:layout_height="44dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/rounded_view_register"
         android:ems="10"
         android:hint="@string/et_name_reg"
@@ -47,6 +35,7 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -75,121 +64,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/userregister" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="277dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/spinner"
-        android:dropDownWidth="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email_reg2" />
-
-    <Spinner
-        android:id="@+id/spinner4"
-        android:layout_width="277dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="68dp"
-        android:background="@drawable/spinner"
-        android:dropDownWidth="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email_reg2" />
-
-    <Spinner
-        android:id="@+id/spinner5"
-        android:layout_width="277dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="124dp"
-        android:background="@drawable/spinner"
-        android:dropDownWidth="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email_reg2" />
-
-    <TextView
-        android:id="@+id/tv_spinnerD"
-        android:layout_width="159dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="20dp"
-        android:hint="@string/tv_spinnerD"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email_reg2" />
-
-    <ImageView
-        android:id="@+id/dropdown_arrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email_reg2"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/dropdown_arrow"
-        tools:ignore="VectorDrawableCompat" />
-
-    <TextView
-        android:id="@+id/tv_city"
-        android:layout_width="135dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="20dp"
-        android:hint="@string/tv_city"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
-
-    <TextView
-        android:id="@+id/tv_gender"
-        android:layout_width="135dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="24dp"
-        android:hint="@string/tv_gender"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_city" />
-
-    <ImageView
-        android:id="@+id/dropdown_arrowc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="76dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/dropdown_arrow"
-        tools:ignore="VectorDrawableCompat" />
-
-    <ImageView
-        android:id="@+id/dropdown_arrowc2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="76dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/dropdown_arrow"
-        tools:ignore="VectorDrawableCompat" />
-
     <EditText
         android:id="@+id/et_mobile"
         android:layout_width="275dp"
         android:layout_height="44dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/rounded_view_register"
         android:ems="10"
         android:hint="@string/et_mobile"
@@ -197,15 +76,15 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner5" />
+        app:layout_constraintTop_toBottomOf="@+id/gender_spinner" />
 
     <EditText
         android:id="@+id/et_password"
-        android:layout_width="274dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="275dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/rounded_view_register"
         android:ems="10"
         android:hint="@string/et_password"
@@ -213,7 +92,7 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_mobile" />
 
@@ -231,5 +110,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_password"
         app:layout_constraintVertical_bias="1.0" />
+
+    <Spinner
+        android:id="@+id/district_spinner"
+        android:layout_width="275dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_view_register"
+        android:entries="@array/districts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_email_reg2" />
+
+    <Spinner
+        android:id="@+id/gender_spinner"
+        android:layout_width="275dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_view_register"
+        android:entries="@array/gender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/district_spinner" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_email_reg2"
+        app:srcCompat="@drawable/dropdown_arrow"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_email_reg2"
+        app:srcCompat="@drawable/dropdown_arrow"
+        tools:ignore="VectorDrawableCompat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
