@@ -21,6 +21,7 @@
     <color name="transparent">#0000ffff</color>
     <color name="modern_blue">#1464F6</color>
     <color name="modern_blue_1">#004cd6</color>
+    <color name="my_spinner_text_color">#FF4C4C4C</color>
 
 </resources>
 

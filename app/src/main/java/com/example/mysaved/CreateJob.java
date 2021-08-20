@@ -6,12 +6,14 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
@@ -25,16 +27,21 @@ import java.util.Map;
 
 public class CreateJob extends AppCompatActivity {
 
+    //Variable declare
+
     EditText company_name, job_title, salary, job_description, email, phone;
     Spinner type_spinner, district_spinner;
     Button create_btn;
     ImageView b1_btn, cimg, addimage;
     ProgressBar progressBar;
-    Uri imageUri;
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    String phonePattern = "[0-9]{10}";
 
     FirebaseDatabase rootNode;
     DatabaseReference reference;
     StorageReference reference2 = FirebaseStorage.getInstance().getReference();
+
+    //ID declare
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +67,7 @@ public class CreateJob extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+        //This codes are execuded after click
 
         rootNode = FirebaseDatabase.getInstance();
         reference = rootNode.getReference("create_job");
@@ -74,10 +82,55 @@ public class CreateJob extends AppCompatActivity {
         String job_type = type_spinner.getSelectedItem().toString();
         String district = district_spinner.getSelectedItem().toString();
 
+
         JobHelperClass helperClass = new JobHelperClass(name,title,salary1,description,email1,phone1,job_type,district);
 
-        reference.child(phone1).setValue(helperClass);
+        //Validations
 
+                if(TextUtils.isEmpty(name)){
+                    company_name.setError("Company Name is Required");
+                    return;
+                }
+                if(TextUtils.isEmpty(title)){
+                    job_title.setError("Job Title is Required");
+                    return;
+                }
+                if(TextUtils.isEmpty(salary1)){
+                    salary.setError("Salary is Required");
+                    return;
+                }
+                if(TextUtils.isEmpty(description)){
+                    job_description.setError("Description is Required");
+                    return;
+                }
+                if(email.getText().toString().isEmpty()) {
+                    email.setError("Email is Required");
+                }else {
+                    if (!email.getText().toString().trim().matches(emailPattern)) {
+                        email.setError("Invalid Email Address");
+                        return;
+                    }
+                }
+                if(TextUtils.isEmpty(phone1)){
+                    phone.setError("Phone is Required");
+                }else {
+                    if (!phone.getText().toString().trim().matches(phonePattern)) {
+                        phone.setError("Invalid Phone Number");
+                        return;
+                    }
+                }
+                if (job_type.equals("Select Job Type")){
+                    Toast.makeText(CreateJob.this, "Select Job Type", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (district.equals("Select District")){
+                    Toast.makeText(CreateJob.this, "Select a District", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                //database child set
+
+                reference.child(phone1).setValue(helperClass);
             }
         });
 

@@ -43,7 +43,9 @@
         android:layout_height="39dp"
         android:layout_marginTop="7dp"
         android:background="@drawable/border2"
-        android:paddingStart="15dp"
+        android:entries="@array/job_type_sm"
+        android:paddingStart="8dp"
+        android:paddingTop="7dp"
         android:paddingEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -63,16 +65,18 @@
 
     <Spinner
         android:id="@+id/et_dised"
-        android:layout_width="138dp"
-        android:layout_height="35dp"
+        android:layout_width="324dp"
+        android:layout_height="39dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="25dp"
         android:background="@drawable/border2"
-        android:paddingStart="15dp"
+        android:entries="@array/districts_sm"
+        android:paddingStart="8dp"
+        android:paddingTop="7dp"
         android:paddingEnd="15dp"
         app:layout_constraintBottom_toTopOf="@+id/imageButton_addimageed"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_phoneed" />
 
@@ -87,29 +91,13 @@
         android:inputType="phone"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
-        android:textColor="#000000"
-        android:textColorHint="#000000"
+        android:textColor="#FF4C4C4C"
+        android:textColorHint="#FF4C4C4C"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_emailed" />
-
-    <Spinner
-        android:id="@+id/et_cityed"
-        android:layout_width="138dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="25dp"
-        android:background="@drawable/border2"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton_addimageed"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.838"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_phoneed"
-        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageView_dised"
@@ -119,17 +107,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/et_dised"
         app:layout_constraintEnd_toEndOf="@+id/et_dised"
         app:layout_constraintTop_toTopOf="@+id/et_dised"
-        app:srcCompat="@drawable/drop_down"
-        tools:ignore="VectorDrawableCompat" />
-
-    <ImageView
-        android:id="@+id/imageView_cityed"
-        android:layout_width="13dp"
-        android:layout_height="21dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/et_cityed"
-        app:layout_constraintEnd_toEndOf="@+id/et_cityed"
-        app:layout_constraintTop_toTopOf="@+id/et_cityed"
         app:srcCompat="@drawable/drop_down"
         tools:ignore="VectorDrawableCompat" />
 
@@ -145,8 +122,8 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:paddingBottom="56dp"
-        android:textColor="#000000"
-        android:textColorHint="#000000"
+        android:textColor="#FF4C4C4C"
+        android:textColorHint="#FF4C4C4C"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -164,8 +141,8 @@
         android:inputType="textEmailAddress"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
-        android:textColor="#000000"
-        android:textColorHint="#000000"
+        android:textColor="#FF4C4C4C"
+        android:textColorHint="#FF4C4C4C"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -183,8 +160,8 @@
         android:inputType="textPersonName"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
-        android:textColor="#000000"
-        android:textColorHint="#000000"
+        android:textColor="#FF4C4C4C"
+        android:textColorHint="#FF4C4C4C"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -202,8 +179,8 @@
         android:inputType="textPersonName"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
-        android:textColor="#000000"
-        android:textColorHint="#000000"
+        android:textColor="#FF4C4C4C"
+        android:textColorHint="#FF4C4C4C"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -221,8 +198,8 @@
         android:inputType="textPersonName"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
-        android:textColor="#000000"
-        android:textColorHint="#000000"
+        android:textColor="#FF4C4C4C"
+        android:textColorHint="#FF4C4C4C"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -291,4 +268,14 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton_addimageed" />
+
+    <ProgressBar
+        android:id="@+id/progressBar_cj2ed"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton_addimageed"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton_addimageed"
+        app:layout_constraintStart_toStartOf="@+id/imageButton_addimageed"
+        app:layout_constraintTop_toTopOf="@+id/imageButton_addimageed" />
 </androidx.constraintlayout.widget.ConstraintLayout>
