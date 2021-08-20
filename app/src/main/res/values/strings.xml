@@ -13,13 +13,13 @@
     <string name="et_email_reg">Enter Email</string>
     <string name="tv_spinnerD">Enter District</string>
     <string name="tv_city">Enter City</string>
-    <string name="tv_gender">Enter Gender</string>
+
     <string name="et_mobile">Enter Mobile Number</string>
     <string name="et_password">Enter Password</string>
     <string name="btn_acCeate">Create Account</string>
     <string name="tv_req_job_title">Request job title</string>
     <string name="tv_name">Name</string>
-    <string name="tv_age">Age</string>
+
     <string name="tv_genderreqjob">Gender</string>
     <string name="tv_DescriptionReq">Description</string>
     <string name="btn_sendmail_reqjob">Email Me</string>
@@ -74,5 +74,30 @@
     <string name="img_company3">picture of company3</string>
     <string name="img_company4">picture of company4</string>
 
+    <string-array name="testspin">
+        <item>--Select City Area--</item>
+        <item>-- City Area--</item>
+        <item>-- Area--</item>
+    </string-array>
+
+    <string-array name="districts">
+        <item>Select District</item>
+        <item>Ampara</item>
+        <item>Anuradhapura</item>
+        <item>Badulla</item>
+        <item>Batticaloa</item>
+        <item>Colombo</item>
+        <item>Galle</item>
+        <item>Gampaha</item>
+        <item>Hambantota</item>
+        <item>Jaffna</item>
+        <item>Kalutara</item>
+    </string-array>
+
+    <string-array name="gender">
+        <item>Select Gender</item>
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
 </resources>
 
