@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="drawer_layout" type="id" />
+    <item name="progressBar_listings" type="id" />
+    <item name="my_listing_recyclerview" type="id" />
+</resources>

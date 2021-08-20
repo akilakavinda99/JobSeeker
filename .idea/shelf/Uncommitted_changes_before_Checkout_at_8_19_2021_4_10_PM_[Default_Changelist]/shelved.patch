@@ -1,0 +1,353 @@
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <!-- Damru's Strings-->\r\n    <string name=\"app_name\">My Saved</string>\r\n    <string name=\"my_saved\">My Saved</string>\r\n    <string name=\"tv_allsaved\">All Saved</string>\r\n    <string name=\"tv_count\">1</string>\r\n    <string name=\"tv_job\">Software Engineer</string>\r\n    <string name=\"tv_time\">Full-time</string>\r\n    <string name=\"tv_location\">Malabe,Colombo</string>\r\n    <string name=\"tv_title\">My Saved Jobs</string>\r\n    <string name=\"et_name_reg\">Enter Name</string>\r\n    <string name=\"tv_Register\">Register</string>\r\n    <string name=\"et_email_reg\">Enter Email</string>\r\n    <string name=\"tv_spinnerD\">Enter District</string>\r\n    <string name=\"tv_city\">Enter City</string>\r\n\r\n    <string name=\"et_mobile\">Enter Mobile Number</string>\r\n    <string name=\"et_password\">Enter Password</string>\r\n    <string name=\"btn_acCeate\">Create Account</string>\r\n    <string name=\"tv_req_job_title\">Request job title</string>\r\n    <string name=\"tv_name\">Name</string>\r\n\r\n    <string name=\"tv_genderreqjob\">Gender</string>\r\n    <string name=\"tv_DescriptionReq\">Description</string>\r\n    <string name=\"btn_sendmail_reqjob\">Email Me</string>\r\n    <string name=\"btn_call_reqjob\">Call Me</string>\r\n    <string name=\"jobtitle\">Jobtitle</string>\r\n    <string name=\"tv_location_job\">location</string>\r\n    <string name=\"tv_jobtype_vjob\">Job Type</string>\r\n    <string name=\"tv_company_jv\">Company</string>\r\n    <string name=\"tv_salary_jv\">Salary</string>\r\n    <string name=\"tv_description_jobv\">Description</string>\r\n    <string name=\"tv_requiremnts_jv\">Requirements</string>\r\n    <string name=\"tv_publishdate\">\"Publish Date : \"</string>\r\n    <string name=\"tv_publishdate1\">Publish Date</string>\r\n    <string name=\"tv_email_jv\">Email</string>\r\n    <string name=\"btn_sendemail_jv\">Send Email</string>\r\n    <string name=\"btn_call_jv\">Call</string>\r\n    <string name=\"btn_email_jv\">Send Email</string>\r\n    <string name=\"tv_editjobc\">Edit Job</string>\r\n    <string name=\"et_name_editjob\">Job title you want to request</string>\r\n    <string name=\"et_name_editjob1\">Name</string>\r\n    <string name=\"et_age_editjob\">Age</string>\r\n    <string name=\"et_gender_editjob\">Gender</string>\r\n    <string name=\"et_description_editjob\">Description</string>\r\n    <string name=\"et_qualifications_editjob\">Qualifications</string>\r\n    <string name=\"et_email_editjob\">Email</string>\r\n    <string name=\"et_phone_editjob\">Phone Number</string>\r\n    <string name=\"btn_editjob\">Edit</string>\r\n    <string name=\"tv_job2\">Software Engineer</string>\r\n    <string name=\"tv_time2\">Full Time</string>\r\n    <string name=\"tv_location2\">Malabe,Colombo</string>\r\n    <string name=\"tv_job3\">Graphic Design</string>\r\n    <string name=\"tv_job4\">.NET Engineer</string>\r\n    <string name=\"tv_time3\">Part time</string>\r\n    <string name=\"tv_time4\">Full Time</string>\r\n\r\n\r\n    <!-- Amila's Strings-->\r\n\r\n    <string name=\"tv_createajob\">Create a Job</string>\r\n    <string name=\"et_company\">Enter Company Name</string>\r\n    <string name=\"et_title\">Enter Job Title</string>\r\n    <string name=\"et_salary\">Enter Salary</string>\r\n    <string name=\"et_description\">Enter Job Description</string>\r\n    <string name=\"et_email\">Enter Email Address</string>\r\n    <string name=\"et_phone\">Enter Phone Number</string>\r\n    <string name=\"tv_addimg\">Add Image</string>\r\n    <string name=\"btn_create\">Create</string>\r\n\r\n    <string name=\"tv_editjob\">Edit Job</string>\r\n    <string name=\"et_companyed\">Enter Company Name</string>\r\n    <string name=\"et_titleed\">Enter Job Title</string>\r\n    <string name=\"et_salaryed\">Enter Salary</string>\r\n    <string name=\"et_descriptioned\">Enter Job Description</string>\r\n    <string name=\"et_emailed\">Enter Email Address</string>\r\n    <string name=\"et_phoneed\">Enter Phone Number</string>\r\n    <string name=\"tv_addimged\">Add Image</string>\r\n    <string name=\"btn_edit\">Edit</string>\r\n    <string name=\"tv_mjl1\">My Job Listings</string>\r\n    <string name=\"btn_cn\">Create New</string>\r\n    <string name=\"tv_mrjl\">My Requested Jobs</string>\r\n    <string name=\"btn_newreq\">New Request</string>\r\n\r\n    <!-- Amila's Strings-->\r\n\r\n    <string name=\"tv_location3\">Keselwatta,Panadura</string>\r\n    <string name=\"tv_job5\">HR.Intern</string>\r\n    <string name=\"tv_time5\">Full Time</string>\r\n    <string name=\"tv_location4\">Horethuduwa,Moratuwa</string>\r\n    <string name=\"tv_location5\">Kaluwella,Galle</string>\r\n    <string name=\"tv_title2\">Requested Jods</string>\r\n    <string name=\"btn_rq_jobs\">Request a job</string>\r\n    <string name=\"tv_job6\">Iam open to work as a full stack developer</string>\r\n    <string name=\"tv_gender\">Male</string>\r\n    <string name=\"tv_age\">28 years old</string>\r\n    <string name=\"tv_job7\">I am looking for software engineering job </string>\r\n    <string name=\"tv_gender2\">Female</string>\r\n    <string name=\"tv_age2\">27 years old</string>\r\n    <string name=\"tv_job8\">Searching for a graphic designer job</string>\r\n    <string name=\"tv_age3\">24 years old</string>\r\n    <string name=\"img_company1\">picture of Company1</string>\r\n    <string name=\"img_company2\">picture of company2</string>\r\n    <string name=\"img_company3\">picture of company3</string>\r\n    <string name=\"img_company4\">picture of company4</string>\r\n\r\n\r\n    <!--    Pankaja's Strings-->\r\n    <string name=\"txt_sign_in\">Sign In</string>\r\n    <string name=\"log_password_txt\">Password</string>\r\n    <string name=\"log_email_txt\">Email</string>\r\n    <string name=\"lg_button\">Login</string>\r\n    <string name=\"sign_up_button\">Sign Up</string>\r\n    <string name=\"fgt_password\">Forget Password?</string>\r\n    <string name=\"txt_view\">Request a Job</string>\r\n    <string name=\"req_job\">Enter the Job title you want to request</string>\r\n    <string name=\"ent_name\">Enter Name</string>\r\n    <string name=\"ent_age\">Enter Age</string>\r\n    <string name=\"description\">Enter Description about yourself</string>\r\n    <string name=\"ent_email\">Enter Email Address</string>\r\n    <string name=\"ent_p_no\">Enter Phone Number</string>\r\n    <string name=\"add_image\">Add Image</string>\r\n    <string name=\"create_button\">Create</string>\r\n    <string name=\"txt_profile\">Profile</string>\r\n    <string name=\"verify_now_btn\">Verify Now</string>\r\n    <string name=\"txt_name\">Name</string>\r\n    <string name=\"txt_mobileno\">Mobile No</string>\r\n    <string name=\"txt_Gender\">Gender</string>\r\n    <string name=\"txt_district\">District</string>\r\n    <string name=\"txt_city\">City</string>\r\n    <string name=\"txt_email\">Email</string>\r\n    <string name=\"edit_user_btn\">Edit</string>\r\n    <string name=\"txt_editprofile\">Edit Profile</string>\r\n    <string name=\"edit_name_txt\">Name</string>\r\n    <string name=\"edit_Mno_txt\">Mobile No</string>\r\n    <string name=\"edit_email_txt\">Email</string>\r\n    <string name=\"update_user_btn\">Update</string>\r\n    <string name=\"Nav_login\">Log In</string>\r\n    <string name=\"nav_logout\">Log Out</string>\r\n    <string name=\"nav_home_txt\">Home</string>\r\n    <string name=\"nav_createjob_txt\">Create  a Job</string>\r\n    <string name=\"nav_myjobs_txt\">My Jobs</string>\r\n    <string name=\"nav_requestedjobs_txt\">Requested Jobs</string>\r\n    <string name=\"nav_myreqjobs_txt\">My Requested Jobs</string>\r\n    <string name=\"nav_savedjobs_txt\">Saved Jobs</string>\r\n    <string name=\"nav_profile_txt\">Profile</string>\r\n\r\n    <!--    Pankaja's Strings-->\r\n\r\n</resources>\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/strings.xml	(revision 479b0f1851cfc95638f0cb3bbc51440403f4ffa0)
++++ app/src/main/res/values/strings.xml	(date 1629369620972)
+@@ -68,7 +68,7 @@
+     <string name="tv_addimg">Add Image</string>
+     <string name="btn_create">Create</string>
+ 
+-    <string name="tv_editjob">Edit Job</string>
++    <string name="editjb">Edit Job</string>
+     <string name="et_companyed">Enter Company Name</string>
+     <string name="et_titleed">Enter Job Title</string>
+     <string name="et_salaryed">Enter Salary</string>
+@@ -82,7 +82,6 @@
+     <string name="tv_mrjl">My Requested Jobs</string>
+     <string name="btn_newreq">New Request</string>
+ 
+-    <!-- Amila's Strings-->
+ 
+     <string name="tv_location3">Keselwatta,Panadura</string>
+     <string name="tv_job5">HR.Intern</string>
+@@ -144,7 +143,6 @@
+     <string name="nav_myreqjobs_txt">My Requested Jobs</string>
+     <string name="nav_savedjobs_txt">Saved Jobs</string>
+     <string name="nav_profile_txt">Profile</string>
+-
+     <!--    Pankaja's Strings-->
+ 
+ </resources>
+Index: app/src/main/java/com/example/mysaved/EditJob.java
+===================================================================
+--- app/src/main/java/com/example/mysaved/EditJob.java	(revision 479b0f1851cfc95638f0cb3bbc51440403f4ffa0)
++++ app/src/main/java/com/example/mysaved/EditJob.java	(revision 479b0f1851cfc95638f0cb3bbc51440403f4ffa0)
+@@ -1,14 +0,0 @@
+-package com.example.mysaved;
+-
+-import android.os.Bundle;
+-
+-import androidx.appcompat.app.AppCompatActivity;
+-
+-public class EditJob extends AppCompatActivity {
+-
+-    @Override
+-    protected void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_edit_job);
+-    }
+-}
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_edit_job.xml
+===================================================================
+--- app/src/main/res/layout/activity_edit_job.xml	(revision 479b0f1851cfc95638f0cb3bbc51440403f4ffa0)
++++ app/src/main/res/layout/activity_edit_job.xml	(revision 479b0f1851cfc95638f0cb3bbc51440403f4ffa0)
+@@ -1,293 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent"
+-    android:background="@drawable/bg1"
+-    tools:context=".EditJob">
+-
+-    <ImageButton
+-        android:id="@+id/imageButton_addimageed"
+-        android:layout_width="101dp"
+-        android:layout_height="76dp"
+-        android:layout_marginTop="24dp"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/et_dised"
+-        app:srcCompat="@drawable/baseline_add_circle_24"
+-        tools:ignore="VectorDrawableCompat" />
+-
+-    <TextView
+-        android:id="@+id/tv_addimged"
+-        android:layout_width="wrap_content"
+-        android:layout_height="21dp"
+-        android:layout_marginStart="55dp"
+-        android:layout_marginTop="48dp"
+-        android:layout_marginEnd="32dp"
+-        android:layout_marginBottom="144dp"
+-        android:hint="@string/tv_addimged"
+-        android:textColor="#FFFFFF"
+-        android:textColorHint="#FFFFFF"
+-        android:textSize="16sp"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toStartOf="@+id/imageButton_addimageed"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/et_dised" />
+-
+-    <Spinner
+-        android:id="@+id/et_jobtypeed"
+-        android:layout_width="324dp"
+-        android:layout_height="39dp"
+-        android:layout_marginTop="7dp"
+-        android:background="@drawable/border2"
+-        android:paddingStart="15dp"
+-        android:paddingEnd="15dp"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.492"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/et_salaryed" />
+-
+-    <ImageView
+-        android:id="@+id/imageView_jobtypeed"
+-        android:layout_width="13dp"
+-        android:layout_height="21dp"
+-        android:layout_marginEnd="8dp"
+-        app:layout_constraintBottom_toBottomOf="@+id/et_jobtypeed"
+-        app:layout_constraintEnd_toEndOf="@+id/et_jobtypeed"
+-        app:layout_constraintTop_toTopOf="@+id/et_jobtypeed"
+-        app:layout_constraintVertical_bias="0.444"
+-        app:srcCompat="@drawable/drop_down"
+-        tools:ignore="VectorDrawableCompat" />
+-
+-    <Spinner
+-        android:id="@+id/et_dised"
+-        android:layout_width="138dp"
+-        android:layout_height="35dp"
+-        android:layout_marginTop="8dp"
+-        android:layout_marginBottom="25dp"
+-        android:background="@drawable/border2"
+-        android:paddingStart="15dp"
+-        android:paddingEnd="15dp"
+-        app:layout_constraintBottom_toTopOf="@+id/imageButton_addimageed"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.153"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/et_phoneed" />
+-
+-    <EditText
+-        android:id="@+id/et_phoneed"
+-        android:layout_width="324dp"
+-        android:layout_height="39dp"
+-        android:layout_marginTop="7dp"
+-        android:background="@drawable/border2"
+-        android:ems="10"
+-        android:hint="@string/et_phoneed"
+-        android:inputType="phone"
+-        android:paddingStart="15dp"
+-        android:paddingEnd="15dp"
+-        android:textColor="#000000"
+-        android:textColorHint="#404040"
+-        android:textSize="16sp"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.492"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/et_emailed" />
+-
+-    <Spinner
+-        android:id="@+id/et_cityed"
+-        android:layout_width="138dp"
+-        android:layout_height="35dp"
+-        android:layout_marginTop="8dp"
+-        android:layout_marginBottom="25dp"
+-        android:background="@drawable/border2"
+-        android:paddingStart="15dp"
+-        android:paddingEnd="15dp"
+-        app:layout_constraintBottom_toTopOf="@+id/imageButton_addimageed"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.838"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/et_phoneed"
+-        app:layout_constraintVertical_bias="1.0" />
+-
+-    <ImageView
+-        android:id="@+id/imageView_dised"
+-        android:layout_width="13dp"
+-        android:layout_height="21dp"
+-        android:layout_marginEnd="5dp"
+-        app:layout_constraintBottom_toBottomOf="@+id/et_dised"
+-        app:layout_constraintEnd_toEndOf="@+id/et_dised"
+-        app:layout_constraintTop_toTopOf="@+id/et_dised"
+-        app:srcCompat="@drawable/drop_down"
+-        tools:ignore="VectorDrawableCompat" />
+-
+-    <ImageView
+-        android:id="@+id/imageView_cityed"
+-        android:layout_width="13dp"
+-        android:layout_height="21dp"
+-        android:layout_marginEnd="5dp"
+-        app:layout_constraintBottom_toBottomOf="@+id/et_cityed"
+-        app:layout_constraintEnd_toEndOf="@+id/et_cityed"
+-        app:layout_constraintTop_toTopOf="@+id/et_cityed"
+-        app:srcCompat="@drawable/drop_down"
+-        tools:ignore="VectorDrawableCompat" />
+-
+-    <EditText
+-        android:id="@+id/et_descriptioned"
+-        android:layout_width="324dp"
+-        android:layout_height="90dp"
+-        android:layout_marginTop="7dp"
+-        android:background="@drawable/border2"
+-        android:ems="10"
+-        android:hint="@string/et_descriptioned"
+-        android:inputType="textPersonName"
+-        android:paddingStart="15dp"
+-        android:paddingEnd="15dp"
+-        android:paddingBottom="56dp"
+-        android:textColor="#000000"
+-        android:textColorHint="#404040"
+-        android:textSize="16sp"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.492"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/et_jobtypeed" />
+-
+-    <EditText
+-        android:id="@+id/et_emailed"
+-        android:layout_width="324dp"
+-        android:layout_height="39dp"
+-        android:layout_marginTop="7dp"
+-        android:background="@drawable/border2"
+-        android:ems="10"
+-        android:hint="@string/et_emailed"
+-        android:inputType="textEmailAddress"
+-        android:paddingStart="15dp"
+-        android:paddingEnd="15dp"
+-        android:textColor="#000000"
+-        android:textColorHint="#404040"
+-        android:textSize="16sp"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.492"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/et_descriptioned" />
+-
+-    <EditText
+-        android:id="@+id/et_titleed"
+-        android:layout_width="324dp"
+-        android:layout_height="39dp"
+-        android:layout_marginTop="7dp"
+-        android:background="@drawable/border2"
+-        android:ems="10"
+-        android:hint="@string/et_titleed"
+-        android:inputType="textPersonName"
+-        android:paddingStart="15dp"
+-        android:paddingEnd="15dp"
+-        android:textColor="#000000"
+-        android:textColorHint="#404040"
+-        android:textSize="16sp"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.492"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/et_companyed" />
+-
+-    <EditText
+-        android:id="@+id/et_salaryed"
+-        android:layout_width="324dp"
+-        android:layout_height="39dp"
+-        android:layout_marginTop="7dp"
+-        android:background="@drawable/border2"
+-        android:ems="10"
+-        android:hint="@string/et_salaryed"
+-        android:inputType="textPersonName"
+-        android:paddingStart="15dp"
+-        android:paddingEnd="15dp"
+-        android:textColor="#000000"
+-        android:textColorHint="#404040"
+-        android:textSize="16sp"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.492"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/et_titleed" />
+-
+-    <EditText
+-        android:id="@+id/et_companyed"
+-        android:layout_width="324dp"
+-        android:layout_height="39dp"
+-        android:layout_marginTop="132dp"
+-        android:background="@drawable/border2"
+-        android:ems="10"
+-        android:hint="@string/et_companyed"
+-        android:inputType="textPersonName"
+-        android:paddingStart="15dp"
+-        android:paddingEnd="15dp"
+-        android:textColor="#000000"
+-        android:textColorHint="#404040"
+-        android:textSize="16sp"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.492"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
+-
+-    <TextView
+-        android:id="@+id/tv_editjob"
+-        android:layout_width="160dp"
+-        android:layout_height="41dp"
+-        android:layout_marginTop="40dp"
+-        android:layout_marginBottom="64dp"
+-        android:fontFamily="sans-serif-medium"
+-        android:hint="@string/tv_editjob"
+-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+-        android:textColor="#000000"
+-        android:textColorHint="#000000"
+-        android:textSize="28sp"
+-        app:layout_constraintBottom_toTopOf="@+id/et_company"
+-        app:layout_constraintEnd_toStartOf="@+id/imageView_deletejob"
+-        app:layout_constraintStart_toEndOf="@+id/imageView15"
+-        app:layout_constraintTop_toTopOf="parent"
+-        app:layout_constraintVertical_bias="0.0"
+-        tools:ignore="UnknownIdInLayout" />
+-
+-    <ImageView
+-        android:id="@+id/imageView15"
+-        android:layout_width="23dp"
+-        android:layout_height="40dp"
+-        android:layout_marginStart="40dp"
+-        android:layout_marginTop="40dp"
+-        android:layout_marginEnd="12dp"
+-        android:layout_marginBottom="52dp"
+-        app:layout_constraintBottom_toTopOf="@+id/et_companyed"
+-        app:layout_constraintEnd_toStartOf="@+id/tv_editjob"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent"
+-        app:srcCompat="@drawable/back"
+-        tools:ignore="VectorDrawableCompat" />
+-
+-    <ImageView
+-        android:id="@+id/imageView_deletejob"
+-        android:layout_width="44dp"
+-        android:layout_height="37dp"
+-        android:layout_marginStart="55dp"
+-        android:layout_marginTop="40dp"
+-        android:layout_marginEnd="64dp"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toEndOf="@+id/tv_editjob"
+-        app:layout_constraintTop_toTopOf="parent"
+-        app:srcCompat="@drawable/round_delete_forever_24"
+-        tools:ignore="VectorDrawableCompat" />
+-
+-    <Button
+-        android:id="@+id/btn_edit"
+-        android:layout_width="112dp"
+-        android:layout_height="40dp"
+-        android:layout_marginTop="36dp"
+-        android:layout_marginBottom="44dp"
+-        android:background="@drawable/border2"
+-        android:hint="@string/btn_edit"
+-        android:paddingTop="0dp"
+-        android:textColorHint="#FFFFFF"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.495"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/imageButton_addimageed" />
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
