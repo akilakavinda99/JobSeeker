@@ -30,10 +30,7 @@
             android:exported="true" />
 
 
-        <activity android:name=".EditjobReq"
-            android:exported="true">
 
-        </activity>
 
         <activity
             android:name=".MyRequestedJobs"
@@ -58,6 +55,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
        <activity
             android:name=".MyJobListings"
             android:exported="true" />
