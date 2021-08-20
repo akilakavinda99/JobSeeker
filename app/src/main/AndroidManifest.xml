@@ -27,7 +27,7 @@
             android:name=".Homepage"
             android:exported="true" />
         <activity
-            android:name=".SaveJobs"
+            android:name=".SaveJobs"/>
 
 
         <activity android:name=".UserloginActivity"
