@@ -18,6 +18,8 @@ public class JobHelperClass {
         this.district = district;
     }
 
+    //Getter & setters
+
     public String getName() {
         return name;
     }
