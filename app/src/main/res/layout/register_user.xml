@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/regbackground"
+    tools:context=".RegisterUserActivity">
+
+    <EditText
+        android:id="@+id/et_email_reg2"
+        android:layout_width="275dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_view_register"
+        android:ems="10"
+        android:hint="@string/et_email_reg"
+        android:inputType="textPersonName"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_name_reg" />
+
+    <EditText
+        android:id="@+id/et_name_reg"
+        android:layout_width="275dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounded_view_register"
+        android:ems="10"
+        android:hint="@string/et_name_reg"
+        android:inputType="textPersonName"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="197dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/actor"
+        android:text="@string/tv_Register"
+        android:textColor="#070707"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toStartOf="@+id/iv_regupimg"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_regupimg"
+        android:layout_width="137dp"
+        android:layout_height="197dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/userregister" />
+
+    <EditText
+        android:id="@+id/et_mobile"
+        android:layout_width="275dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_view_register"
+        android:ems="10"
+        android:hint="@string/et_mobile"
+        android:inputType="phone"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gender_spinner" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="275dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_view_register"
+        android:ems="10"
+        android:hint="@string/et_password"
+        android:inputType="textPassword"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_mobile" />
+
+    <Button
+        android:id="@+id/btn_acCeate"
+        android:layout_width="183dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="63dp"
+        android:hint="@string/btn_acCeate"
+        android:text="Create Account"
+        app:backgroundTint="@color/modern_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_password"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Spinner
+        android:id="@+id/district_spinner"
+        android:layout_width="275dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_view_register"
+        android:entries="@array/districts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_email_reg2" />
+
+    <Spinner
+        android:id="@+id/gender_spinner"
+        android:layout_width="275dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_view_register"
+        android:entries="@array/gender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/district_spinner" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_email_reg2"
+        app:srcCompat="@drawable/dropdown_arrow"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_email_reg2"
+        app:srcCompat="@drawable/dropdown_arrow"
+        tools:ignore="VectorDrawableCompat" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
