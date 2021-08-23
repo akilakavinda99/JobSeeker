@@ -53,6 +53,7 @@
                 android:hint="@string/btn_newreq"
                 android:paddingTop="1dp"
                 android:textColorHint="#FFFFFF"
+                app:backgroundTint="#477EEC"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tv_mrjl"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.906"

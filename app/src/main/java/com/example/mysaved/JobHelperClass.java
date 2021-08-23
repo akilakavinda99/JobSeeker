@@ -2,12 +2,12 @@ package com.example.mysaved;
 
 public class JobHelperClass {
 
-    String name,title,salary1,description,email1,phone1,job_type,district;
+    String name,title,salary1,description,email1,phone1,job_type,district,date;
 
     public JobHelperClass() {
     }
 
-    public JobHelperClass(String name, String title, String salary1, String description, String email1, String phone1, String job_type, String district) {
+    public JobHelperClass(String name, String title, String salary1, String description, String email1, String phone1, String job_type, String district, String date) {
         this.name = name;
         this.title = title;
         this.salary1 = salary1;
@@ -16,6 +16,7 @@ public class JobHelperClass {
         this.phone1 = phone1;
         this.job_type = job_type;
         this.district = district;
+        this.date = date;
     }
 
     //Getter & setters
@@ -68,12 +69,27 @@ public class JobHelperClass {
         this.phone1 = phone1;
     }
 
-    public String getJob_type() { return job_type; }
+    public String getJob_type() {
+        return job_type;
+    }
 
-    public void setJob_type(String job_type) { this.job_type = job_type; }
+    public void setJob_type(String job_type) {
+        this.job_type = job_type;
+    }
 
-    public String getDistrict() { return district; }
+    public String getDistrict() {
+        return district;
+    }
 
-    public void setDistrict(String district) { this.district = district;
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
