@@ -263,6 +263,7 @@
         android:hint="@string/btn_edit"
         android:paddingTop="0dp"
         android:textColorHint="#FFFFFF"
+        app:backgroundTint="#477EEC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"

@@ -1,13 +1,12 @@
 package com.example.mysaved;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -15,15 +14,22 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.material.textfield.TextInputLayout;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.annotations.Nullable;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class CreateJob extends AppCompatActivity {
 
@@ -36,10 +42,14 @@ public class CreateJob extends AppCompatActivity {
     ProgressBar progressBar;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     String phonePattern = "[0-9]{10}";
+    int job_id = 0;
+    Uri imageUri;
+    String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
-    FirebaseDatabase rootNode;
-    DatabaseReference reference;
-    StorageReference reference2 = FirebaseStorage.getInstance().getReference();
+    //Database Connection
+
+    DatabaseReference root = FirebaseDatabase.getInstance().getReference("create_job");
+    StorageReference reference = FirebaseStorage.getInstance().getReference();
 
     //ID declare
 
@@ -61,31 +71,48 @@ public class CreateJob extends AppCompatActivity {
         cimg = findViewById(R.id.imageView_cimg);
         addimage = findViewById(R.id.imageButton_addimage);
         progressBar = findViewById(R.id.progressBar_cj);
+        progressBar.setVisibility(View.INVISIBLE);
 
+        //Auto increment value
+
+        addimage.setOnClickListener(new View.OnClickListener() {
+
+            //Gallery Access
+
+            @Override
+            public void onClick(View v) {
+                Intent galleryIntent = new Intent();
+                galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+                galleryIntent.setType("image/*");
+                startActivityForResult(galleryIntent , 2);
+            }
+        });
 
         create_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-        //This codes are execuded after click
+                //This codes are execuded after click
 
-        rootNode = FirebaseDatabase.getInstance();
-        reference = rootNode.getReference("create_job");
+                String name = company_name.getText().toString();
+                String title = job_title.getText().toString();
+                String salary1 = salary.getText().toString();
+                String description = job_description.getText().toString();
+                String email1 = email.getText().toString();
+                String phone1 = phone.getText().toString();
+                String job_type = type_spinner.getSelectedItem().toString();
+                String district = district_spinner.getSelectedItem().toString();
 
+                //Get current date
 
-        String name = company_name.getText().toString();
-        String title = job_title.getText().toString();
-        String salary1 = salary.getText().toString();
-        String description = job_description.getText().toString();
-        String email1 = email.getText().toString();
-        String phone1 = phone.getText().toString();
-        String job_type = type_spinner.getSelectedItem().toString();
-        String district = district_spinner.getSelectedItem().toString();
+                String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
+                //Data pass to helper class
 
-        JobHelperClass helperClass = new JobHelperClass(name,title,salary1,description,email1,phone1,job_type,district);
+                JobHelperClass helperClass = new JobHelperClass(name,title,salary1,description,email1,phone1,job_type,district,date);
+                job_id++;
 
-        //Validations
+                //Validations
 
                 if(TextUtils.isEmpty(name)){
                     company_name.setError("Company Name is Required");
@@ -127,14 +154,79 @@ public class CreateJob extends AppCompatActivity {
                     Toast.makeText(CreateJob.this, "Select a District", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                if (imageUri != null){
+                    uploadToFirebase(imageUri);
+                }else{
+                    Toast.makeText(CreateJob.this, "Please Select Image", Toast.LENGTH_SHORT).show();
+                }
 
-                //database child set
-
-                reference.child(phone1).setValue(helperClass);
+                root.child(String.valueOf(job_id)).setValue(helperClass);
             }
         });
 
     }
+
+    //Image get from gallery
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode ==2 && resultCode == RESULT_OK && data != null){
+
+            imageUri = data.getData();
+            addimage.setImageURI(imageUri);
+        }
+    }
+
+    //Upload to Firebase storage
+
+    private void uploadToFirebase(Uri uri){
+        StorageReference reference = FirebaseStorage.getInstance().getReference();
+
+        final StorageReference fileRef = reference.child(System.currentTimeMillis() + "." + getFileExtension(uri));
+        fileRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+
+            //Generate Url
+
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+
+                    //Get image url
+
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        String modelId = "img";
+                        root.child(String.valueOf(job_id)).child(modelId).setValue(uri.toString());
+                        progressBar.setVisibility(View.INVISIBLE);
+                        Toast.makeText(CreateJob.this, "Job Create Successful", Toast.LENGTH_SHORT).show();
+                        addimage.setImageResource(R.drawable.baseline_add_circle_24);
+                    }
+                });
+            }
+        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+                progressBar.setVisibility(View.VISIBLE);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                progressBar.setVisibility(View.INVISIBLE);
+                Toast.makeText(CreateJob.this, "Job Create Failed", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private String getFileExtension(Uri mUri){
+
+        ContentResolver cr = getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cr.getType(mUri));
+
+    }
+
 }
 
 

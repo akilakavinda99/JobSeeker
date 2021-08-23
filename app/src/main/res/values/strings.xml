@@ -86,6 +86,7 @@
         <item> Select Job Type</item>
         <item> Full Time</item>
         <item> Part Time</item>
+        <item> Intern</item>
     </string-array>
 
     <string-array name="districts_sm">
