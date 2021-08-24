@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.annotations.Nullable;
@@ -30,6 +31,7 @@ import com.google.firebase.storage.UploadTask;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Objects;
 
 public class CreateJob extends AppCompatActivity {
 
@@ -38,7 +40,7 @@ public class CreateJob extends AppCompatActivity {
     EditText company_name, job_title, salary, job_description, email, phone;
     Spinner type_spinner, district_spinner;
     Button create_btn;
-    ImageView b1_btn, cimg, addimage;
+    ImageView b1_btn,addimage;
     ProgressBar progressBar;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     String phonePattern = "[0-9]{10}";
@@ -46,12 +48,14 @@ public class CreateJob extends AppCompatActivity {
     Uri imageUri;
     String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
+   // Get Current user
+
+    String userID = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
+
     //Database Connection
 
-    DatabaseReference root = FirebaseDatabase.getInstance().getReference("create_job");
+    DatabaseReference root = FirebaseDatabase.getInstance().getReference("create_job").child(userID);
     StorageReference reference = FirebaseStorage.getInstance().getReference();
-
-    //ID declare
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +72,6 @@ public class CreateJob extends AppCompatActivity {
         district_spinner = (Spinner)findViewById(R.id.et_dis);
         create_btn = findViewById(R.id.btn_create);
         b1_btn = findViewById(R.id.imageView_b1);
-        cimg = findViewById(R.id.imageView_cimg);
         addimage = findViewById(R.id.imageButton_addimage);
         progressBar = findViewById(R.id.progressBar_cj);
         progressBar.setVisibility(View.INVISIBLE);

@@ -7,10 +7,12 @@
     android:background="@drawable/bg1"
     tools:context=".CreateJob">
 
+
     <TextView
         android:id="@+id/tv_createajob"
         android:layout_width="160dp"
         android:layout_height="41dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="64dp"
         android:fontFamily="sans-serif-medium"
@@ -19,31 +21,29 @@
         android:textColor="#000000"
         android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/et_company"
-        app:layout_constraintEnd_toStartOf="@+id/imageView_cimg"
         app:layout_constraintStart_toEndOf="@+id/imageView_b1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/imageView_cimg"
-        android:layout_width="167dp"
-        android:layout_height="152dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/cgif"
+        android:layout_width="252dp"
+        android:layout_height="186dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/travel"
         app:layout_constraintBottom_toTopOf="@+id/et_company"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_createajob"
+        app:layout_constraintHorizontal_bias="0.817"
+        app:layout_constraintStart_toEndOf="@+id/et_company"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.666"
-        app:srcCompat="@drawable/ll" />
+        app:layout_constraintVertical_bias="0.395" />
 
     <ImageView
         android:id="@+id/imageView_b1"
         android:layout_width="23dp"
         android:layout_height="40dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="52dp"
