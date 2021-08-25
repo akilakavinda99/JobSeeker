@@ -30,16 +30,16 @@ public class NavigationBarActivity extends AppCompatActivity {
                setContentView(R.layout.activity_navigation_bar);
                drawerLayout = findViewById(R.id.drawer_layout);
 
-               nav_login = findViewById(R.id.Nav_login);
-               nav_logout = findViewById(R.id.nav_logout);
+               nav_login = findViewById(R.id.btn_nav_login);
+               nav_logout = findViewById(R.id.btn_nav_logout);
 
-               nav_home_txt = findViewById(R.id.nav_home_txt);
-               nav_createjob_txt = findViewById(R.id.nav_createjob_txt);
-               nav_myjobs_txt = findViewById(R.id.nav_myjobs_txt);
-               nav_requestedjobs_txt = findViewById(R.id.nav_requestedjobs_txt);
-               nav_myreqjobs_txt = findViewById(R.id.nav_myreqjobs_txt);
-               nav_savedjobs_txt = findViewById(R.id.nav_savedjobs_txt);
-               nav_profile_txt = findViewById(R.id.nav_profile_txt);
+               nav_home_txt = findViewById(R.id.tv_nav_home);
+               nav_createjob_txt = findViewById(R.id.tv_nav_createjob);
+               nav_myjobs_txt = findViewById(R.id.tv_nav_myjobs);
+               nav_requestedjobs_txt = findViewById(R.id.tv_nav_requestedjobs);
+               nav_myreqjobs_txt = findViewById(R.id.tv_nav_myreqjobs);
+               nav_savedjobs_txt = findViewById(R.id.tv_nav_savedjobs);
+               nav_profile_txt = findViewById(R.id.tv_nav_profile);
                progressBar_listings = findViewById(R.id.progressBar_listings);
                my_listing_recyclerview = findViewById(R.id.my_listing_recyclerview);
 

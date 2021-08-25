@@ -169,44 +169,53 @@
 
 
     <!--    Pankaja's Strings-->
-    <string name="txt_sign_in">Sign In</string>
-    <string name="log_password_txt">Password</string>
-    <string name="log_email_txt">Email</string>
-    <string name="lg_button">Login</string>
-    <string name="sign_up_button">Sign Up</string>
-    <string name="fgt_password">Forget Password?</string>
-    <string name="txt_view">Request a Job</string>
-    <string name="req_job">Enter the Job title you want to request</string>
-    <string name="ent_name">Enter Name</string>
-    <string name="ent_age">Enter Age</string>
-    <string name="description">Enter Description about yourself</string>
-    <string name="ent_email">Enter Email Address</string>
-    <string name="ent_p_no">Enter Phone Number</string>
-    <string name="add_image">Add Image</string>
-    <string name="create_button">Create</string>
-    <string name="txt_profile">Profile</string>
-    <string name="verify_now_btn">Verify Now</string>
-    <string name="txt_name">Name</string>
-    <string name="txt_mobileno">Mobile No</string>
-    <string name="txt_Gender">Gender</string>
-    <string name="txt_district">District</string>
-    <string name="txt_city">City</string>
-    <string name="txt_email">Email</string>
-    <string name="edit_user_btn">Edit</string>
-    <string name="txt_editprofile">Edit Profile</string>
-    <string name="edit_name_txt">Name</string>
-    <string name="edit_Mno_txt">Mobile No</string>
-    <string name="edit_email_txt">Email</string>
-    <string name="update_user_btn">Update</string>
-    <string name="Nav_login">Log In</string>
-    <string name="nav_logout">Log Out</string>
-    <string name="nav_home_txt">Home</string>
-    <string name="nav_createjob_txt">Create  a Job</string>
-    <string name="nav_myjobs_txt">My Jobs</string>
-    <string name="nav_requestedjobs_txt">Requested Jobs</string>
-    <string name="nav_myreqjobs_txt">My Requested Jobs</string>
-    <string name="nav_savedjobs_txt">Saved Jobs</string>
-    <string name="nav_profile_txt">Profile</string>
+
+    <string name="tv_sign_in">Sign In</string>
+    <string name="et_log_email">Email</string>
+    <string name="et_log_password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_sign_up">Sign Up</string>
+    <string name="tv_fgt_password">Forget Password?</string>
+
+    <string name="tv_request_job">Request a Job</string>
+    <string name="et_request_job">Enter the Job title you want to request</string>
+    <string name="et_nameR">Enter Name</string>
+    <string name="et_ageR">Enter Age</string>
+    <string name="et_descriptionR">Enter Description about yourself</string>
+    <string name="et_emailR">Enter Email Address</string>
+    <string name="et_phone_noR">Enter Phone No</string>
+    <string name="tv_add_image">Add Image</string>
+    <string name="btn_createR">Create</string>
+
+    <string name="btn_nav_login">Login</string>
+    <string name="btn_nav_logout">Log out</string>
+    <string name="tv_nav_home">Home</string>
+    <string name="tv_nav_createjob">Create a Job</string>
+    <string name="tv_nav_myjobs">My Jobs</string>
+    <string name="tv_nav_requestedjobs">Requested Jobs</string>
+    <string name="tv_nav_myreqjobs">My Requested Jobs</string>
+    <string name="tv_nav_savedjobs">Saved Jobs</string>
+    <string name="tv_nav_profile">Profile</string>
+
+    <string name="tv_Profile">Profile</string>
+    <string name="btn_verify_now">Verify Now</string>
+    <string name="tv_nameP">Name</string>
+    <string name="tv_mobilenoP">Mobile No</string>
+    <string name="tv_genderP">Gender</string>
+    <string name="tv_districtP">District</string>
+    <string name="tv_emailP">Email</string>
+    <string name="btn_edit_user">Edit</string>
+
+    <string name="tv_edit_profile">Edit Profile</string>
+    <string name="tv_nameE">Name</string>
+    <string name="tv_mobilenoE">Mobile No</string>
+    <string name="tv_GenderE">Gender</string>
+    <string name="tv_districtE">District</string>
+    <string name="tv_emailE">Email</string>
+    <string name="et_user_name">Name</string>
+    <string name="et_user_Mno">Mobile No</string>
+    <string name="et_user_email">Email</string>
+    <string name="btn_updateE">Update</string>
 
     <!--    Pankaja's Strings-->
 

@@ -4,65 +4,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileviewActivity">
+    tools:context=".Profile">
 
     <ImageView
-        android:id="@+id/user_back_btn"
+        android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="44dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166"
         app:srcCompat="@drawable/baseline_arrow_back_ios_24"
         tools:ignore="VectorDrawableCompat" />
 
     <TextView
-        android:id="@+id/txt_editprofile"
+        android:id="@+id/tv_Profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
         android:layout_marginTop="100dp"
         android:fontFamily="@font/segoe_bold"
-        android:text="@string/txt_profile"
+        android:text="@string/tv_Profile"
         android:textColor="@color/nav"
         android:textSize="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/image_verified"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_editprofile"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_Profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.17"
-        app:layout_constraintStart_toEndOf="@+id/txt_editprofile"
-        app:layout_constraintTop_toTopOf="@+id/txt_editprofile"
+        app:layout_constraintStart_toEndOf="@+id/tv_Profile"
+        app:layout_constraintTop_toTopOf="@+id/tv_Profile"
         app:layout_constraintVertical_bias="0.521"
         app:srcCompat="@drawable/round_verified_24"
         tools:visibility="invisible"
         tools:ignore="VectorDrawableCompat" />
 
-
     <Button
-        android:id="@+id/verify_now_btn"
+        android:id="@+id/btn_verify_now"
         android:layout_width="83dp"
         android:layout_height="19dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/verify_now_btn"
-        android:text="@string/verify_now_btn"
+        android:text="@string/btn_verify_now"
         android:textAllCaps="false"
         android:textColor="@color/nav"
         android:textSize="10sp"
         android:visibility="invisible"
         app:backgroundTint="@color/Light_black"
-        app:layout_constraintEnd_toEndOf="@+id/txt_editprofile"
+        app:layout_constraintEnd_toEndOf="@+id/tv_Profile"
         app:layout_constraintHorizontal_bias="0.585"
-        app:layout_constraintStart_toStartOf="@+id/txt_editprofile"
-        app:layout_constraintTop_toBottomOf="@+id/txt_editprofile" />
-
+        app:layout_constraintStart_toStartOf="@+id/tv_Profile"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Profile" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -79,65 +75,54 @@
         app:layout_constraintGuide_begin="174dp" />
 
     <TextView
-        android:id="@+id/txt_name"
+        android:id="@+id/tv_nameP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txt_name"
+        android:text="@string/tv_nameP"
         android:textColor="@color/nav"
-        app:layout_constraintBottom_toTopOf="@+id/txt_mobileno"
+        app:layout_constraintBottom_toTopOf="@+id/tv_mobilenoP"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline6" />
 
-
     <TextView
-        android:id="@+id/txt_mobileno"
+        android:id="@+id/tv_mobilenoP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txt_mobileno"
+        android:text="@string/tv_mobilenoP"
         android:textColor="@color/nav"
-        app:layout_constraintBottom_toTopOf="@+id/txt_Gender"
+        app:layout_constraintBottom_toTopOf="@+id/tv_genderP"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/txt_name" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_nameP" />
 
     <TextView
-        android:id="@+id/txt_Gender"
+        android:id="@+id/tv_genderP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txt_Gender"
+        android:text="@string/tv_genderP"
         android:textColor="@color/nav"
-        app:layout_constraintBottom_toTopOf="@+id/txt_district"
+        app:layout_constraintBottom_toTopOf="@+id/tv_districtP"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/txt_mobileno" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_mobilenoP" />
 
     <TextView
-        android:id="@+id/txt_district"
+        android:id="@+id/tv_districtP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txt_district"
+        android:text="@string/tv_districtP"
         android:textColor="@color/nav"
-        app:layout_constraintBottom_toTopOf="@+id/txt_city"
+        app:layout_constraintBottom_toTopOf="@+id/tv_emailP"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/txt_Gender" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_genderP" />
 
     <TextView
-        android:id="@+id/txt_city"
+        android:id="@+id/tv_emailP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txt_city"
-        android:textColor="@color/nav"
-        app:layout_constraintBottom_toTopOf="@+id/txt_email"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/txt_district" />
-
-    <TextView
-        android:id="@+id/txt_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_email"
+        android:text="@string/tv_emailP"
         android:textColor="@color/nav"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/txt_city" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_districtP" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -154,66 +139,56 @@
         app:layout_constraintGuide_begin="225dp" />
 
     <TextView
-        android:id="@+id/user_name_txt"
+        android:id="@+id/tv_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/user_Mno_txt"
+        app:layout_constraintBottom_toTopOf="@+id/tv_user_Mno"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/guideline6" />
 
     <TextView
-        android:id="@+id/user_Mno_txt"
+        android:id="@+id/tv_user_Mno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/user_gender_txt"
+        app:layout_constraintBottom_toTopOf="@+id/tv_user_gender"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/user_name_txt" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_user_name" />
 
     <TextView
-        android:id="@+id/user_gender_txt"
+        android:id="@+id/tv_user_gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/user_District_txt"
+        app:layout_constraintBottom_toTopOf="@+id/tv_user_district"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/user_Mno_txt" />
-
+        app:layout_constraintTop_toBottomOf="@+id/tv_user_Mno" />
     <TextView
-        android:id="@+id/user_District_txt"
+        android:id="@+id/tv_user_district"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/user_City_txt"
+        app:layout_constraintBottom_toTopOf="@+id/tv_user_email"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/user_gender_txt" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_user_gender" />
 
     <TextView
-        android:id="@+id/user_City_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/user_email_txt"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/user_District_txt" />
-
-    <TextView
-        android:id="@+id/user_email_txt"
+        android:id="@+id/tv_user_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/user_City_txt" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_user_district" />
 
     <Button
-        android:id="@+id/update_user_btn"
+        android:id="@+id/btn_edit_user"
         android:layout_width="93dp"
         android:layout_height="36dp"
         android:layout_marginTop="52dp"
         android:background="@drawable/button_blue_border"
-        android:text="@string/edit_user_btn"
+        android:text="@string/btn_edit_user"
         android:textAllCaps="false"
         android:textColor="@color/white"
         app:backgroundTint="@color/nav_login"
