@@ -7,12 +7,12 @@
     tools:context=".EditprofileActivity">
 
     <ImageView
-        android:id="@+id/user_back_btn"
+        android:id="@+id/image_edituser_backbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="44dp"
-        app:layout_constraintBottom_toTopOf="@+id/txt_editprofile"
+        app:layout_constraintBottom_toTopOf="@+id/tv_edit_profile"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.166"
@@ -21,13 +21,13 @@
 
 
     <TextView
-        android:id="@+id/txt_editprofile"
+        android:id="@+id/tv_edit_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="108dp"
         android:fontFamily="@font/segoe_bold"
-        android:text="@string/txt_editprofile"
+        android:text="@string/tv_edit_profile"
         android:textColor="@color/nav"
         android:textSize="40dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,65 +48,56 @@
         app:layout_constraintGuide_begin="174dp" />
 
     <TextView
-        android:id="@+id/txt_name"
+        android:id="@+id/tv_nameE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txt_name"
+        android:text="@string/tv_nameE"
         android:textColor="@color/nav"
-        app:layout_constraintBottom_toTopOf="@+id/txt_mobileno"
+        app:layout_constraintBottom_toTopOf="@+id/tv_mobilenoE"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline6" />
 
 
     <TextView
-        android:id="@+id/txt_mobileno"
+        android:id="@+id/tv_mobilenoE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txt_mobileno"
+        android:text="@string/tv_mobilenoE"
         android:textColor="@color/nav"
-        app:layout_constraintBottom_toTopOf="@+id/txt_Gender"
+        app:layout_constraintBottom_toTopOf="@+id/tv_GenderE"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/txt_name" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_nameE" />
 
     <TextView
-        android:id="@+id/txt_Gender"
+        android:id="@+id/tv_GenderE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txt_Gender"
+        android:text="@string/tv_GenderE"
         android:textColor="@color/nav"
-        app:layout_constraintBottom_toTopOf="@+id/txt_district"
+        app:layout_constraintBottom_toTopOf="@+id/tv_districtE"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/txt_mobileno" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_mobilenoE" />
 
     <TextView
-        android:id="@+id/txt_district"
+        android:id="@+id/tv_districtE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txt_district"
+        android:text="@string/tv_districtE"
         android:textColor="@color/nav"
-        app:layout_constraintBottom_toTopOf="@+id/txt_city"
+        app:layout_constraintBottom_toTopOf="@+id/tv_emailE"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/txt_Gender" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_GenderE" />
+
 
     <TextView
-        android:id="@+id/txt_city"
+        android:id="@+id/tv_emailE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txt_city"
-        android:textColor="@color/nav"
-        app:layout_constraintBottom_toTopOf="@+id/txt_email"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/txt_district" />
-
-    <TextView
-        android:id="@+id/txt_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_email"
+        android:text="@string/tv_emailE"
         android:textColor="@color/nav"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/txt_city" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_districtE" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -123,75 +114,65 @@
         app:layout_constraintGuide_begin="225dp" />
 
     <TextView
-        android:id="@+id/user_name_txt"
+        android:id="@+id/et_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/edit_name_txt"
-        app:layout_constraintBottom_toTopOf="@+id/user_Mno_txt"
+        android:hint="@string/et_user_name"
+        app:layout_constraintBottom_toTopOf="@+id/et_user_Mno"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/guideline6" />
 
     <TextView
-        android:id="@+id/user_Mno_txt"
+        android:id="@+id/et_user_Mno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/edit_Mno_txt"
+        android:hint="@string/et_user_Mno"
         android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/user_gender_txt"
+        app:layout_constraintBottom_toTopOf="@+id/spinner_user_gender"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/user_name_txt" />
+        app:layout_constraintTop_toBottomOf="@+id/et_user_name" />
 
 
     <Spinner
-        android:id="@+id/user_gender_txt"
+        android:id="@+id/spinner_user_gender"
         android:layout_width="70dp"
         android:layout_height="20dp"
         android:background="@drawable/spinner_box"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/user_District_txt"
+        app:layout_constraintBottom_toTopOf="@+id/spinner_user_district"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/user_Mno_txt" />
+        app:layout_constraintTop_toBottomOf="@+id/et_user_Mno" />
 
     <Spinner
-        android:id="@+id/user_District_txt"
+        android:id="@+id/spinner_user_district"
         android:layout_width="100dp"
         android:layout_height="20dp"
         android:background="@drawable/spinner_box"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/user_City_txt"
+        app:layout_constraintBottom_toTopOf="@+id/et_user_email"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/user_gender_txt" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_user_gender" />
 
-    <Spinner
-        android:id="@+id/user_City_txt"
-        android:layout_width="100dp"
-        android:layout_height="20dp"
-        android:background="@drawable/spinner_box"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/user_email_txt"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/user_District_txt" />
 
     <TextView
-        android:id="@+id/user_email_txt"
+        android:id="@+id/et_user_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/edit_email_txt"
+        android:hint="@string/et_user_email"
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/user_City_txt" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_user_district" />
 
     <Button
-        android:id="@+id/update_user_btn"
+        android:id="@+id/btn_updateE"
         android:layout_width="105dp"
         android:layout_height="39dp"
         android:layout_marginTop="52dp"
         android:background="@drawable/button_blue_border"
-        android:text="@string/update_user_btn"
+        android:text="@string/btn_updateE"
         android:textAllCaps="false"
         android:textColor="@color/white"
         app:backgroundTint="@color/nav_login"
@@ -206,11 +187,11 @@
         android:id="@+id/imageView4"
         android:layout_width="16dp"
         android:layout_height="14dp"
-        app:layout_constraintBottom_toBottomOf="@+id/user_gender_txt"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_user_gender"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.217"
-        app:layout_constraintStart_toStartOf="@+id/user_gender_txt"
-        app:layout_constraintTop_toTopOf="@+id/user_gender_txt"
+        app:layout_constraintStart_toStartOf="@+id/spinner_user_gender"
+        app:layout_constraintTop_toTopOf="@+id/spinner_user_gender"
         app:srcCompat="@drawable/round_arrow_drop_down_20"
         tools:ignore="MissingConstraints,VectorDrawableCompat" />
 
@@ -218,34 +199,23 @@
         android:id="@+id/imageView5"
         android:layout_width="16dp"
         android:layout_height="14dp"
-        app:layout_constraintBottom_toBottomOf="@+id/user_District_txt"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_user_district"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.361"
-        app:layout_constraintStart_toStartOf="@+id/user_District_txt"
-        app:layout_constraintTop_toTopOf="@+id/user_District_txt"
+        app:layout_constraintStart_toStartOf="@+id/spinner_user_district"
+        app:layout_constraintTop_toTopOf="@+id/spinner_user_district"
         app:srcCompat="@drawable/round_arrow_drop_down_20"
         tools:ignore="MissingConstraints,VectorDrawableCompat" />
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="16dp"
-        android:layout_height="14dp"
-        app:layout_constraintBottom_toBottomOf="@+id/user_City_txt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.361"
-        app:layout_constraintStart_toStartOf="@+id/user_City_txt"
-        app:layout_constraintTop_toTopOf="@+id/user_City_txt"
-        app:srcCompat="@drawable/round_arrow_drop_down_20"
-        tools:ignore="MissingConstraints,VectorDrawableCompat" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/image_deleteicon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/txt_editprofile"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_edit_profile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txt_editprofile"
-        app:layout_constraintTop_toTopOf="@+id/txt_editprofile"
+        app:layout_constraintStart_toEndOf="@+id/tv_edit_profile"
+        app:layout_constraintTop_toTopOf="@+id/tv_edit_profile"
         app:srcCompat="@drawable/round_delete_forever_24"
         tools:ignore="VectorDrawableCompat" />
 
