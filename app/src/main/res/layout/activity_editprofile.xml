@@ -7,7 +7,7 @@
     tools:context=".EditprofileActivity">
 
     <ImageView
-        android:id="@+id/image_edituser_backbtn"
+        android:id="@+id/edit_user_back_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -209,7 +209,7 @@
 
 
     <ImageView
-        android:id="@+id/image_deleteicon"
+        android:id="@+id/user_delete_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/tv_edit_profile"
