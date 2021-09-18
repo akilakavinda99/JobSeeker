@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/activity_create_job.xml" value="0.33" />
-        <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/activity_edit_job.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/activity_edit_job.xml" value="0.264" />
+        <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/activity_userlogin.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/register_user.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/USER/Videos/JobSeeker/app/src/main/res/layout/activity_create_job.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/USER/Videos/JobSeeker/app/src/main/res/layout/activity_edit_job.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/USER/Videos/JobSeeker/app/src/main/res/layout/activity_edit_jobreq.xml" value="0.33" />
