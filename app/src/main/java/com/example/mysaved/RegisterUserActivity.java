@@ -58,7 +58,7 @@ public class RegisterUserActivity extends AppCompatActivity {
 
         //if user is already registered send to Userprofile page
         if (fAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), LogoutTest.class));
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             //using finish method then the user cannot access the back button after going to the homepage
             finish();
         }
@@ -155,7 +155,7 @@ public class RegisterUserActivity extends AppCompatActivity {
 
 
 
-                            startActivity(new Intent(getApplicationContext(), Spinnertest.class));
+                            startActivity(new Intent(getApplicationContext(), UserloginActivity.class));
                         }
                         else {
                             Toast.makeText(RegisterUserActivity.this, "Error", Toast.LENGTH_SHORT).show();
