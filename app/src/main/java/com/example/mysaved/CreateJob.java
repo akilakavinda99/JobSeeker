@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -20,8 +21,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.annotations.Nullable;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
@@ -30,7 +34,9 @@ import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Objects;
 
 public class CreateJob extends AppCompatActivity {
@@ -45,10 +51,11 @@ public class CreateJob extends AppCompatActivity {
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     String phonePattern = "[0-9]{10}";
     int job_id = 0;
+    Long Lcount;
     Uri imageUri;
     String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
-   // Get Current user
+    // Get Current user
 
     String userID = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
 
@@ -76,8 +83,6 @@ public class CreateJob extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar_cj);
         progressBar.setVisibility(View.INVISIBLE);
 
-        //Auto increment value
-
         addimage.setOnClickListener(new View.OnClickListener() {
 
             //Gallery Access
@@ -88,6 +93,21 @@ public class CreateJob extends AppCompatActivity {
                 galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
                 galleryIntent.setType("image/*");
                 startActivityForResult(galleryIntent , 2);
+            }
+        });
+
+        //Get previous job count from database
+        DatabaseReference rr = FirebaseDatabase.getInstance().getReference().child("user").child(userID);
+        rr.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Lcount = (Long) snapshot.child("JobId").getValue();
+                assert Lcount != null;
+                job_id = Lcount.intValue();
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
 
@@ -113,7 +133,7 @@ public class CreateJob extends AppCompatActivity {
                 //Data pass to helper class
 
                 JobHelperClass helperClass = new JobHelperClass(name,title,salary1,description,email1,phone1,job_type,district,date);
-                job_id++;
+
 
                 //Validations
 
@@ -163,7 +183,15 @@ public class CreateJob extends AppCompatActivity {
                     Toast.makeText(CreateJob.this, "Please Select Image", Toast.LENGTH_SHORT).show();
                 }
 
-                root.child(String.valueOf(job_id)).setValue(helperClass);
+                //increment one by job count
+                job_id++;
+
+                root.child(String.valueOf(job_id)).setValue(helperClass).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                    }
+                });
+
             }
         });
 
@@ -205,6 +233,13 @@ public class CreateJob extends AppCompatActivity {
                         progressBar.setVisibility(View.INVISIBLE);
                         Toast.makeText(CreateJob.this, "Job Create Successful", Toast.LENGTH_SHORT).show();
                         addimage.setImageResource(R.drawable.baseline_add_circle_24);
+
+                        //update new job count to database
+                        DatabaseReference rr = FirebaseDatabase.getInstance().getReference().child("user").child(userID);
+                        Map<String,Object> user = new HashMap<>();
+                        user.put("JobId",job_id);
+                        rr.updateChildren(user);
+                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                     }
                 });
             }
