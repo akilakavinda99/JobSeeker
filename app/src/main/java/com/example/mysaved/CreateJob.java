@@ -239,7 +239,7 @@ public class CreateJob extends AppCompatActivity {
                         Map<String,Object> user = new HashMap<>();
                         user.put("JobId",job_id);
                         rr.updateChildren(user);
-                        startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                        startActivity(new Intent(getApplicationContext(), Profile.class));
                     }
                 });
             }
