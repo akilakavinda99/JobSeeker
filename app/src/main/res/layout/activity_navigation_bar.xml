@@ -9,28 +9,28 @@
 
 
     <Button
-        android:id="@+id/nav_logout"
+        android:id="@+id/btn_nav_logout"
         android:layout_width="90dp"
         android:layout_height="35dp"
-        android:text="@string/nav_logout"
-        android:onClick="logout"
-        android:visibility="gone"
-        android:textAllCaps="false"
-        android:textColor="@color/nav_logout"
-        android:background="@drawable/button_red_border"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="40dp"
+        android:background="@drawable/button_red_border"
+        android:onClick="@string/btn_nav_logout"
+        android:text="@string/btn_nav_logout"
+        android:textAllCaps="false"
+        android:textColor="@color/nav_logout"
+        android:visibility="gone"
         tools:ignore="OnClick" />
 
     <Button
-        android:id="@+id/Nav_login"
+        android:id="@+id/btn_nav_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/border1"
-        android:onClick="@string/Nav_login"
-        android:text="@string/Nav_login"
+        android:onClick="@string/btn_nav_login"
+        android:text="@string/btn_nav_login"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:visibility="visible"
@@ -53,14 +53,14 @@
         tools:ignore="OnClick">
 
         <TextView
-            android:id="@+id/nav_home_txt"
+            android:id="@+id/tv_nav_home"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:fontFamily="@font/segoe_bold"
             android:padding="12dp"
-            android:text="@string/nav_home_txt"
+            android:text="@string/tv_nav_home"
             android:textColor="@color/nav"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -76,14 +76,14 @@
         tools:ignore="OnClick">
 
         <TextView
-            android:id="@+id/nav_createjob_txt"
+            android:id="@+id/tv_nav_createjob"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:fontFamily="@font/segoe_bold"
             android:padding="12dp"
-            android:text="@string/nav_createjob_txt"
+            android:text="@string/tv_nav_createjob"
             android:textColor="@color/nav"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -100,14 +100,14 @@
         tools:ignore="OnClick">
 
         <TextView
-            android:id="@+id/nav_myjobs_txt"
+            android:id="@+id/tv_nav_myjobs"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:fontFamily="@font/segoe_bold"
             android:padding="12dp"
-            android:text="@string/nav_myjobs_txt"
+            android:text="@string/tv_nav_myjobs"
             android:textColor="@color/nav"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -124,14 +124,14 @@
     tools:ignore="OnClick">
 
         <TextView
-            android:id="@+id/nav_requestedjobs_txt"
+            android:id="@+id/tv_nav_requestedjobs"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:fontFamily="@font/segoe_bold"
             android:padding="12dp"
-            android:text="@string/nav_requestedjobs_txt"
+            android:text="@string/tv_nav_requestedjobs"
             android:textColor="@color/nav"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -147,14 +147,14 @@ android:gravity="center_vertical"
     tools:ignore="OnClick">
 
     <TextView
-        android:id="@+id/nav_myreqjobs_txt"
+        android:id="@+id/tv_nav_myreqjobs"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_weight="1"
         android:fontFamily="@font/segoe_bold"
         android:padding="12dp"
-        android:text="@string/nav_myreqjobs_txt"
+        android:text="@string/tv_nav_myreqjobs"
         android:textColor="@color/nav"
         android:textSize="25dp"
         android:textStyle="bold" />
@@ -170,14 +170,14 @@ android:gravity="center_vertical"
         tools:ignore="OnClick,UsingOnClickInXml">
 
         <TextView
-            android:id="@+id/nav_savedjobs_txt"
+            android:id="@+id/tv_nav_savedjobs"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:fontFamily="@font/segoe_bold"
             android:padding="12dp"
-            android:text="@string/nav_savedjobs_txt"
+            android:text="@string/tv_nav_savedjobs"
             android:textColor="@color/nav"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -203,6 +203,7 @@ android:gravity="center_vertical"
 
         <ImageView
 
+            android:id="@+id/image_navigation_bar"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="10dp"
@@ -210,13 +211,13 @@ android:gravity="center_vertical"
             tools:srcCompat="@drawable/round_account_circle_20" />
 
         <TextView
-            android:id="@+id/nav_profile_txt"
+            android:id="@+id/tv_nav_profile"
             android:layout_width="289dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/segoe_bold"
             android:padding="12dp"
-            android:text="@string/nav_profile_txt"
+            android:text="@string/tv_nav_profile"
             android:textColor="@color/nav"
             android:textSize="25dp"
             android:textStyle="bold" />

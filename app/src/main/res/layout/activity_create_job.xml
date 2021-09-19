@@ -248,7 +248,11 @@
         android:id="@+id/requiredd"
         android:layout_width="105dp"
         android:layout_height="39dp"
+
         android:layout_marginTop="42dp"
+
+        android:layout_marginTop="44dp"
+
         android:layout_marginBottom="106dp"
         android:hint="@string/requiredd"
         android:textAlignment="center"
@@ -257,10 +261,17 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+
         app:layout_constraintHorizontal_bias="0.372"
         app:layout_constraintStart_toEndOf="@+id/imageButton_addimage"
         app:layout_constraintTop_toBottomOf="@+id/et_dis"
         app:layout_constraintVertical_bias="0.0" />
+
+        app:layout_constraintHorizontal_bias="0.392"
+        app:layout_constraintStart_toEndOf="@+id/imageButton_addimage"
+        app:layout_constraintTop_toBottomOf="@+id/et_dis"
+        app:layout_constraintVertical_bias="1.0" />
+
 
     <ImageButton
         android:id="@+id/imageButton_addimage"
