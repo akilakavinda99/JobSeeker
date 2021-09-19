@@ -58,7 +58,7 @@ public class RegisterUserActivity extends AppCompatActivity {
 
         //if user is already registered send to Userprofile page
         if (fAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), LogoutTest.class));
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             //using finish method then the user cannot access the back button after going to the homepage
             finish();
         }
@@ -131,31 +131,32 @@ public class RegisterUserActivity extends AppCompatActivity {
                                 }
                             });
 
-                //sending other data to realtime DB
-                userID = fAuth.getCurrentUser().getUid();
-               reference = rootNode.getReference().child("user").child(userID);
-                Map<String,Object> user = new HashMap<>();
-                user.put("Email",dregEmail);
-                user.put("Name",dregName);
-                user.put("Phone",dregPhone);
-                user.put("District",ddistrict_spinner);
-                user.put("Gender",dgender_spiner);
+                            //sending other data to realtime DB
+                            userID = fAuth.getCurrentUser().getUid();
+                            reference = rootNode.getReference().child("user").child(userID);
+                            Map<String,Object> user = new HashMap<>();
+                            user.put("Email",dregEmail);
+                            user.put("Name",dregName);
+                            user.put("Phone",dregPhone);
+                            user.put("District",ddistrict_spinner);
+                            user.put("Gender",dgender_spiner);
+                            user.put("JobId",0);
 
 
-                reference.setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.d(TAG,"user profile is created for "+ userID);
-                    }
-                });
-
-
-
-
+                            reference.setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d(TAG,"user profile is created for "+ userID);
+                                }
+                            });
 
 
 
-                            startActivity(new Intent(getApplicationContext(), Spinnertest.class));
+
+
+
+
+                            startActivity(new Intent(getApplicationContext(), UserloginActivity.class));
                         }
                         else {
                             Toast.makeText(RegisterUserActivity.this, "Error", Toast.LENGTH_SHORT).show();

@@ -67,6 +67,7 @@
     <string name="et_phone">Enter Phone Number</string>
     <string name="tv_addimg">Add Image</string>
     <string name="btn_create">Create</string>
+    <string name="requiredd">Image Can not be Edited!!!</string>
 
     <string name="tv_editjob">Edit Job</string>
     <string name="et_companyed">Enter Company Name</string>
