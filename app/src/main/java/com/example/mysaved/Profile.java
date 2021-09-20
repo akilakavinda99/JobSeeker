@@ -26,11 +26,12 @@ import java.util.Map;
 
 public class Profile extends AppCompatActivity {
     TextView text_Pname,text_Pphone,text_Pgender,text_Pdistrict,text_Pemail,user_name,user_phone,user_gender,user_district,user_email;
-    Button edit_user_btn,verify_now_btn;
+    Button edit_user_btn,verify_now_btn,logout;
     ImageView user_back_btn,verification_badge;
     FirebaseAuth fAuth;
     DatabaseReference databaseReference;
     String userID;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +50,14 @@ public class Profile extends AppCompatActivity {
         user_email =findViewById(R.id.tv_user_email);
         edit_user_btn = findViewById(R.id.btn_edit_user);
         user_back_btn = findViewById(R.id.userprofile_back_btn);
+        logout = findViewById(R.id.btn_logout);
         verification_badge = findViewById(R.id.verified_badge);
         verify_now_btn = findViewById(R.id.btn_verify_now);
 
         //get current instance of firebase authentication
         fAuth = FirebaseAuth.getInstance();
 
-        //is user is not logged in, return to Login page
+        //check whether user is not logged in, return to Login page
         if (fAuth.getCurrentUser() == null){
             Intent i = new Intent(getApplicationContext(), UserloginActivity.class).putExtra("from", "profile");
             startActivity(i);
@@ -73,8 +75,8 @@ public class Profile extends AppCompatActivity {
                     user_name.setText(snapshot.child("Name").getValue().toString());
                     user_phone.setText(snapshot.child("Phone").getValue().toString());
                     user_gender.setText(snapshot.child("Gender").getValue().toString());
-                    user_email.setText(snapshot.child("District").getValue().toString());
-                    user_district.setText(snapshot.child("Email").getValue().toString());
+                    user_district.setText(snapshot.child("District").getValue().toString());
+                    user_email.setText(snapshot.child("Email").getValue().toString());
 
                 }
                 @Override
@@ -86,10 +88,10 @@ public class Profile extends AppCompatActivity {
             //check whether user is verified or not
             Map<String,Object> USER = new HashMap<>();
             if (user.isEmailVerified()){
-                USER.put("verified","y");
+                USER.put("verified","yes");
             }
             else {
-                USER.put("verified","n");
+                USER.put("verified","no");
             }
             //update verified in DB
             DatabaseReference df = FirebaseDatabase.getInstance().getReference().child("user").child(userID);
@@ -99,6 +101,7 @@ public class Profile extends AppCompatActivity {
             //display verification badge and verify now button
             if (user.isEmailVerified()){
                 verification_badge.setVisibility(View.VISIBLE);
+                verify_now_btn.setVisibility(View.INVISIBLE);
             }else {
                 verify_now_btn.setVisibility(View.VISIBLE);
 
@@ -123,7 +126,7 @@ public class Profile extends AppCompatActivity {
             edit_user_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(getApplicationContext(), CreateJob.class));
+                    startActivity(new Intent(getApplicationContext(), EditProfile.class));
                 }
             });
 
@@ -133,6 +136,14 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), CreateJob.class));
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(Profile.this, UserloginActivity.class));
             }
         });
 
