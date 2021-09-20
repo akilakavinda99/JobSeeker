@@ -12,7 +12,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MySaved">
+
+        <activity
+            android:name=".New_Saved_Jobs"
+            android:exported="true" />
+        <activity
+            android:name=".Homepage_new"
+            android:exported="true" />
+        <activity android:name=".Profile" />
+        <activity android:name=".LogoutTest" />
+        <activity
+            android:name=".Spinnertest"
+            android:exported="true" />
+        <activity
+            android:name=".EditjobReq"
+            android:exported="true" />
+
         <activity android:name=".Profile"></activity>
+
 
 
         <activity

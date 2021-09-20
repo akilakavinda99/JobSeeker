@@ -257,6 +257,8 @@
     <string name="et_user_Mno">Mobile No</string>
     <string name="et_user_email">Email</string>
     <string name="btn_updateE">Update</string>
+    <string name="d_tv_jobtype">Jobtype</string>
+    <string name="d_tv_joblocation">location</string>
 
 
 
