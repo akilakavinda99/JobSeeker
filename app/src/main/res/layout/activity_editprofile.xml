@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditprofileActivity">
+    tools:context=".EditProfile">
 
     <ImageView
         android:id="@+id/edit_user_back_btn"
@@ -33,71 +33,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="56dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="174dp" />
-
-    <TextView
-        android:id="@+id/tv_nameE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tv_nameE"
-        android:textColor="@color/nav"
-        app:layout_constraintBottom_toTopOf="@+id/tv_mobilenoE"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline6" />
-
-
-    <TextView
-        android:id="@+id/tv_mobilenoE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tv_mobilenoE"
-        android:textColor="@color/nav"
-        app:layout_constraintBottom_toTopOf="@+id/tv_GenderE"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nameE" />
-
-    <TextView
-        android:id="@+id/tv_GenderE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tv_GenderE"
-        android:textColor="@color/nav"
-        app:layout_constraintBottom_toTopOf="@+id/tv_districtE"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_mobilenoE" />
-
-    <TextView
-        android:id="@+id/tv_districtE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tv_districtE"
-        android:textColor="@color/nav"
-        app:layout_constraintBottom_toTopOf="@+id/tv_emailE"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_GenderE" />
-
-
-    <TextView
-        android:id="@+id/tv_emailE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tv_emailE"
-        android:textColor="@color/nav"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_districtE" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -113,58 +48,82 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="225dp" />
 
-    <TextView
+
+    <EditText
         android:id="@+id/et_user_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/et_user_name"
-        app:layout_constraintBottom_toTopOf="@+id/et_user_Mno"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline6" />
-
-    <TextView
-        android:id="@+id/et_user_Mno"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/et_user_Mno"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/spinner_user_gender"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/et_user_name" />
-
-
-    <Spinner
-        android:id="@+id/spinner_user_gender"
-        android:layout_width="70dp"
-        android:layout_height="20dp"
-        android:background="@drawable/spinner_box"
+        android:layout_width="275dp"
+        android:layout_height="45dp"
+        android:background="@drawable/rounded_view_register"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/spinner_user_district"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/et_user_Mno" />
+        app:layout_constraintBottom_toTopOf="@+id/et_user_Mno"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        app:layout_constraintVertical_bias="0.481" />
+
+    <EditText
+        android:id="@+id/et_user_Mno"
+        android:layout_width="275dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_view_register"
+        android:ems="10"
+        android:inputType="phone"
+        android:textSize="15dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/user_gender_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
     <Spinner
-        android:id="@+id/spinner_user_district"
-        android:layout_width="100dp"
-        android:layout_height="20dp"
+        android:id="@+id/user_gender_spinner"
+        android:layout_width="275dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/spinner_box"
+        android:entries="@array/gender"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/user_district_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/user_district_spinner"
+        android:layout_width="275dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/spinner_box"
+        android:entries="@array/districts"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         app:layout_constraintBottom_toTopOf="@+id/et_user_email"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_user_gender" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
-    <TextView
+    <EditText
         android:id="@+id/et_user_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/et_user_email"
-        android:text=""
+        android:layout_width="275dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/rounded_view_register"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:textSize="15dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_user_district" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_updateE"
@@ -183,30 +142,32 @@
         app:layout_constraintTop_toTopOf="@+id/guideline5"
         app:layout_constraintVertical_bias="0.0" />
 
+
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="16dp"
-        android:layout_height="14dp"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner_user_gender"
+        android:layout_width="27dp"
+        android:layout_height="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/user_gender_spinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
-        app:layout_constraintStart_toStartOf="@+id/spinner_user_gender"
-        app:layout_constraintTop_toTopOf="@+id/spinner_user_gender"
+        app:layout_constraintHorizontal_bias="0.746"
+        app:layout_constraintStart_toStartOf="@+id/user_gender_spinner"
+        app:layout_constraintTop_toTopOf="@+id/user_gender_spinner"
+        app:layout_constraintVertical_bias="0.55"
         app:srcCompat="@drawable/round_arrow_drop_down_20"
         tools:ignore="MissingConstraints,VectorDrawableCompat" />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="16dp"
-        android:layout_height="14dp"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner_user_district"
+        android:layout_width="27dp"
+        android:layout_height="26dp"
+        app:layout_constraintBottom_toBottomOf="@+id/user_district_spinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.361"
-        app:layout_constraintStart_toStartOf="@+id/spinner_user_district"
-        app:layout_constraintTop_toTopOf="@+id/spinner_user_district"
+        app:layout_constraintHorizontal_bias="0.747"
+        app:layout_constraintStart_toStartOf="@+id/user_district_spinner"
+        app:layout_constraintTop_toTopOf="@+id/user_district_spinner"
+        app:layout_constraintVertical_bias="0.421"
         app:srcCompat="@drawable/round_arrow_drop_down_20"
         tools:ignore="MissingConstraints,VectorDrawableCompat" />
-
 
     <ImageView
         android:id="@+id/user_delete_btn"
@@ -218,5 +179,7 @@
         app:layout_constraintTop_toTopOf="@+id/tv_edit_profile"
         app:srcCompat="@drawable/round_delete_forever_24"
         tools:ignore="VectorDrawableCompat" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
