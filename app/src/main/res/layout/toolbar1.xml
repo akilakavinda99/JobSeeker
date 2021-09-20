@@ -13,6 +13,7 @@
             android:layout_width="37dp"
             android:layout_height="31dp"
             android:layout_centerVertical="true"
+            android:onClick="ClickMenu"
             android:src="@drawable/ic_baseline_menu_24"/>
         <ImageView
             android:id="@+id/logo_icon"
