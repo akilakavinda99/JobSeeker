@@ -1,6 +1,7 @@
 package com.example.mysaved;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -51,13 +53,14 @@ public class ViewHolder_SaveJobs extends RecyclerView.Adapter<ViewHolder_SaveJob
 
     @Override
     public int getItemCount() {
+
         return Hlist.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder implements CompoundButton.OnCheckedChangeListener {
 
         ImageView imageView;
-        TextView jobtitle,jobtype,joblocation;
+        TextView jobtitle,jobtype,joblocation,count;
         CheckBox remove;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -67,14 +70,23 @@ public class ViewHolder_SaveJobs extends RecyclerView.Adapter<ViewHolder_SaveJob
             joblocation = itemView.findViewById(R.id.d_tv_joblocation2);
             imageView = itemView.findViewById(R.id.d_img_profile2);
             remove = itemView.findViewById(R.id.d_img_delete);
-//            count = itemView.findViewById(R.id.tv_count);
+//             count = itemView.findViewById(R.id.tv_count);
 
             remove.setOnCheckedChangeListener(this);
-//            count.setText(getItemCount());
+
+
         }
 
         @Override
         public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+            if (FirebaseAuth.getInstance().getCurrentUser() == null){
+                Toast.makeText(context, "Please Login First", Toast.LENGTH_SHORT).show();
+                //user not login direct him to login page
+                context.startActivity(new Intent(context,LoginActivity.class));
+
+                return;
+            }
 
             DatabaseReference dbremove = FirebaseDatabase.getInstance().getReference("user")
                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())

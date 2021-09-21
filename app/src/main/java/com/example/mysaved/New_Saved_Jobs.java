@@ -24,17 +24,25 @@ public class New_Saved_Jobs extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private DatabaseReference root;
+    private DatabaseReference dbcount;
     private ViewHolder_SaveJobs viewHolder_saveJobs;
     private ArrayList<HomeList> list;
     private String currentUserId;
     private FirebaseAuth auth2;
     private Button back;
+    private TextView savejobs;
+    private int count = 0;
+//    private String test;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_saved_jobs);
+
+//        Intent intent = getIntent();
+//        test = intent.getStringExtra("user_id");
+//        System.out.println(test+" adoo");
 
         back = findViewById(R.id.d_test_btn2);
         back.setOnClickListener(new View.OnClickListener() {
@@ -45,8 +53,47 @@ public class New_Saved_Jobs extends AppCompatActivity {
             }
         });
 
+
+
         auth2 = FirebaseAuth.getInstance();
         currentUserId = auth2.getCurrentUser().getUid();
+        savejobs = findViewById(R.id.tv_count);
+        dbcount = FirebaseDatabase.getInstance().getReference().child("user").child(currentUserId);
+
+        dbcount.child("savejobs").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                   if (dataSnapshot.exists())
+                   {
+                       System.out.println(dataSnapshot);
+                       count = 0;
+                       count = (int) dataSnapshot.getChildrenCount();
+                       System.out.println(count+"count");
+                       savejobs.setText(Integer.toString(count));
+//                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
+//                        if (ds.exists()) {
+//
+//                            count = (int) ds.getChildrenCount();
+//                            System.out.println(ds);
+//                            savejobs.setText(Integer.toString(count));
+//
+//                        } else {
+//                            savejobs.setText("0");
+//                        }
+//                    }
+                   } else {
+                       savejobs.setText("0");
+                   }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         recyclerView = findViewById(R.id.d_recycle2);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

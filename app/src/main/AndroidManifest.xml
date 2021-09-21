@@ -20,17 +20,6 @@
             android:name=".Homepage_new"
             android:exported="true" />
         <activity android:name=".Profile" />
-        <activity android:name=".LogoutTest" />
-        <activity
-            android:name=".Spinnertest"
-            android:exported="true" />
-        <activity
-            android:name=".EditjobReq"
-            android:exported="true" />
-
-        <activity android:name=".Profile"></activity>
-
-
 
         <activity
             android:name=".ViewJob"
@@ -60,12 +49,11 @@
             android:exported="true" />
 
         <activity
-            android:name=".EditProfile"
-            android:exported="true" />
-
-        <activity
             android:name=".ViewReqJob"
             android:exported="true" />
+
+        <activity android:name=".ViewjobM"
+            android:exported="true"/>
         <activity
             android:name=".RegisterUserActivity"
             android:exported="true">
