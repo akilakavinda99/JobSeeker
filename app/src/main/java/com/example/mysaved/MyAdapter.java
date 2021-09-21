@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -77,12 +78,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         @Override
         public void onClick(View view) {
+            String auth = FirebaseAuth.getInstance().getCurrentUser().getUid();
             int Position = getAbsoluteAdapterPosition();
             Model model = mList.get(Position);
-            Intent intent = new Intent(view.getContext(),CreateJob.class);
-            intent.putExtra("Job", model.JobID);
+            Intent intent = new Intent(view.getContext(),ViewjobM.class);
+            intent.putExtra("user_id", auth);
+            intent.putExtra("job_id", model.JobID);
             view.getContext().startActivity(intent);
             System.out.println(model.JobID);
         }
-   }
     }
+}
