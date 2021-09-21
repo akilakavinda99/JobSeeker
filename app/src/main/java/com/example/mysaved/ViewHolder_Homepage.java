@@ -16,8 +16,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -98,21 +101,48 @@ public class ViewHolder_Homepage extends RecyclerView.Adapter<ViewHolder_Homepag
             HomeList home = list.get(position);
 
             if(b){
+                compoundButton.setChecked(true);
                 dbsave.child(home.id).child(home.jobid).setValue(home);
+
 
             }else{
                 dbsave.child(home.id).child(home.jobid).setValue(null);
             }
+           dbsave.addValueEventListener(new ValueEventListener() {
+               @Override
+               public void onDataChange(@NonNull DataSnapshot snapshot) {
+                   for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+                       String id = dataSnapshot.getKey();
+                       System.out.println(id+" Fucku");
+                       for (DataSnapshot ds : snapshot.getChildren()){
+                           String idjob = ds.getKey();
+                           if(ds.exists()){
+                               compoundButton.setChecked(true);
+                           }
+                       }
+                   }
+               }
+
+               @Override
+               public void onCancelled(@NonNull DatabaseError error) {
+
+               }
+           });
         }
 
         @Override
         public void onClick(View view) {
             int position = getAbsoluteAdapterPosition();
             HomeList home = list.get(position);
+            String userid = home.id;
+            String jobid = home.jobid;
+//            Intent intent;
+//            context.startActivity(new intent(context, New_Saved_Jobs.class));
+            Intent intent = new Intent(view.getContext(), ViewjobM.class);
+            intent.putExtra("user_id", userid);
+            intent.putExtra("job_id", jobid);
 
-            context.startActivity(new Intent(context, New_Saved_Jobs.class));
-            System.out.println(home.id);
-            System.out.println(home.jobid);
+            view.getContext().startActivity(intent);
         }
     }
 

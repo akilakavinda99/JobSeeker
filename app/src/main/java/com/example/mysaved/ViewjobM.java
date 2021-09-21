@@ -46,6 +46,8 @@ public class ViewjobM extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewjob_m);
 
+        String userid = getIntent().getStringExtra("user_id");
+        String jobid = getIntent().getStringExtra("job_id");
 
         jobTitle_tv = findViewById(R.id.jobTitle_tv);
         jobLocation_tv = findViewById(R.id.jobLocation_tv);
@@ -73,7 +75,7 @@ public class ViewjobM extends AppCompatActivity {
         btn_call_jv4 = findViewById(R.id.btn_call_jv4);
 
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("create_job").child("5yQhUWmMuCeXFBdbRi6htxb2Nhs2").child("4");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("create_job").child(userid).child(jobid);
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -93,7 +95,7 @@ public class ViewjobM extends AppCompatActivity {
                     jobDescription_tv_jobView.setText(snapshot.child("description").getValue().toString());
                     imageUrl = (snapshot.child("img").getValue().toString());
 
-                    Picasso.get().load(imageUrl).resize(600,500).into(jobImage_tv_jobView);
+                    Picasso.get().load(imageUrl).fit().into(jobImage_tv_jobView);
 
                     try {
                         postDate = sdf.parse(Objects.requireNonNull(snapshot.child("date").getValue()).toString());
