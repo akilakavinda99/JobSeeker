@@ -90,7 +90,43 @@
         <item> Intern</item>
     </string-array>
 
+    <string-array name="job_type_ddm">
+        <item> Select Job Ty[pe</item>
+        <item> Full Time</item>
+        <item> Part Time</item>
+        <item> Intern</item>
+    </string-array>
+
     <string-array name="districts_sm">
+        <item> Select District</item>
+        <item> Ampara</item>
+        <item> Anuradhapura</item>
+        <item> Badulla</item>
+        <item> Batticaloa</item>
+        <item> Colombo</item>
+        <item> Galle</item>
+        <item> Gampaha</item>
+        <item> Hambantota</item>
+        <item> Jaffna</item>
+        <item> Kalutara</item>
+        <item> Kandy</item>
+        <item> Kegalle</item>
+        <item> Kilinochchi</item>
+        <item> Kurunegala</item>
+        <item> Mannar</item>
+        <item> Matale</item>
+        <item> Matara</item>
+        <item> Monaragala</item>
+        <item> Mullaitivu</item>
+        <item> Nuwara Eliya</item>
+        <item> Polonnaruwa</item>
+        <item> Puttalam</item>
+        <item> Ratnapura</item>
+        <item> Trincomalee</item>
+        <item> Vavuniya</item>
+    </string-array>
+
+    <string-array name="districts_smm">
         <item> Select District</item>
         <item> Ampara</item>
         <item> Anuradhapura</item>
