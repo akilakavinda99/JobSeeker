@@ -87,7 +87,7 @@ public class UserloginActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
-                        startActivity(new Intent(getApplicationContext(), CreateJob.class));
+                        startActivity(new Intent(getApplicationContext(), MyJobListings.class));
                     }
                     else {
                         Toast.makeText(UserloginActivity.this, "Login Unsuccessful", Toast.LENGTH_SHORT).show();
