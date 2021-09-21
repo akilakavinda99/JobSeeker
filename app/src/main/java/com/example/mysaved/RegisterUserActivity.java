@@ -141,6 +141,7 @@ public class RegisterUserActivity extends AppCompatActivity {
                             user.put("District",ddistrict_spinner);
                             user.put("Gender",dgender_spiner);
                             user.put("JobId",0);
+                            user.put("ReqId",0);
 
 
                             reference.setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {

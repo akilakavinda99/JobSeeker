@@ -61,7 +61,7 @@
     <string name="tv_createajob">Create a Job</string>
     <string name="et_company">Enter Company Name</string>
     <string name="et_title">Enter Job Title</string>
-    <string name="et_salary">Enter Salary</string>
+    <string name="et_salary2">Enter Salary (LKR | MO)</string>
     <string name="et_description">Enter Job Description</string>
     <string name="et_email">Enter Email Address</string>
     <string name="et_phone">Enter Phone Number</string>
@@ -293,8 +293,13 @@
     <string name="et_user_Mno">Mobile No</string>
     <string name="et_user_email">Email</string>
     <string name="btn_updateE">Update</string>
+
+    <string name="phone6">Phone</string>
+    <string name="title8">Title</string>
+
     <string name="d_tv_jobtype">Jobtype</string>
     <string name="d_tv_joblocation">location</string>
+
 
 
 

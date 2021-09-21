@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MySaved">
 
+        <activity android:name=".Profile"></activity>
+
+
         <activity
             android:name=".New_Saved_Jobs"
             android:exported="true" />
@@ -21,6 +24,7 @@
             android:exported="true" />
         <activity android:name=".Profile" />
 
+
         <activity
             android:name=".ViewJob"
             android:exported="true" />
@@ -28,10 +32,17 @@
             android:name=".Request_jobs_home"
             android:exported="true" />
 
+        <activity
+            android:name=".MyJobListings"
+            android:exported="true" />
+
 
         <activity
             android:name=".UserloginActivity"
             android:exported="true" />
+
+
+
         <activity
             android:name=".NavigationBarActivity"
             android:exported="true" />
@@ -63,9 +74,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MyJobListings"
-            android:exported="true" />
         <activity
             android:name=".CreateJob"
             android:exported="true" />

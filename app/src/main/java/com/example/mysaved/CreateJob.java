@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -71,7 +70,7 @@ public class CreateJob extends AppCompatActivity {
 
         company_name = findViewById(R.id.et_company);
         job_title = findViewById(R.id.et_title);
-        salary = findViewById(R.id.et_salary);
+        salary = findViewById(R.id.et_salary2);
         job_description = findViewById(R.id.et_description);
         email = findViewById(R.id.et_email);
         phone = findViewById(R.id.et_phone);
@@ -108,6 +107,14 @@ public class CreateJob extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        b1_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MyJobListings.class));
+                overridePendingTransition(R.anim.animation_enter, R.anim.animation_leave);
             }
         });
 
@@ -239,7 +246,7 @@ public class CreateJob extends AppCompatActivity {
                         Map<String,Object> user = new HashMap<>();
                         user.put("JobId",job_id);
                         rr.updateChildren(user);
-                        startActivity(new Intent(getApplicationContext(), Profile.class));
+                        startActivity(new Intent(getApplicationContext(), MyJobListings.class));
                     }
                 });
             }
