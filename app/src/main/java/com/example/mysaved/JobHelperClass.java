@@ -1,8 +1,13 @@
 package com.example.mysaved;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class JobHelperClass {
 
-    String name,title,salary1,description,email1,phone1,job_type,district,date;
+    String name,title,salary1,description,email1,phone1,job_type,district;
+    String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
     public JobHelperClass() {
     }

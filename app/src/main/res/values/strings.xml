@@ -90,7 +90,43 @@
         <item> Intern</item>
     </string-array>
 
+    <string-array name="job_type_ddm">
+        <item> Select Job Ty[pe</item>
+        <item> Full Time</item>
+        <item> Part Time</item>
+        <item> Intern</item>
+    </string-array>
+
     <string-array name="districts_sm">
+        <item> Select District</item>
+        <item> Ampara</item>
+        <item> Anuradhapura</item>
+        <item> Badulla</item>
+        <item> Batticaloa</item>
+        <item> Colombo</item>
+        <item> Galle</item>
+        <item> Gampaha</item>
+        <item> Hambantota</item>
+        <item> Jaffna</item>
+        <item> Kalutara</item>
+        <item> Kandy</item>
+        <item> Kegalle</item>
+        <item> Kilinochchi</item>
+        <item> Kurunegala</item>
+        <item> Mannar</item>
+        <item> Matale</item>
+        <item> Matara</item>
+        <item> Monaragala</item>
+        <item> Mullaitivu</item>
+        <item> Nuwara Eliya</item>
+        <item> Polonnaruwa</item>
+        <item> Puttalam</item>
+        <item> Ratnapura</item>
+        <item> Trincomalee</item>
+        <item> Vavuniya</item>
+    </string-array>
+
+    <string-array name="districts_smm">
         <item> Select District</item>
         <item> Ampara</item>
         <item> Anuradhapura</item>
@@ -240,11 +276,11 @@
 
     <string name="tv_Profile">Profile</string>
     <string name="btn_verify_now">Verify Now</string>
-    <string name="tv_nameP">Name</string>
-    <string name="tv_mobilenoP">Mobile No</string>
-    <string name="tv_genderP">Gender</string>
-    <string name="tv_districtP">District</string>
-    <string name="tv_emailP">Email</string>
+    <string name="tv_nameP">Name :</string>
+    <string name="tv_mobilenoP">Mobile No :</string>
+    <string name="tv_genderP">Gender :</string>
+    <string name="tv_districtP">District :</string>
+    <string name="tv_emailP">Email :</string>
     <string name="btn_edit_user">Edit</string>
 
     <string name="tv_edit_profile">Edit Profile</string>
@@ -257,8 +293,14 @@
     <string name="et_user_Mno">Mobile No</string>
     <string name="et_user_email">Email</string>
     <string name="btn_updateE">Update</string>
+
     <string name="phone6">Phone</string>
     <string name="title8">Title</string>
+
+    <string name="d_tv_jobtype">Jobtype</string>
+    <string name="d_tv_joblocation">location</string>
+
+
 
 
     <!--    Pankaja's Strings-->

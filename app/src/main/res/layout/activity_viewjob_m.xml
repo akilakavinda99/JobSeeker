@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/toolbar1"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/jobImage_tv_jobView"
+            android:layout_width="423dp"
+            android:layout_height="199dp"
+            android:adjustViewBounds="true"
+            android:background="@color/white"
+            android:scaleType="centerInside"
+            tools:srcCompat="@drawable/company1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_corner_background"
+            android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="61dp">
+
+                        <TableRow
+                            android:id="@+id/tableRow"
+                            android:layout_width="87dp"
+                            android:layout_height="45dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.038">
+
+                        </TableRow>
+
+                        <TextView
+                            android:id="@+id/jobTitle_tv"
+                            android:layout_width="301dp"
+                            android:layout_height="34dp"
+                            android:fontFamily="@font/segoe_bold"
+                            android:paddingStart="15dp"
+                            android:paddingLeft="10dp"
+                            android:text="@string/jobtitle"
+                            android:textSize="24sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/tableRow"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tableRow"
+                            tools:text="Softawre Enginner Intern" />
+
+                        <TextView
+                            android:id="@+id/jobLocation_tv"
+                            android:layout_width="71dp"
+                            android:layout_height="wrap_content"
+                            android:text="Matara"
+                            android:textColor="@color/modern_blue"
+                            android:textSize="14sp"
+                            app:layout_constraintBaseline_toBaselineOf="@+id/jobTitle_tv"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/jobTitle_tv" />
+
+                        <View
+                            android:id="@+id/divider5"
+                            android:layout_width="409dp"
+                            android:layout_height="5dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="?android:attr/listDivider"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="63dp">
+
+                        <TextView
+                            android:id="@+id/textView35"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/segoe_bold"
+                            android:text="@string/tv_jobtype_vjob"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintBaseline_toBaselineOf="@+id/textView36"
+                            app:layout_constraintEnd_toStartOf="@+id/textView36"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView36"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/segoe_bold"
+                            android:text="Company"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/textView37"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/textView35"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <TextView
+                            android:id="@+id/textView37"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/segoe_bold"
+                            android:text="Salary"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintBaseline_toBaselineOf="@+id/textView36"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/textView36" />
+
+                        <TextView
+                            android:id="@+id/jobType_tv_jobView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Virtusa"
+                            app:layout_constraintBaseline_toBaselineOf="@+id/jobCompany_tv_jobView"
+                            app:layout_constraintEnd_toStartOf="@+id/jobCompany_tv_jobView"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/jobCompany_tv_jobView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingLeft="5dp"
+                            android:text="Heloloooo"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/jobSalary_tv_jobView"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/jobType_tv_jobView"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/jobSalary_tv_jobView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TextView"
+                            app:layout_constraintBaseline_toBaselineOf="@+id/jobCompany_tv_jobView"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/jobCompany_tv_jobView" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/divider6"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/jobViews_tv_jobView"
+                            android:layout_width="212dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingLeft="20dp"
+                            android:text="20 Views" />
+
+                        <TextView
+                            android:id="@+id/jobDaysAgo_tv_jobView"
+                            android:layout_width="25dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="90 Days Ago" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/divider7"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp">
+
+                        <TextView
+                            android:id="@+id/textView45"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/segoe_bold"
+                            android:text="Description"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.498"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.105" />
+
+                        <TextView
+                            android:id="@+id/jobDescription_tv_jobView"
+                            android:layout_width="323dp"
+                            android:layout_height="101dp"
+                            android:background="@drawable/textview_backgound"
+                            android:padding="15dp"
+                            android:text="TextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextView"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.497"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView45"
+                            app:layout_constraintVertical_bias="0.292" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btn_email_jv2"
+                            android:layout_width="94dp"
+                            android:layout_height="45dp"
+                            android:layout_marginStart="28dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="@drawable/button_blue_bo"
+                            android:text="@string/btn_email_jv"
+                            android:textColor="@color/modern_blue"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btn_call_jv4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="284dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="@drawable/button_blue_bo"
+                            android:text="@string/btn_call_jv"
+                            android:textColor="@color/modern_blue"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/jobEmail_tv_jobView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="kagdhrfg@gmail.com"
+                            app:layout_constraintBaseline_toBaselineOf="@+id/textView47"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.083"
+                            app:layout_constraintStart_toEndOf="@+id/textView47" />
+
+                        <TextView
+                            android:id="@+id/textView47"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="60dp"
+                            android:layout_marginBottom="28dp"
+                            android:fontFamily="@font/segoe_bold"
+                            android:text="Email  :"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toTopOf="@+id/jobDate_tv_jobView"
+                            app:layout_constraintEnd_toEndOf="@+id/textView49"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:id="@+id/jobDate_tv_jobView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TextView"
+                            app:layout_constraintBaseline_toBaselineOf="@+id/textView49"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.111"
+                            app:layout_constraintStart_toEndOf="@+id/textView49" />
+
+                        <TextView
+                            android:id="@+id/textView49"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginBottom="32dp"
+                            android:fontFamily="@font/segoe_bold"
+                            android:text="@string/tv_publishdate"
+                            android:textColor="@color/black"
+                            app:layout_constraintBottom_toTopOf="@+id/btn_email_jv2"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+</LinearLayout>
