@@ -46,7 +46,7 @@ public class EditProfile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.editprofile);
+        setContentView(R.layout.activity_editprofile);
         String Gender= getIntent().getExtras().getString("GENDER");
         String District= getIntent().getExtras().getString("DISTRICT");
 
@@ -82,7 +82,7 @@ public class EditProfile extends AppCompatActivity {
 
         //is user is not logged in, return to Login page
         if (fAuth.getCurrentUser() == null) {
-            startActivity(new Intent(getApplicationContext(), Userlogin.class));
+            startActivity(new Intent(getApplicationContext(), UserloginActivity.class));
             finish();
         }
 
@@ -208,7 +208,7 @@ public class EditProfile extends AppCompatActivity {
                                 DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("user").child(userID);
                                 dbRef.removeValue();
                                 fAuth.getCurrentUser().delete();
-                                startActivity(new Intent(getApplicationContext(), Userlogin.class));
+                                startActivity(new Intent(getApplicationContext(), UserloginActivity.class));
                             }
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {

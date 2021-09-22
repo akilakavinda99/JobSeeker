@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
 
-public class Userlogin extends AppCompatActivity {
+public class UserloginActivity extends AppCompatActivity {
     FirebaseDatabase rootNode;
     EditText email,password;
     Button signup,login;
@@ -33,7 +33,7 @@ public class Userlogin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(R.layout.activity_userlogin);
 
         email = findViewById(R.id.et_log_email);
         password = findViewById(R.id.et_log_password);
@@ -84,15 +84,15 @@ public class Userlogin extends AppCompatActivity {
                 @Override
                 public void onSuccess(AuthResult authResult) {
 
-                    Toast.makeText(Userlogin.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(Userlogin.this, Profile.class));
+                    Toast.makeText(UserloginActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(UserloginActivity.this, Profile.class));
                     finish();
                 }
 
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(Userlogin.this, "Login Unsuccessful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserloginActivity.this, "Login Unsuccessful", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -115,12 +115,12 @@ public class Userlogin extends AppCompatActivity {
                         fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(Userlogin.this, "Reset link sent to your email", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(UserloginActivity.this, "Reset link sent to your email", Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(Userlogin.this, "Error! Link is not sent", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(UserloginActivity.this, "Error! Link is not sent", Toast.LENGTH_SHORT).show();
                             }
                         });
 

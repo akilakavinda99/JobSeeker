@@ -36,7 +36,7 @@ public class Profile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.profile);
+        setContentView(R.layout.activity_profile);
 
         text_Pname = findViewById(R.id.tv_nameP);
         text_Pphone = findViewById(R.id.tv_mobilenoP);
@@ -59,7 +59,7 @@ public class Profile extends AppCompatActivity {
 
         //check whether user is not logged in, return to Login page
         if (fAuth.getCurrentUser() == null){
-            Intent i = new Intent(getApplicationContext(), Userlogin.class).putExtra("from", "profile");
+            Intent i = new Intent(getApplicationContext(), UserloginActivity.class).putExtra("from", "profile");
             startActivity(i);
         }
         else{
@@ -147,7 +147,7 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(Profile.this, Userlogin.class));
+                startActivity(new Intent(Profile.this, UserloginActivity.class));
             }
         });
 

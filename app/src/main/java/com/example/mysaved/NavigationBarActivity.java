@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-public class NavigationBar_Drawer extends AppCompatActivity {
+public class NavigationBarActivity extends AppCompatActivity {
 
     RecyclerView my_listing_recyclerview;
     Button nav_logout, nav_login;
@@ -32,7 +32,7 @@ public class NavigationBar_Drawer extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.navigation_bar_drawer);
+        setContentView(R.layout.activity_navigation_bar);
 
         drawerLayout = findViewById(R.id.drawer_layout);
 
@@ -81,7 +81,7 @@ public class NavigationBar_Drawer extends AppCompatActivity {
     //navigation drawer button functions
     public void login(View view) {
 
-        Intent i = new Intent(getApplicationContext(), Userlogin.class).putExtra("from", "main");
+        Intent i = new Intent(getApplicationContext(), UserloginActivity.class).putExtra("from", "main");
         startActivity(i);
 
     }
