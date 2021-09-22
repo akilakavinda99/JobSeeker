@@ -307,6 +307,25 @@
                             app:layout_constraintBottom_toTopOf="@+id/btn_email_jv2"
                             app:layout_constraintStart_toStartOf="parent" />
 
+                        <Button
+                            android:id="@+id/Edit_JobView_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:text="Button"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/btn_call_jv4"
+                            app:layout_constraintHorizontal_bias="0.529"
+                            app:layout_constraintStart_toEndOf="@+id/btn_email_jv2" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TextView"
+                            tools:layout_editor_absoluteX="297dp"
+                            tools:layout_editor_absoluteY="49dp" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
