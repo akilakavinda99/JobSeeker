@@ -14,17 +14,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 
-public class UserloginActivity extends AppCompatActivity {
+public class Userlogin extends AppCompatActivity {
     FirebaseDatabase rootNode;
     EditText email,password;
     Button signup,login;
@@ -36,7 +33,7 @@ public class UserloginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_userlogin);
+        setContentView(R.layout.login);
 
         email = findViewById(R.id.et_log_email);
         password = findViewById(R.id.et_log_password);
@@ -83,15 +80,19 @@ public class UserloginActivity extends AppCompatActivity {
 
 
             //authenticate user
-            fAuth.signInWithEmailAndPassword(text_email,text_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            fAuth.signInWithEmailAndPassword(text_email, text_password).addOnSuccessListener(new OnSuccessListener<AuthResult>(){
                 @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
-                        startActivity(new Intent(getApplicationContext(), CreateJob.class));
-                    }
-                    else {
-                        Toast.makeText(UserloginActivity.this, "Login Unsuccessful", Toast.LENGTH_SHORT).show();
-                    }
+                public void onSuccess(AuthResult authResult) {
+
+                    Toast.makeText(Userlogin.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(Userlogin.this, Profile.class));
+                    finish();
+                }
+
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(Userlogin.this, "Login Unsuccessful", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -114,12 +115,12 @@ public class UserloginActivity extends AppCompatActivity {
                         fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(UserloginActivity.this, "Reset link sent to your email", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Userlogin.this, "Reset link sent to your email", Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(UserloginActivity.this, "Error! Link is not sent", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Userlogin.this, "Error! Link is not sent", Toast.LENGTH_SHORT).show();
                             }
                         });
 

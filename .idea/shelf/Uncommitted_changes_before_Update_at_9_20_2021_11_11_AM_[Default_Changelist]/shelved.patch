@@ -1,0 +1,520 @@
+Index: app/src/main/java/com/example/mysaved/NavigationBarActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.mysaved;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.drawerlayout.widget.DrawerLayout;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\n\r\nimport android.app.AlertDialog;\r\nimport android.content.Context;\r\nimport android.os.Bundle;\r\nimport android.widget.Button;\r\nimport android.widget.ProgressBar;\r\nimport android.widget.TextView;\r\n\r\n\r\npublic class NavigationBarActivity extends AppCompatActivity {\r\n\r\n        RecyclerView my_listing_recyclerview;\r\n        Button nav_logout,nav_login;\r\n        DrawerLayout drawerLayout;\r\n        TextView nav_home_txt,nav_createjob_txt,nav_myjobs_txt,nav_requestedjobs_txt,nav_myreqjobs_txt,nav_savedjobs_txt,nav_profile_txt;\r\n        ProgressBar progressBar_listings;\r\n        Context context;\r\n        AlertDialog.Builder builder;\r\n\r\n\r\n\r\n           @Override\r\n           protected void onCreate(Bundle savedInstanceState) {\r\n               super.onCreate(savedInstanceState);\r\n               setContentView(R.layout.activity_navigation_bar);\r\n               drawerLayout = findViewById(R.id.drawer_layout);\r\n\r\n               nav_login = findViewById(R.id.btn_nav_login);\r\n               nav_logout = findViewById(R.id.btn_nav_logout);\r\n\r\n               nav_home_txt = findViewById(R.id.tv_nav_home);\r\n               nav_createjob_txt = findViewById(R.id.tv_nav_createjob);\r\n               nav_myjobs_txt = findViewById(R.id.tv_nav_myjobs);\r\n               nav_requestedjobs_txt = findViewById(R.id.tv_nav_requestedjobs);\r\n               nav_myreqjobs_txt = findViewById(R.id.tv_nav_myreqjobs);\r\n               nav_savedjobs_txt = findViewById(R.id.tv_nav_savedjobs);\r\n               nav_profile_txt = findViewById(R.id.tv_nav_profile);\r\n               progressBar_listings = findViewById(R.id.progressBar_listings);\r\n               my_listing_recyclerview = findViewById(R.id.my_listing_recyclerview);\r\n\r\n           }\r\n\r\n      }\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/mysaved/NavigationBarActivity.java	(revision 01d87064571abe74a8e4f687d096f98ebcac9531)
++++ app/src/main/java/com/example/mysaved/NavigationBarActivity.java	(date 1632115898534)
+@@ -1,48 +1,192 @@
+ package com.example.mysaved;
+ 
+ import androidx.appcompat.app.AppCompatActivity;
++import androidx.core.content.ContextCompat;
++import androidx.core.view.GravityCompat;
+ import androidx.drawerlayout.widget.DrawerLayout;
+ import androidx.recyclerview.widget.RecyclerView;
+ 
+ import android.app.AlertDialog;
+ import android.content.Context;
++import android.content.Intent;
+ import android.os.Bundle;
++import android.view.View;
+ import android.widget.Button;
+ import android.widget.ProgressBar;
+ import android.widget.TextView;
+ 
++import com.google.firebase.auth.FirebaseAuth;
++
+ 
+ public class NavigationBarActivity extends AppCompatActivity {
+ 
+-        RecyclerView my_listing_recyclerview;
+-        Button nav_logout,nav_login;
+-        DrawerLayout drawerLayout;
+-        TextView nav_home_txt,nav_createjob_txt,nav_myjobs_txt,nav_requestedjobs_txt,nav_myreqjobs_txt,nav_savedjobs_txt,nav_profile_txt;
+-        ProgressBar progressBar_listings;
+-        Context context;
+-        AlertDialog.Builder builder;
++    RecyclerView my_listing_recyclerview;
++    Button nav_logout, nav_login;
++    DrawerLayout drawerLayout;
++    TextView nav_home_txt, nav_createjob_txt, nav_myjobs_txt, nav_requestedjobs_txt, nav_myreqjobs_txt,
++            nav_savedjobs_txt, nav_profile_txt;
++    ProgressBar progressBar_listings;
++    FirebaseAuth fAuth;
++    String userID;
+ 
+ 
+ 
+-           @Override
+-           protected void onCreate(Bundle savedInstanceState) {
+-               super.onCreate(savedInstanceState);
+-               setContentView(R.layout.activity_navigation_bar);
+-               drawerLayout = findViewById(R.id.drawer_layout);
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_navigation_bar);
++
++        drawerLayout = findViewById(R.id.drawer_layout);
+ 
+-               nav_login = findViewById(R.id.btn_nav_login);
+-               nav_logout = findViewById(R.id.btn_nav_logout);
++        nav_login = findViewById(R.id.btn_nav_login);
++        nav_logout = findViewById(R.id.btn_nav_logout);
+ 
+-               nav_home_txt = findViewById(R.id.tv_nav_home);
+-               nav_createjob_txt = findViewById(R.id.tv_nav_createjob);
+-               nav_myjobs_txt = findViewById(R.id.tv_nav_myjobs);
+-               nav_requestedjobs_txt = findViewById(R.id.tv_nav_requestedjobs);
+-               nav_myreqjobs_txt = findViewById(R.id.tv_nav_myreqjobs);
+-               nav_savedjobs_txt = findViewById(R.id.tv_nav_savedjobs);
+-               nav_profile_txt = findViewById(R.id.tv_nav_profile);
+-               progressBar_listings = findViewById(R.id.progressBar_listings);
+-               my_listing_recyclerview = findViewById(R.id.my_listing_recyclerview);
++        nav_home_txt = findViewById(R.id.tv_nav_home);
++        nav_createjob_txt = findViewById(R.id.tv_nav_createjob);
++        nav_myjobs_txt = findViewById(R.id.tv_nav_myjobs);
++        nav_requestedjobs_txt = findViewById(R.id.tv_nav_requestedjobs);
++        nav_myreqjobs_txt = findViewById(R.id.tv_nav_myreqjobs);
++        nav_savedjobs_txt = findViewById(R.id.tv_nav_savedjobs);
++        nav_profile_txt = findViewById(R.id.tv_nav_profile);
++        progressBar_listings = findViewById(R.id.progressBar_listings);
++        my_listing_recyclerview = findViewById(R.id.my_listing_recyclerview);
+ 
+-           }
++
++        //get current instance of firebase authentication
++        fAuth = FirebaseAuth.getInstance();
++
++        //check if user is already logged in
++        if (fAuth.getCurrentUser() != null) {
++            userID = fAuth.getCurrentUser().getUid();
++            nav_login.setVisibility(View.GONE);
++            nav_logout.setVisibility(View.VISIBLE);
++        } else {
++            nav_logout.setVisibility(View.GONE);
++            nav_login.setVisibility(View.VISIBLE);
++
++        }
++
++    }
++
++
++    public void ClickMenu(View view) {
++        //open drawer
++        openDrawer(drawerLayout);
++    }
++
++    public static void openDrawer(DrawerLayout drawerLayout) {
++        //open drawer layer
++        drawerLayout.openDrawer(GravityCompat.START);
++
++    }
++
++    //navigation drawer button functions
++    public void login(View view) {
++
++        Intent i = new Intent(getApplicationContext(), UserloginActivity.class).putExtra("from", "main");
++        startActivity(i);
++
++    }
++
++    public void logout(View view) {
++        FirebaseAuth.getInstance().signOut();
++        nav_logout.setVisibility(View.GONE);
++        nav_login.setVisibility(View.VISIBLE);
++
++    }
++
++    //side_nav buttons
++    public void navClickHome(View view) {
++        nav_home_txt.setTextColor(ContextCompat.getColor(this, R.color.black));
++        nav_createjob_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_myjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_requestedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_myreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_savedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_profile_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++
++
++        startActivity(new Intent(getApplicationContext(), EditProfile.class));
++
++
++    }
++
++    public void navClickCreateJob(View view) {
++        nav_home_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_createjob_txt.setTextColor(ContextCompat.getColor(this, R.color.black));
++        nav_myjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_requestedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_myreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_savedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_profile_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++
++        startActivity(new Intent(getApplicationContext(), CreateJob.class));
++
++    }
++
++    public void navClickMyjobs(View view) {
++        nav_home_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_createjob_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_myjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black));
++        nav_requestedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_myreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_savedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_profile_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++
++        startActivity(new Intent(getApplicationContext(), MyJobListings.class));
++
++    }
++
++    public void navClickRequestedjobs(View view) {
++        nav_home_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_createjob_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_myjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_requestedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black));
++        nav_myreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_savedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_profile_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++
++        startActivity(new Intent(getApplicationContext(), Request_jobs_home.class));
++
++    }
++
++    public void navClickMyreqjobs(View view) {
++        nav_home_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_createjob_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_myjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_requestedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_myreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black));
++        nav_savedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_profile_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++
++        startActivity(new Intent(getApplicationContext(), MyRequestedJobs.class));
++
++    }
++
++    public void navClickSavedjobs(View view) {
++        nav_home_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_createjob_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_myjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_requestedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_myreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_savedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black));
++        nav_profile_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++
++        startActivity(new Intent(getApplicationContext(), RegisterUserActivity.class));
++
++    }
++
++    public void navClickProfile(View view) {
++        nav_home_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_createjob_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_myjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_requestedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_myreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_savedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black01));
++        nav_profile_txt.setTextColor(ContextCompat.getColor(this, R.color.black));
++
++        startActivity(new Intent(getApplicationContext(), Profile.class));
++
++    }
+ 
+-      }
++}
+Index: app/src/main/res/layout/activity_navigation_bar.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    tools:context=\".NavigationBarActivity\">\r\n\r\n\r\n    <Button\r\n        android:id=\"@+id/btn_nav_logout\"\r\n        android:layout_width=\"90dp\"\r\n        android:layout_height=\"35dp\"\r\n        android:layout_marginLeft=\"25dp\"\r\n        android:layout_marginTop=\"40dp\"\r\n        android:background=\"@drawable/button_red_border\"\r\n        android:onClick=\"@string/btn_nav_logout\"\r\n        android:text=\"@string/btn_nav_logout\"\r\n        android:textAllCaps=\"false\"\r\n        android:textColor=\"@color/nav_logout\"\r\n        android:visibility=\"gone\"\r\n        tools:ignore=\"OnClick\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/btn_nav_login\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginLeft=\"25dp\"\r\n        android:layout_marginTop=\"40dp\"\r\n        android:background=\"@drawable/border1\"\r\n        android:onClick=\"@string/btn_nav_login\"\r\n        android:text=\"@string/btn_nav_login\"\r\n        android:textAllCaps=\"false\"\r\n        android:textColor=\"@color/white\"\r\n        android:visibility=\"visible\"\r\n        app:backgroundTint=\"@color/nav_login\"\r\n        tools:ignore=\"OnClick\" />\r\n\r\n    <View\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"0dp\"\r\n        android:layout_marginTop=\"90dp\"\r\n        android:layout_marginBottom=\"16dp\" />\r\n\r\n    <LinearLayout\r\n        android:id=\"@+id/nav_home\"\r\n        android:onClick=\"navClickHome\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"horizontal\"\r\n        android:gravity=\"center_vertical\"\r\n        tools:ignore=\"OnClick\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_nav_home\"\r\n            android:layout_width=\"0dp\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"16dp\"\r\n            android:layout_weight=\"1\"\r\n            android:fontFamily=\"@font/segoe_bold\"\r\n            android:padding=\"12dp\"\r\n            android:text=\"@string/tv_nav_home\"\r\n            android:textColor=\"@color/nav\"\r\n            android:textSize=\"25dp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n    </LinearLayout>\r\n    <LinearLayout\r\n        android:onClick=\"navClickCreateJob\"\r\n        android:id=\"@+id/nav_createjob\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"horizontal\"\r\n        android:gravity=\"center_vertical\"\r\n        tools:ignore=\"OnClick\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_nav_createjob\"\r\n            android:layout_width=\"0dp\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"16dp\"\r\n            android:layout_weight=\"1\"\r\n            android:fontFamily=\"@font/segoe_bold\"\r\n            android:padding=\"12dp\"\r\n            android:text=\"@string/tv_nav_createjob\"\r\n            android:textColor=\"@color/nav\"\r\n            android:textSize=\"25dp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n</LinearLayout>\r\n\r\n    <LinearLayout\r\n        android:onClick=\"navClickMyjobs\"\r\n        android:id=\"@+id/nav_Myjobs\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:gravity=\"center_vertical\"\r\n        android:orientation=\"horizontal\"\r\n        tools:ignore=\"OnClick\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_nav_myjobs\"\r\n            android:layout_width=\"0dp\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"16dp\"\r\n            android:layout_weight=\"1\"\r\n            android:fontFamily=\"@font/segoe_bold\"\r\n            android:padding=\"12dp\"\r\n            android:text=\"@string/tv_nav_myjobs\"\r\n            android:textColor=\"@color/nav\"\r\n            android:textSize=\"25dp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n    </LinearLayout>\r\n\r\n    <LinearLayout\r\n    android:onClick=\"navClickRequestedjobs\"\r\n    android:id=\"@+id/nav_requestedjobs\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    android:orientation=\"horizontal\"\r\n    android:gravity=\"center_vertical\"\r\n    tools:ignore=\"OnClick\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_nav_requestedjobs\"\r\n            android:layout_width=\"0dp\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"16dp\"\r\n            android:layout_weight=\"1\"\r\n            android:fontFamily=\"@font/segoe_bold\"\r\n            android:padding=\"12dp\"\r\n            android:text=\"@string/tv_nav_requestedjobs\"\r\n            android:textColor=\"@color/nav\"\r\n            android:textSize=\"25dp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n</LinearLayout>\r\n<LinearLayout\r\nandroid:onClick=\"navClickMyreqjobs\"\r\nandroid:id=\"@+id/nav_myrequestedjobs\"\r\nandroid:layout_width=\"match_parent\"\r\nandroid:layout_height=\"wrap_content\"\r\nandroid:orientation=\"horizontal\"\r\nandroid:gravity=\"center_vertical\"\r\n    tools:ignore=\"OnClick\">\r\n\r\n    <TextView\r\n        android:id=\"@+id/tv_nav_myreqjobs\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"16dp\"\r\n        android:layout_weight=\"1\"\r\n        android:fontFamily=\"@font/segoe_bold\"\r\n        android:padding=\"12dp\"\r\n        android:text=\"@string/tv_nav_myreqjobs\"\r\n        android:textColor=\"@color/nav\"\r\n        android:textSize=\"25dp\"\r\n        android:textStyle=\"bold\" />\r\n\r\n</LinearLayout>\r\n    <LinearLayout\r\n        android:onClick=\"navClickSavedjobs\"\r\n        android:id=\"@+id/nav_myjobs\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"horizontal\"\r\n        android:gravity=\"center_vertical\"\r\n        tools:ignore=\"OnClick,UsingOnClickInXml\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_nav_savedjobs\"\r\n            android:layout_width=\"0dp\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"16dp\"\r\n            android:layout_weight=\"1\"\r\n            android:fontFamily=\"@font/segoe_bold\"\r\n            android:padding=\"12dp\"\r\n            android:text=\"@string/tv_nav_savedjobs\"\r\n            android:textColor=\"@color/nav\"\r\n            android:textSize=\"25dp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n    </LinearLayout>\r\n\r\n\r\n    <View\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"0dp\"\r\n        android:layout_marginTop=\"30dp\"\r\n        android:layout_marginBottom=\"20dp\" />\r\n\r\n    <LinearLayout\r\n\r\n        android:onClick=\"navClickProfile\"\r\n        android:id=\"@+id/nav_profile\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"horizontal\"\r\n        android:gravity=\"center_vertical\"\r\n        tools:ignore=\"OnClick\">\r\n\r\n        <ImageView\r\n\r\n            android:id=\"@+id/image_navigation_bar\"\r\n            android:layout_width=\"50dp\"\r\n            android:layout_height=\"50dp\"\r\n            android:layout_marginLeft=\"10dp\"\r\n            android:src=\"@drawable/round_account_circle_20\"\r\n            tools:srcCompat=\"@drawable/round_account_circle_20\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/tv_nav_profile\"\r\n            android:layout_width=\"289dp\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_weight=\"1\"\r\n            android:fontFamily=\"@font/segoe_bold\"\r\n            android:padding=\"12dp\"\r\n            android:text=\"@string/tv_nav_profile\"\r\n            android:textColor=\"@color/nav\"\r\n            android:textSize=\"25dp\"\r\n            android:textStyle=\"bold\" />\r\n    </LinearLayout>\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_navigation_bar.xml	(revision 01d87064571abe74a8e4f687d096f98ebcac9531)
++++ app/src/main/res/layout/activity_navigation_bar.xml	(date 1632055556418)
+@@ -10,31 +10,32 @@
+ 
+     <Button
+         android:id="@+id/btn_nav_logout"
+-        android:layout_width="90dp"
+-        android:layout_height="35dp"
++        android:layout_width="115dp"
++        android:layout_height="wrap_content"
+         android:layout_marginLeft="25dp"
+         android:layout_marginTop="40dp"
+         android:background="@drawable/button_red_border"
+-        android:onClick="@string/btn_nav_logout"
++        android:onClick="logout"
+         android:text="@string/btn_nav_logout"
+         android:textAllCaps="false"
+         android:textColor="@color/nav_logout"
+         android:visibility="gone"
++        app:backgroundTint="@color/btn_nav_logout"
+         tools:ignore="OnClick" />
+ 
+     <Button
+         android:id="@+id/btn_nav_login"
+-        android:layout_width="wrap_content"
++        android:layout_width="114dp"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="25dp"
+         android:layout_marginTop="40dp"
+-        android:background="@drawable/border1"
+-        android:onClick="@string/btn_nav_login"
++        android:background="@drawable/button_blue_border"
++        android:onClick="login"
+         android:text="@string/btn_nav_login"
+         android:textAllCaps="false"
+-        android:textColor="@color/white"
++        android:textColor="@color/nav_login"
+         android:visibility="visible"
+-        app:backgroundTint="@color/nav_login"
++        app:backgroundTint="@color/btn_nav_login"
+         tools:ignore="OnClick" />
+ 
+     <View
+Index: app/src/main/java/com/example/mysaved/UserloginActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.mysaved;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.appcompat.app.AlertDialog;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.content.DialogInterface;\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.text.TextUtils;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.EditText;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport com.google.android.gms.tasks.OnCompleteListener;\r\nimport com.google.android.gms.tasks.OnFailureListener;\r\nimport com.google.android.gms.tasks.OnSuccessListener;\r\nimport com.google.android.gms.tasks.Task;\r\nimport com.google.firebase.auth.AuthResult;\r\nimport com.google.firebase.auth.FirebaseAuth;\r\nimport com.google.firebase.database.DatabaseReference;\r\nimport com.google.firebase.database.FirebaseDatabase;\r\n\r\n\r\npublic class UserloginActivity extends AppCompatActivity {\r\n    FirebaseDatabase rootNode;\r\n    EditText email,password;\r\n    Button signup,login;\r\n    TextView fgt_password;\r\n    FirebaseAuth fAuth;\r\n\r\n\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_userlogin);\r\n\r\n        email = findViewById(R.id.et_log_email);\r\n        password = findViewById(R.id.et_log_password);\r\n        login = findViewById(R.id.btn_login);\r\n        signup = findViewById(R.id.btn_sign_up);\r\n        fgt_password = findViewById(R.id.tv_fgt_password);\r\n\r\n        //get current instance of firebase authentication\r\n        fAuth = FirebaseAuth.getInstance();\r\n\r\n        rootNode=FirebaseDatabase.getInstance();\r\n\r\n\r\n        // if the user is not registered\r\n        signup.setOnClickListener(new View.OnClickListener() {\r\n        @Override\r\n        public void onClick(View v) {\r\n            startActivity(new Intent(getApplicationContext(), RegisterUserActivity.class));\r\n        }\r\n    });\r\n\r\n        // Login to the system when clicks the login button\r\n        login.setOnClickListener(new View.OnClickListener() {\r\n        @Override\r\n        public void onClick(View v) {\r\n\r\n\r\n            String text_email = email.getText().toString().trim();\r\n            String text_password = password.getText().toString().trim();\r\n\r\n            //validation\r\n            if(TextUtils.isEmpty(text_email)){\r\n                email.setError(\"Email is required\");\r\n                return;\r\n            }\r\n            if(TextUtils.isEmpty(text_password)){\r\n                password.setError(\"Password is required\");\r\n                return;\r\n            }\r\n\r\n            if(text_password.length() < 6){\r\n                password.setError(\"Password must greater than 6 characters\");\r\n            }\r\n\r\n\r\n            //authenticate user\r\n            fAuth.signInWithEmailAndPassword(text_email,text_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {\r\n                @Override\r\n                public void onComplete(@NonNull Task<AuthResult> task) {\r\n                    if (task.isSuccessful()){\r\n                        startActivity(new Intent(getApplicationContext(), Profile.class));\r\n                    }\r\n                    else {\r\n                        Toast.makeText(UserloginActivity.this, \"Login Unsuccessful\", Toast.LENGTH_SHORT).show();\r\n                    }\r\n                }\r\n            });\r\n        }\r\n    });\r\n\r\n        fgt_password.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                EditText resetmail = new EditText(v.getContext());\r\n                AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());\r\n                passwordResetDialog.setTitle(\"Reset Password\");\r\n                passwordResetDialog.setMessage(\"Enter your email To receive reset link\");\r\n                passwordResetDialog.setView(resetmail);\r\n\r\n                passwordResetDialog.setPositiveButton(\"Send Link\", new DialogInterface.OnClickListener() {\r\n                    @Override\r\n                    public void onClick(DialogInterface dialog, int which) {\r\n                        //extract email and send email\r\n                        String mail = resetmail.getText().toString();\r\n                        fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {\r\n                            @Override\r\n                            public void onSuccess(Void aVoid) {\r\n                                Toast.makeText(UserloginActivity.this, \"Reset link sent to your email\", Toast.LENGTH_SHORT).show();\r\n                            }\r\n                        }).addOnFailureListener(new OnFailureListener() {\r\n                            @Override\r\n                            public void onFailure(@NonNull Exception e) {\r\n                                Toast.makeText(UserloginActivity.this, \"Error! Link is not sent\", Toast.LENGTH_SHORT).show();\r\n                            }\r\n                        });\r\n\r\n                    }\r\n                });\r\n\r\n                passwordResetDialog.create().show();\r\n            }\r\n        });\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/mysaved/UserloginActivity.java	(revision 01d87064571abe74a8e4f687d096f98ebcac9531)
++++ app/src/main/java/com/example/mysaved/UserloginActivity.java	(date 1632032851389)
+@@ -63,11 +63,10 @@
+         @Override
+         public void onClick(View v) {
+ 
+-
+             String text_email = email.getText().toString().trim();
+             String text_password = password.getText().toString().trim();
+ 
+-            //validation
++            //Validations
+             if(TextUtils.isEmpty(text_email)){
+                 email.setError("Email is required");
+                 return;
+Index: app/src/main/java/com/example/mysaved/EditProfile.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/mysaved/EditProfile.java	(date 1631978761759)
++++ app/src/main/java/com/example/mysaved/EditProfile.java	(date 1631978761759)
+@@ -0,0 +1,213 @@
++ package com.example.mysaved;
++
++import android.app.AlertDialog;
++import android.content.DialogInterface;
++import android.content.Intent;
++import android.os.Bundle;
++import android.text.TextUtils;
++import android.view.View;
++import android.widget.Button;
++import android.widget.ImageView;
++import android.widget.Spinner;
++import android.widget.TextView;
++import android.widget.Toast;
++
++import androidx.annotation.NonNull;
++import androidx.appcompat.app.AppCompatActivity;
++
++import com.google.android.gms.tasks.OnFailureListener;
++import com.google.android.gms.tasks.OnSuccessListener;
++import com.google.firebase.auth.FirebaseAuth;
++import com.google.firebase.auth.FirebaseUser;
++import com.google.firebase.database.DataSnapshot;
++import com.google.firebase.database.DatabaseError;
++import com.google.firebase.database.DatabaseReference;
++import com.google.firebase.database.FirebaseDatabase;
++import com.google.firebase.database.ValueEventListener;
++
++import java.util.HashMap;
++import java.util.Map;
++
++public class EditProfile extends AppCompatActivity {
++
++    TextView edit_user_name,edit_user_phone,edit_user_email;
++    Spinner edit_user_gender_spinner,edit_user_district_spinner;
++    Button update_user_btn;
++    ImageView edit_user_back_btn,user_delete_btn;
++    FirebaseAuth fAuth;
++    FirebaseUser user;
++    FirebaseDatabase rootNode;
++    DatabaseReference reference;
++    String userID,default_gender,default_district;
++
++
++    AlertDialog.Builder builder;
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_editprofile);
++
++        edit_user_name = findViewById(R.id.et_user_name);
++        edit_user_phone = findViewById(R.id.et_user_Mno);
++        edit_user_gender_spinner = (Spinner) findViewById(R.id.user_gender_spinner);
++        edit_user_district_spinner = (Spinner) findViewById(R.id.user_district_spinner);
++        edit_user_email = findViewById(R.id.et_user_email);
++        update_user_btn = findViewById(R.id.btn_updateE);
++        edit_user_back_btn = findViewById(R.id.edit_user_back_btn);
++        user_delete_btn = findViewById(R.id.user_delete_btn);
++
++
++
++
++        //get current instance of firebase authentication
++        fAuth = FirebaseAuth.getInstance();
++
++        rootNode=FirebaseDatabase.getInstance();
++
++        user = fAuth.getCurrentUser();
++
++        //is user is not logged in, return to Login page
++        if (fAuth.getCurrentUser() == null) {
++            startActivity(new Intent(getApplicationContext(), UserloginActivity.class));
++            finish();
++        } else {
++            userID = fAuth.getCurrentUser().getUid();
++            FirebaseUser user = fAuth.getCurrentUser();
++
++            //fetch user data from DB
++            reference = FirebaseDatabase.getInstance().getReference().child("user").child(userID);
++            reference .addListenerForSingleValueEvent(new ValueEventListener() {
++                @Override
++                public void onDataChange(@NonNull DataSnapshot snapshot) {
++                    //assign values to edit text fields
++                    edit_user_name.setText(snapshot.child("Name").getValue().toString());
++                    edit_user_phone.setText(snapshot.child("Phone").getValue().toString());
++                    default_gender = snapshot.child("Gender").getValue().toString();
++                    default_district = snapshot.child("District").getValue().toString();
++                    edit_user_email.setText(snapshot.child("Email").getValue().toString());
++                }
++
++                @Override
++                public void onCancelled(@NonNull DatabaseError error) {
++
++                }
++            });
++
++            update_user_btn.setOnClickListener(new View.OnClickListener() {
++                @Override
++                public void onClick(View v) {
++                    //assign edit text values to variables
++                    String eName = edit_user_name.getText().toString().trim();
++                    String ePhone = edit_user_phone.getText().toString().trim();
++                    String eGender = edit_user_gender_spinner.getSelectedItem().toString();
++                    String eDistrict = edit_user_district_spinner.getSelectedItem().toString();
++                    String eEmail = edit_user_email.getText().toString().trim();
++
++
++                    //validations
++                    if (TextUtils.isEmpty(eName)) {
++                        edit_user_name.setError("Name is required");
++                        return;
++                    }
++
++                    if (TextUtils.isEmpty(ePhone)) {
++                        edit_user_phone.setError("Mobile No is required");
++                        return;
++                    }
++
++                    if (eGender.equals("Select Gender")){
++                        Toast.makeText(EditProfile.this, "Select a Gender", Toast.LENGTH_SHORT).show();
++                        return;
++                    }
++                    if (eDistrict.equals("Select District")){
++                        Toast.makeText(EditProfile.this, "Select a District", Toast.LENGTH_SHORT).show();
++                        return;
++                    }
++
++                    if (TextUtils.isEmpty(eEmail)) {
++                        edit_user_email.setError("Email is required");
++                        return;
++                    }
++
++
++
++
++                    //update email first
++                    user.updateEmail(eEmail).addOnSuccessListener(new OnSuccessListener<Void>() {
++                        @Override
++                        public void onSuccess(Void aVoid) {
++
++                            Map<String, Object> user = new HashMap<>();
++                            user.put("Name", eName);
++                            user.put("Phone", ePhone);
++                            user.put("Gender", eGender);
++                            user.put("District", eDistrict);
++                            user.put("Email", eEmail);
++
++                            //update other properties next
++                            reference.updateChildren(user).addOnSuccessListener(new OnSuccessListener<Void>() {
++                                @Override
++                                public void onSuccess(Void aVoid) {
++                                    Toast.makeText(EditProfile.this, "Update Successful", Toast.LENGTH_SHORT).show();
++                                }
++                            }).addOnFailureListener(new OnFailureListener() {
++                                @Override
++                                public void onFailure(@NonNull Exception e) {
++                                    Toast.makeText(EditProfile.this, "Update Unsuccessful", Toast.LENGTH_SHORT).show();
++                                }
++                            });
++
++
++                        }
++                    }).addOnFailureListener(new OnFailureListener() {
++                        @Override
++                        public void onFailure(@NonNull Exception e) {
++                            Toast.makeText(EditProfile.this, "Email Already Exists", Toast.LENGTH_SHORT).show();
++                        }
++                    });
++
++                }
++            });
++
++            edit_user_back_btn.setOnClickListener(new View.OnClickListener() {
++                @Override
++                public void onClick(View v) {
++                    startActivity(new Intent(getApplicationContext(), Profile.class));
++                }
++            });
++
++            user_delete_btn.setOnClickListener(new View.OnClickListener() {
++                @Override
++                public void onClick(View v) {
++                    builder = new AlertDialog.Builder(v.getContext());
++                    builder.setMessage("Permanently Delete Account")
++                            .setCancelable(false)
++                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
++                                public void onClick(DialogInterface dialog, int id) {
++                                    //delete user
++                                    DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("user").child(userID);
++                                    dbRef.removeValue();
++                                    fAuth.getCurrentUser().delete();
++                                    startActivity(new Intent(getApplicationContext(), UserloginActivity.class));
++                                }
++                            })
++                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
++                                public void onClick(DialogInterface dialog, int id) {
++                                    //  Action for 'NO' Button
++                                    dialog.cancel();
++
++                                }
++                            });
++                    //Creating dialog box
++                    AlertDialog alert = builder.create();
++                    //Setting the title manually
++                    alert.setTitle("Delete Listing");
++                    alert.show();
++
++                }
++            });
++        }
++    }
++
++}
++

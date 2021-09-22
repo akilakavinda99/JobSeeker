@@ -15,7 +15,9 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Request_jobs_home extends AppCompatActivity {
+
+public class NavigationBar_Drawer extends AppCompatActivity {
+
     RecyclerView my_listing_recyclerview;
     Button nav_logout, nav_login;
     DrawerLayout drawerLayout;
@@ -25,10 +27,12 @@ public class Request_jobs_home extends AppCompatActivity {
     FirebaseAuth fAuth;
     String userID;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_request_jobs_home);
+        setContentView(R.layout.navigation_bar_drawer);
 
         drawerLayout = findViewById(R.id.drawer_layout);
 
@@ -182,4 +186,5 @@ public class Request_jobs_home extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), Profile.class));
 
     }
+
 }

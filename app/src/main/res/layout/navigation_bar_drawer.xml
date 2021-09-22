@@ -5,36 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".NavigationBarActivity">
+    tools:context=".NavigationBar_Drawer">
 
 
     <Button
         android:id="@+id/btn_nav_logout"
-        android:layout_width="90dp"
-        android:layout_height="35dp"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/button_red_border"
-        android:onClick="@string/btn_nav_logout"
+        android:onClick="logout"
         android:text="@string/btn_nav_logout"
         android:textAllCaps="false"
         android:textColor="@color/nav_logout"
         android:visibility="gone"
+        app:backgroundTint="@color/btn_nav_logout"
         tools:ignore="OnClick" />
 
     <Button
         android:id="@+id/btn_nav_login"
-        android:layout_width="wrap_content"
+        android:layout_width="114dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/border1"
-        android:onClick="@string/btn_nav_login"
+        android:background="@drawable/button_blue_border"
+        android:onClick="login"
         android:text="@string/btn_nav_login"
         android:textAllCaps="false"
-        android:textColor="@color/white"
+        android:textColor="@color/nav_login"
         android:visibility="visible"
-        app:backgroundTint="@color/nav_login"
+        app:backgroundTint="@color/btn_nav_login"
         tools:ignore="OnClick" />
 
     <View
@@ -88,7 +89,7 @@
             android:textSize="25dp"
             android:textStyle="bold" />
 
-</LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:onClick="navClickMyjobs"
@@ -115,13 +116,13 @@
     </LinearLayout>
 
     <LinearLayout
-    android:onClick="navClickRequestedjobs"
-    android:id="@+id/nav_requestedjobs"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:gravity="center_vertical"
-    tools:ignore="OnClick">
+        android:onClick="navClickRequestedjobs"
+        android:id="@+id/nav_requestedjobs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        tools:ignore="OnClick">
 
         <TextView
             android:id="@+id/tv_nav_requestedjobs"
@@ -136,30 +137,30 @@
             android:textSize="25dp"
             android:textStyle="bold" />
 
-</LinearLayout>
-<LinearLayout
-android:onClick="navClickMyreqjobs"
-android:id="@+id/nav_myrequestedjobs"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:orientation="horizontal"
-android:gravity="center_vertical"
-    tools:ignore="OnClick">
-
-    <TextView
-        android:id="@+id/tv_nav_myreqjobs"
-        android:layout_width="0dp"
+    </LinearLayout>
+    <LinearLayout
+        android:onClick="navClickMyreqjobs"
+        android:id="@+id/nav_myrequestedjobs"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_weight="1"
-        android:fontFamily="@font/segoe_bold"
-        android:padding="12dp"
-        android:text="@string/tv_nav_myreqjobs"
-        android:textColor="@color/nav"
-        android:textSize="25dp"
-        android:textStyle="bold" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        tools:ignore="OnClick">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv_nav_myreqjobs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/segoe_bold"
+            android:padding="12dp"
+            android:text="@string/tv_nav_myreqjobs"
+            android:textColor="@color/nav"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
     <LinearLayout
         android:onClick="navClickSavedjobs"
         android:id="@+id/nav_myjobs"
