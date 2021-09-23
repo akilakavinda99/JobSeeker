@@ -1,5 +1,7 @@
 package com.example.mysaved;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -35,7 +37,8 @@ public class EditJob extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_job);
-
+        String UserID = getIntent().getExtras().getString("UserID");
+        String JobID = getIntent().getExtras().getString("JobID");
         String CompanyName= getIntent().getExtras().getString("JOBCOMPANY");
         String JobTitle= getIntent().getExtras().getString("JOBTITLE");
         String Salary= getIntent().getExtras().getString("SALARY");
@@ -88,7 +91,7 @@ public class EditJob extends AppCompatActivity {
             int spinnerPosition = adapterr.getPosition(District);
             et_dised.setSelection(spinnerPosition);
         }
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("create_job").child("5yQhUWmMuCeXFBdbRi6htxb2Nhs2").child("1");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("create_job").child(UserID).child(JobID);
 
 
 //      et_jobtypeed.setText(Spinner)(JobType);
@@ -158,7 +161,11 @@ public class EditJob extends AppCompatActivity {
                         @Override
                         public void onSuccess(Void unused) {
                             Toast.makeText(EditJob.this, " Successful", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), ViewJob.class));
+                            Intent intent = new Intent(view.getContext(), ViewjobM.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            intent.putExtra("user_id",UserID);
+                            intent.putExtra("job_id",JobID );
+                            startActivity(intent);
                             overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                         }
                     });
@@ -168,8 +175,20 @@ public class EditJob extends AppCompatActivity {
         imageView_deletejob.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                databaseReference.removeValue();
+                AlertDialog.Builder builder=new AlertDialog.Builder(EditJob.this);
+                builder.setMessage("Do You Want To Delete?").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        databaseReference.removeValue();
                Toast.makeText(getApplicationContext(),"Deleted",Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), Homepage_new.class));
+
+                    }
+                }).setNegativeButton("Cancel",null);
+//                databaseReference.removeValue();
+//               Toast.makeText(getApplicationContext(),"Deleted",Toast.LENGTH_SHORT).show();
+                AlertDialog alert =builder.create();
+                alert.show();
             }
         });
     }

@@ -9,16 +9,17 @@
 
     <TextView
         android:id="@+id/tv_request_job"
-        android:layout_width="248dp"
-        android:layout_height="66dp"
+        android:layout_width="190dp"
+        android:layout_height="58dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/segoe"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-medium"
         android:text="@string/tv_request_job"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/black"
-        android:textSize="40sp"
+        android:textSize="28sp"
         app:layout_constraintEnd_toStartOf="@+id/image_request_job"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,8 +33,22 @@
         app:layout_constraintTop_toTopOf="@+id/tv_request_job"
         app:srcCompat="@drawable/young_businessman_holding_board_sign_i_need_job_vector_illustration_eps_181626917" />
 
+    <ImageView
+        android:id="@+id/backimgR"
+        android:layout_width="23dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toStartOf="@+id/tv_request_job"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back"
+        tools:ignore="VectorDrawableCompat" />
 
-    <TextView
+    <EditText
         android:id="@+id/et_job_title"
         android:layout_width="350dp"
         android:layout_height="50dp"
@@ -51,7 +66,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_request_job"
         tools:ignore="MissingConstraints" />
 
-    <TextView
+    <EditText
         android:id="@+id/et_nameR"
         android:layout_width="350dp"
         android:layout_height="50dp"
@@ -70,7 +85,7 @@
         tools:ignore="MissingConstraints" />
 
 
-    <TextView
+    <EditText
         android:id="@+id/et_emailR"
         android:layout_width="350dp"
         android:layout_height="50dp"
@@ -89,6 +104,26 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
+        android:id="@+id/requiredd2"
+        android:layout_width="105dp"
+        android:layout_height="39dp"
+
+
+        android:layout_marginTop="42dp"
+        android:layout_marginBottom="120dp"
+        android:hint="@string/requiredd"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#F33B3B"
+
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintStart_toEndOf="@+id/image_add_imageR"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
         android:id="@+id/et_phone_noR"
         android:layout_width="350dp"
         android:layout_height="50dp"
@@ -96,7 +131,7 @@
         android:background="@drawable/border2"
         android:ems="10"
         android:hint="@string/et_phone_noR"
-        android:inputType="textPersonName"
+        android:inputType="number|textPersonName"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textSize="16sp"
@@ -106,7 +141,7 @@
         app:layout_constraintTop_toBottomOf="@+id/et_emailR"
         tools:ignore="MissingConstraints" />
 
-    <TextView
+    <EditText
         android:id="@+id/et_ageR"
         android:layout_width="170dp"
         android:layout_height="50dp"
@@ -115,7 +150,7 @@
         android:background="@drawable/border2"
         android:ems="10"
         android:hint="@string/et_ageR"
-        android:inputType="textPersonName"
+        android:inputType="number|textPersonName"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textSize="16sp"
@@ -131,12 +166,26 @@
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="28dp"
+        android:entries="@array/genderR"
         android:background="@drawable/border2"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_nameR"
         tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView_jobtype"
+        android:layout_width="14dp"
+        android:layout_height="26dp"
+        android:layout_marginEnd="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_genderR"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_genderR"
+        app:layout_constraintTop_toTopOf="@+id/spinner_genderR"
+        app:srcCompat="@drawable/drop_down"
+        tools:ignore="VectorDrawableCompat" />
 
     <EditText
         android:id="@+id/et_descriptionR"
@@ -146,7 +195,7 @@
         android:background="@drawable/border2"
         android:ems="10"
         android:hint="@string/et_descriptionR"
-        android:inputType="textPersonName"
+        android:inputType="textPersonName|textImeMultiLine"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textSize="16sp"
@@ -171,15 +220,15 @@
         android:id="@+id/image_add_imageR"
         android:layout_width="114dp"
         android:layout_height="85dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="148dp"
         android:padding="0dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_createR"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toEndOf="@+id/tv_add_image"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_add_image"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/et_phone_noR"
+        app:layout_constraintVertical_bias="0.296"
         app:srcCompat="@drawable/baseline_add_circle_24"
         tools:ignore="VectorDrawableCompat" />
 
@@ -187,23 +236,21 @@
         android:id="@+id/tv_add_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
         android:text="@string/tv_add_image"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/image_add_imageR"
-        app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_phone_noR"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_createR"
-        android:layout_width="168dp"
+        android:layout_width="137dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/button_blue_border"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/border2"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:text="@string/btn_createR"
@@ -212,9 +259,18 @@
         app:backgroundTint="@color/nav_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
+
+    <ProgressBar
+        android:id="@+id/progressBarR"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/image_add_imageR"
+        app:layout_constraintEnd_toEndOf="@+id/image_add_imageR"
+        app:layout_constraintStart_toStartOf="@+id/image_add_imageR"
+        app:layout_constraintTop_toTopOf="@+id/image_add_imageR" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

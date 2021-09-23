@@ -9,10 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -21,13 +19,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.HashMap;
-import java.util.Map;
 
 public class Profile extends AppCompatActivity {
     TextView text_Pname,text_Pphone,text_Pgender,text_Pdistrict,text_Pemail,user_name,user_phone,user_gender,user_district,user_email;
-    Button edit_user_btn,verify_now_btn,logout;
-    ImageView user_back_btn,verification_badge;
+    Button edit_user_btn,logout;
+    ImageView user_back_btn;
     FirebaseAuth fAuth;
     DatabaseReference databaseReference;
     String userID;
@@ -51,8 +47,6 @@ public class Profile extends AppCompatActivity {
         edit_user_btn = findViewById(R.id.btn_edit_user);
         user_back_btn = findViewById(R.id.userprofile_back_btn);
         logout = findViewById(R.id.btn_logout);
-        verification_badge = findViewById(R.id.verified_badge);
-        verify_now_btn = findViewById(R.id.btn_verify_now);
 
         //get current instance of firebase authentication
         fAuth = FirebaseAuth.getInstance();
@@ -85,48 +79,15 @@ public class Profile extends AppCompatActivity {
                 }
             });
 
-            //check whether user is verified or not
-            Map<String,Object> USER = new HashMap<>();
-            if (user.isEmailVerified()){
-                USER.put("verified","yes");
-            }
-            else {
-                USER.put("verified","no");
-            }
-            //update verified in DB
-            DatabaseReference df = FirebaseDatabase.getInstance().getReference().child("user").child(userID);
-            df.updateChildren(USER);
-
-
-            //display verification badge and verify now button
-            if (user.isEmailVerified()){
-                verification_badge.setVisibility(View.VISIBLE);
-                verify_now_btn.setVisibility(View.INVISIBLE);
-            }else {
-                verify_now_btn.setVisibility(View.VISIBLE);
-
-                verify_now_btn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Toast.makeText(getApplicationContext(), "Verification Email Has Been Sent", Toast.LENGTH_SHORT).show();
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-
-                            }
-                        });
-                    }
-                });
-            }
 
             edit_user_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(getApplicationContext(), EditProfile.class));
+                    Intent intent = new Intent(v.getContext(), EditProfile.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("GENDER",user_gender.getText().toString());
+                    intent.putExtra("DISTRICT",user_district.getText().toString());
+                    startActivity(intent);
                 }
             });
 
@@ -135,7 +96,7 @@ public class Profile extends AppCompatActivity {
         user_back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), CreateJob.class));
+                startActivity(new Intent(getApplicationContext(), Homepage_new.class));
             }
         });
 

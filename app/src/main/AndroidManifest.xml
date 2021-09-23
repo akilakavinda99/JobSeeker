@@ -19,42 +19,70 @@
             android:name=".NewReqJob_Homepage"
             android:exported="true" />
         <activity
+            android:name=".UserloginActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".Profile"
+            android:exported="true" />
+
+        <activity
+            android:name=".EditProfile"
+            android:exported="true" />
+
+        <activity
             android:name=".New_Saved_Jobs"
             android:exported="true" />
+
         <activity
             android:name=".Homepage_new"
             android:exported="true" />
+
         <activity android:name=".Profile" />
+
         <activity
             android:name=".ViewJob"
+            android:exported="true" />
+
+        <activity
+            android:name=".RequestJob"
             android:exported="true" />
         <activity
             android:name=".Request_jobs_home"
             android:exported="true" />
+
         <activity
-            android:name=".UserloginActivity"
+            android:name=".MyJobListings"
             android:exported="true" />
+
         <activity
             android:name=".NavigationBarActivity"
             android:exported="true" />
+
         <activity
             android:name=".ProfileActivity"
             android:exported="true" />
+
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
+
         <activity
             android:name=".MyRequestedJobs"
             android:exported="true" />
+
         <activity
             android:name=".EditJob"
             android:exported="true" />
         <activity
             android:name=".ViewReqJob"
             android:exported="true" />
+
         <activity
             android:name=".ViewjobM"
             android:exported="true" />
+
+
         <activity
             android:name=".RegisterUserActivity"
             android:exported="true">
@@ -64,9 +92,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MyJobListings"
-            android:exported="true" />
         <activity
             android:name=".CreateJob"
             android:exported="true" />

@@ -47,13 +47,15 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="52dp"
+        android:clickable="true"
         app:layout_constraintBottom_toTopOf="@+id/et_company"
         app:layout_constraintEnd_toStartOf="@+id/tv_createajob"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/back"
-        tools:ignore="VectorDrawableCompat" />
+        tools:ignore="VectorDrawableCompat"
+        android:focusable="true" />
 
     <EditText
         android:id="@+id/et_company"
@@ -94,13 +96,13 @@
         app:layout_constraintTop_toBottomOf="@+id/et_company" />
 
     <EditText
-        android:id="@+id/et_salary"
+        android:id="@+id/et_salary2"
         android:layout_width="324dp"
         android:layout_height="39dp"
         android:layout_marginTop="7dp"
         android:background="@drawable/border2"
         android:ems="10"
-        android:hint="@string/et_salary"
+        android:hint="@string/et_salary2"
         android:inputType="number"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
@@ -125,7 +127,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_salary" />
+        app:layout_constraintTop_toBottomOf="@+id/et_salary2" />
 
     <Spinner
         android:id="@+id/et_dis"
@@ -152,7 +154,7 @@
         android:background="@drawable/border2"
         android:ems="10"
         android:hint="@string/et_description"
-        android:inputType="textPersonName"
+        android:inputType="textMultiLine|textPersonName"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:paddingBottom="56dp"
@@ -170,12 +172,14 @@
         android:layout_height="26dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="@+id/et_jobtype"
         app:layout_constraintEnd_toEndOf="@+id/et_jobtype"
         app:layout_constraintTop_toTopOf="@+id/et_jobtype"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/drop_down"
-        tools:ignore="VectorDrawableCompat" />
+        tools:ignore="VectorDrawableCompat"
+        android:focusable="true" />
 
     <ImageView
         android:id="@+id/imageView_dis"
@@ -183,11 +187,13 @@
         android:layout_height="26dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="@+id/et_dis"
         app:layout_constraintEnd_toEndOf="@+id/et_dis"
         app:layout_constraintTop_toTopOf="@+id/et_dis"
         app:srcCompat="@drawable/drop_down"
-        tools:ignore="VectorDrawableCompat" />
+        tools:ignore="VectorDrawableCompat"
+        android:focusable="true" />
 
     <EditText
         android:id="@+id/et_email"
@@ -276,12 +282,14 @@
         android:layout_width="101dp"
         android:layout_height="76dp"
         android:layout_marginTop="24dp"
+        android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_dis"
         app:srcCompat="@drawable/baseline_add_circle_24"
-        tools:ignore="VectorDrawableCompat" />
+        tools:ignore="VectorDrawableCompat"
+        android:focusable="true" />
 
     <Button
         android:id="@+id/btn_create"
@@ -290,6 +298,7 @@
         android:layout_marginTop="36dp"
         android:layout_marginBottom="44dp"
         android:background="@drawable/border2"
+        android:clickable="true"
         android:hint="@string/btn_create"
         android:paddingTop="0dp"
         android:textColorHint="#FFFFFF"
@@ -298,7 +307,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton_addimage" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton_addimage"
+        android:focusable="true" />
 
     <ProgressBar
         android:id="@+id/progressBar_cj"

@@ -1,5 +1,7 @@
 package com.example.mysaved;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
@@ -38,18 +40,18 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 
-public class CreateJob extends AppCompatActivity {
+public class RequestJob extends AppCompatActivity {
 
     //Variable declare
 
-    EditText company_name, job_title, salary, job_description, email, phone;
-    Spinner type_spinner, district_spinner;
-    Button create_btn;
-    ImageView b1_btn,addimage;
-    ProgressBar progressBar;
+    EditText req_title, c_name, c_age, req_description, email, phone;
+    Spinner spinerr_gen;
+    Button creatr_req_btn;
+    ImageView back2_btn,insertimg;
+    ProgressBar progressBar2;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     String phonePattern = "[0-9]{10}";
-    int job_id = 0;
+    int req_id = 0;
     Long Lcount;
     Uri imageUri;
     String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
@@ -60,29 +62,28 @@ public class CreateJob extends AppCompatActivity {
 
     //Database Connection
 
-    DatabaseReference root = FirebaseDatabase.getInstance().getReference("create_job").child(userID);
+    DatabaseReference root = FirebaseDatabase.getInstance().getReference("job_request").child(userID);
     StorageReference reference = FirebaseStorage.getInstance().getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_job);
+        setContentView(R.layout.activity_requestjob);
 
-        company_name = findViewById(R.id.et_company);
-        job_title = findViewById(R.id.et_title);
-        salary = findViewById(R.id.et_salary2);
-        job_description = findViewById(R.id.et_description);
-        email = findViewById(R.id.et_email);
-        phone = findViewById(R.id.et_phone);
-        type_spinner = (Spinner)findViewById(R.id.et_jobtype);
-        district_spinner = (Spinner)findViewById(R.id.et_dis);
-        create_btn = findViewById(R.id.btn_create);
-        b1_btn = findViewById(R.id.imageView_b1);
-        addimage = findViewById(R.id.imageButton_addimage);
-        progressBar = findViewById(R.id.progressBar_cj);
-        progressBar.setVisibility(View.INVISIBLE);
+        req_title = findViewById(R.id.et_job_title);
+        c_name = findViewById(R.id.et_nameR);
+        c_age = findViewById(R.id.et_ageR);
+        req_description = findViewById(R.id.et_descriptionR);
+        email = findViewById(R.id.et_emailR);
+        phone = findViewById(R.id.et_phone_noR);
+        spinerr_gen = (Spinner)findViewById(R.id.spinner_genderR);
+        creatr_req_btn = findViewById(R.id.btn_createR);
+        back2_btn = findViewById(R.id.backimgR);
+        insertimg = findViewById(R.id.image_add_imageR);
+        progressBar2 = findViewById(R.id.progressBarR);
+        progressBar2.setVisibility(View.INVISIBLE);
 
-        addimage.setOnClickListener(new View.OnClickListener() {
+        insertimg.setOnClickListener(new View.OnClickListener() {
 
             //Gallery Access
 
@@ -100,9 +101,9 @@ public class CreateJob extends AppCompatActivity {
         rr.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Lcount = (Long) snapshot.child("JobId").getValue();
+                Lcount = (Long) snapshot.child("ReqId").getValue();
                 assert Lcount != null;
-                job_id = Lcount.intValue();
+                req_id = Lcount.intValue();
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -110,28 +111,27 @@ public class CreateJob extends AppCompatActivity {
             }
         });
 
-        b1_btn.setOnClickListener(new View.OnClickListener() {
+        back2_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), MyJobListings.class));
+                startActivity(new Intent(getApplicationContext(), MyRequestedJobs.class));
                 overridePendingTransition(R.anim.animation_enter, R.anim.animation_leave);
             }
         });
 
-        create_btn.setOnClickListener(new View.OnClickListener() {
+        creatr_req_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 //This codes are execuded after click
 
-                String name = company_name.getText().toString();
-                String title = job_title.getText().toString();
-                String salary1 = salary.getText().toString();
-                String description = job_description.getText().toString();
+                String name = req_title.getText().toString();
+                String title = c_name.getText().toString();
+                String c_age1 = c_age.getText().toString();
+                String description = req_description.getText().toString();
                 String email1 = email.getText().toString();
                 String phone1 = phone.getText().toString();
-                String job_type = type_spinner.getSelectedItem().toString();
-                String district = district_spinner.getSelectedItem().toString();
+                String gender = spinerr_gen.getSelectedItem().toString();
 
                 //Get current date
 
@@ -139,25 +139,25 @@ public class CreateJob extends AppCompatActivity {
 
                 //Data pass to helper class
 
-                JobHelperClass helperClass = new JobHelperClass(name,title,salary1,description,email1,phone1,job_type,district,date);
+                RequestHelperClass helperClass = new RequestHelperClass(name,title,c_age1,description,email1,phone1,gender,date);
 
 
                 //Validations
 
                 if(TextUtils.isEmpty(name)){
-                    company_name.setError("Company Name is Required");
+                    req_title.setError("Job Title is Required");
                     return;
                 }
                 if(TextUtils.isEmpty(title)){
-                    job_title.setError("Job Title is Required");
+                    c_name.setError("Your Name is Required");
                     return;
                 }
-                if(TextUtils.isEmpty(salary1)){
-                    salary.setError("Salary is Required");
+                if(TextUtils.isEmpty(c_age1)){
+                    c_age.setError("Age is Required");
                     return;
                 }
                 if(TextUtils.isEmpty(description)){
-                    job_description.setError("Description is Required");
+                    req_description.setError("Description is Required");
                     return;
                 }
                 if(email.getText().toString().isEmpty()) {
@@ -176,24 +176,20 @@ public class CreateJob extends AppCompatActivity {
                         return;
                     }
                 }
-                if (job_type.equals("Select Job Type")){
-                    Toast.makeText(CreateJob.this, "Select Job Type", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if (district.equals("Select District")){
-                    Toast.makeText(CreateJob.this, "Select a District", Toast.LENGTH_SHORT).show();
+                if (gender.equals("Enter Gender")){
+                    Toast.makeText(RequestJob.this, "Select Your Gender", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (imageUri != null){
                     uploadToFirebase(imageUri);
                 }else{
-                    Toast.makeText(CreateJob.this, "Please Select Image", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RequestJob.this, "Please Select Image", Toast.LENGTH_SHORT).show();
                 }
 
                 //increment one by job count
-                job_id++;
+                req_id++;
 
-                root.child(String.valueOf(job_id)).setValue(helperClass).addOnSuccessListener(new OnSuccessListener<Void>() {
+                root.child(String.valueOf(req_id)).setValue(helperClass).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                     }
@@ -213,7 +209,7 @@ public class CreateJob extends AppCompatActivity {
         if (requestCode ==2 && resultCode == RESULT_OK && data != null){
 
             imageUri = data.getData();
-            addimage.setImageURI(imageUri);
+            insertimg.setImageURI(imageUri);
         }
     }
 
@@ -236,15 +232,15 @@ public class CreateJob extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
                         String modelId = "img";
-                        root.child(String.valueOf(job_id)).child(modelId).setValue(uri.toString());
-                        progressBar.setVisibility(View.INVISIBLE);
-                        Toast.makeText(CreateJob.this, "Job Create Successful", Toast.LENGTH_SHORT).show();
-                        addimage.setImageResource(R.drawable.baseline_add_circle_24);
+                        root.child(String.valueOf(req_id)).child(modelId).setValue(uri.toString());
+                        progressBar2.setVisibility(View.INVISIBLE);
+                        Toast.makeText(RequestJob.this, "Request Create Successful", Toast.LENGTH_SHORT).show();
+                        insertimg.setImageResource(R.drawable.baseline_add_circle_24);
 
                         //update new job count to database
                         DatabaseReference rr = FirebaseDatabase.getInstance().getReference().child("user").child(userID);
                         Map<String,Object> user = new HashMap<>();
-                        user.put("JobId",job_id);
+                        user.put("ReqId",req_id);
                         rr.updateChildren(user);
                         startActivity(new Intent(getApplicationContext(), MyJobListings.class));
                     }
@@ -253,13 +249,13 @@ public class CreateJob extends AppCompatActivity {
         }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
-                progressBar.setVisibility(View.VISIBLE);
+                progressBar2.setVisibility(View.VISIBLE);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                progressBar.setVisibility(View.INVISIBLE);
-                Toast.makeText(CreateJob.this, "Job Create Failed", Toast.LENGTH_SHORT).show();
+                progressBar2.setVisibility(View.INVISIBLE);
+                Toast.makeText(RequestJob.this, "Request Create Failed", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -273,5 +269,3 @@ public class CreateJob extends AppCompatActivity {
     }
 
 }
-
-
