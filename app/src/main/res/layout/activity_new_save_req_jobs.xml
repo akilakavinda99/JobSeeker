@@ -7,7 +7,7 @@
     android:background="#FFFFFF"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".New_Saved_Jobs">
+    tools:context=".New_SaveReq_Jobs">
 
     <include
         android:id="@+id/include"
@@ -30,17 +30,17 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/border1"
-        android:text="@string/tv_allsaved"
+        android:text="@string/tv_allreqjob"
         android:textColor="#000000"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_reqtitle" />
 
     <TextView
-        android:id="@+id/tv_count"
+        android:id="@+id/tv_reqcount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -52,18 +52,20 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tv_allsaved"
         app:layout_constraintEnd_toEndOf="@+id/tv_allsaved"
+        app:layout_constraintHorizontal_bias="0.767"
         app:layout_constraintStart_toStartOf="@+id/tv_allsaved"
-        app:layout_constraintTop_toTopOf="@+id/tv_allsaved" />
+        app:layout_constraintTop_toTopOf="@+id/tv_allsaved"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="207dp"
-        android:layout_height="40dp"
+        android:id="@+id/tv_reqtitle"
+        android:layout_width="212dp"
+        android:layout_height="37dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="@string/tv_title"
+        android:text="@string/tv_reqtitle2"
         android:textColor="#000000"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider" />
@@ -81,34 +83,34 @@
         app:layout_constraintTop_toBottomOf="@+id/include" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/d_recycle2"
+        android:id="@+id/d_reqrecycle2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="3dp"
         android:paddingTop="200dp"
-        tools:layout_editor_absoluteX="3dp"
-        tools:layout_editor_absoluteY="74dp" />
+        tools:layout_editor_absoluteX="-36dp"
+        tools:layout_editor_absoluteY="3dp" />
 
     <Button
-        android:id="@+id/d_test_btn2"
+        android:id="@+id/d_reqtest_btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.351"
-        app:layout_constraintStart_toEndOf="@+id/tv_title"
+        app:layout_constraintStart_toEndOf="@+id/tv_reqtitle"
         app:layout_constraintTop_toBottomOf="@+id/include" />
 
     <ProgressBar
-        android:id="@+id/d_progressbar"
+        android:id="@+id/d_progressBar2"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/d_recycle2"
-        app:layout_constraintEnd_toStartOf="@+id/d_recycle2"
+        app:layout_constraintBottom_toTopOf="@+id/d_reqrecycle2"
+        app:layout_constraintEnd_toStartOf="@+id/d_reqrecycle2"
         app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toEndOf="@+id/d_recycle2"
+        app:layout_constraintStart_toEndOf="@+id/d_reqrecycle2"
         app:layout_constraintTop_toBottomOf="@+id/tv_allsaved"
         app:layout_constraintVertical_bias="0.0" />
 
