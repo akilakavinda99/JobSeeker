@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,13 +29,15 @@ import java.util.concurrent.TimeUnit;
 
 public class ViewjobM extends AppCompatActivity {
     TextView jobTitle_tv, jobLocation_tv, jobType_tv_jobView, jobCompany_tv_jobView, jobSalary_tv_jobView, jobViews_tv_jobView,  jobDescription_tv_jobView,
-            jobEmail_tv_jobView, jobDate_tv_jobView,jobDaysAgo_tv_jobView;
+            jobEmail_tv_jobView, jobDate_tv_jobView,jobDaysAgo_tv_jobView,textView2;
     ImageView jobImage_tv_jobView;
 
-    Button btn_email_jv2, btn_call_jv4;
+    Button btn_email_jv2, btn_call_jv4,Edit_JobView_btn;
     DatabaseReference databaseReference;
     String job_id;
     String imageUrl;
+    String userid;
+    FirebaseAuth fAuth;
     String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
     SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
     Date postDate, currentDate;
@@ -46,7 +49,7 @@ public class ViewjobM extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewjob_m);
 
-        String userid = getIntent().getStringExtra("user_id");
+     userid = getIntent().getStringExtra("user_id");
         String jobid = getIntent().getStringExtra("job_id");
 
         jobTitle_tv = findViewById(R.id.jobTitle_tv);
@@ -59,6 +62,8 @@ public class ViewjobM extends AppCompatActivity {
         jobEmail_tv_jobView = findViewById(R.id.jobEmail_tv_jobView);
         jobDate_tv_jobView = findViewById(R.id.jobDate_tv_jobView);
         jobDaysAgo_tv_jobView=findViewById(R.id.jobDaysAgo_tv_jobView);
+        Edit_JobView_btn=findViewById(R.id.Edit_JobView_btn);
+        textView2=findViewById(R.id.textView2);
 
         try {
             currentDate = sdf.parse(date);
@@ -87,9 +92,9 @@ public class ViewjobM extends AppCompatActivity {
                     jobSalary_tv_jobView.setText(snapshot.child("salary1").getValue().toString());
                     jobDate_tv_jobView.setText(snapshot.child("date").getValue().toString());
                     jobEmail_tv_jobView.setText(snapshot.child("email1").getValue().toString());
-//                    job_mobile_tv.setText(snapshot.child("phone1").getValue().toString());
-//
-//                    job_mobile_tv.setVisibility(View.INVISIBLE);
+                    textView2.setText(snapshot.child("phone1").getValue().toString());
+
+                   textView2.setVisibility(View.INVISIBLE);
 
 
                     jobDescription_tv_jobView.setText(snapshot.child("description").getValue().toString());
@@ -106,7 +111,7 @@ public class ViewjobM extends AppCompatActivity {
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
-
+                    fAuth = FirebaseAuth.getInstance();
                     showDifference();
 
 //                    resize(2000,1000)
@@ -122,13 +127,13 @@ public class ViewjobM extends AppCompatActivity {
         });
 
 
-//        btn_call_jv4.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + job_mobile_tv.getText().toString()));
-//                startActivity(intent);
-//            }
-//        });
+        btn_call_jv4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + textView2.getText().toString()));
+                startActivity(intent);
+            }
+        });
 
         //send email button function
         btn_email_jv2.setOnClickListener(new View.OnClickListener() {
@@ -149,32 +154,34 @@ public class ViewjobM extends AppCompatActivity {
             }
         });
 
-//        button_job_edit.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(view.getContext(), EditJob.class);
-//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                intent.putExtra("JOBTITLE",jobtitle.getText().toString());
-//                intent.putExtra("LOCATION",tv_location_job.getText().toString());
-//                intent.putExtra("JOBTYPE",jobType_tv.getText().toString());
-//                intent.putExtra("JOBCOMPANY",jobCompany_tv.getText().toString());
-//                intent.putExtra("SALARY",job_salary_tv.getText().toString());
-//                intent.putExtra("POSTDATE",jobPostDate_tv.getText().toString());
-//                intent.putExtra("EMAIL",jobEmail_tv.getText().toString());
-//                intent.putExtra("MOBILE",job_mobile_tv.getText().toString());
-//                intent.putExtra("DESCRIPTION",jobDescription_tv.getText().toString());
-//                intent.putExtra("Imageurl",imageUrl);
-//
-//
-//                startActivity(intent);
-//                //first passing value entering value and then the exit value
-//                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
-//
-//
-//
-//
-//            }
-//        });
+        Edit_JobView_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), EditJob.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("UserID",userid);
+                intent.putExtra("JobID",jobid);
+                intent.putExtra("JOBTITLE", jobTitle_tv.getText().toString());
+                intent.putExtra("LOCATION",jobLocation_tv.getText().toString());
+                intent.putExtra("JOBTYPE", jobType_tv_jobView.getText().toString());
+                intent.putExtra("JOBCOMPANY",jobCompany_tv_jobView.getText().toString());
+                intent.putExtra("SALARY",jobSalary_tv_jobView.getText().toString());
+                intent.putExtra("POSTDATE", jobDate_tv_jobView.getText().toString());
+                intent.putExtra("EMAIL",jobEmail_tv_jobView.getText().toString());
+                intent.putExtra("MOBILE",textView2.getText().toString());
+                intent.putExtra("DESCRIPTION",jobDescription_tv_jobView.getText().toString());
+                intent.putExtra("Imageurl",imageUrl);
+
+
+                startActivity(intent);
+                //first passing value entering value and then the exit value
+                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+
+
+
+
+            }
+        });
 
 
     }
@@ -200,6 +207,11 @@ public class ViewjobM extends AppCompatActivity {
         } else {
             jobDaysAgo_tv_jobView.setText(dateDifferent(postDate, currentDate).toString() + " Days ago");
         }
+
+        if (fAuth.getCurrentUser() != null)
+            if ( fAuth.getCurrentUser().getUid().equals(userid)){
+                Edit_JobView_btn.setVisibility(View.VISIBLE);
+            } else Edit_JobView_btn.setVisibility(View.INVISIBLE);
 
 
     }

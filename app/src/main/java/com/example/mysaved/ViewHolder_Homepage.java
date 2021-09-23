@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -24,15 +26,20 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-public class ViewHolder_Homepage extends RecyclerView.Adapter<ViewHolder_Homepage.ViewHolder>{
+public class ViewHolder_Homepage extends RecyclerView.Adapter<ViewHolder_Homepage.ViewHolder> implements Filterable {
 
 
     ArrayList<HomeList> list;
+    ArrayList<HomeList> listfull;
     Context context;
     public ViewHolder_Homepage(Context context, ArrayList<HomeList> list){
         this.context= context;
-        this.list = list;
+        this.listfull = list;
+        this.list = new ArrayList<>(listfull);
     }
     @NonNull
     @Override
@@ -56,15 +63,55 @@ public class ViewHolder_Homepage extends RecyclerView.Adapter<ViewHolder_Homepag
 
     @Override
     public int getItemCount() {
+
         return list.size();
     }
+    @Override
+    public Filter getFilter(){
+        return jobFilter;
+    }
+
+    private final Filter jobFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+
+            ArrayList<HomeList> filteredJobList = new ArrayList<>();
+
+            if (charSequence == null || charSequence.length() == 0){
+
+                filteredJobList.addAll(listfull);
+            }else {
+                String filterPattern = charSequence.toString().toLowerCase().trim();
+
+                for (HomeList homeList : listfull){
+                    if (homeList.getTitle().toLowerCase().contains(filterPattern)){
+                        filteredJobList.add(homeList);
+                    }
+                }
+            }
+            FilterResults filterResults = new FilterResults();
+            filterResults.values = filteredJobList;
+            filterResults.count = filteredJobList.size();
+            return filterResults;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+
+            list.clear();
+            list.addAll((ArrayList)filterResults.values);
+            notifyDataSetChanged();
+        }
+    };
 
     class ViewHolder extends RecyclerView.ViewHolder implements CompoundButton.OnCheckedChangeListener , View.OnClickListener {
 
-        ImageView imageView;
+        ImageView imageView, savejob;
         TextView jobtitle, jobtype, joblocation;
         CheckBox bookmark;
         LinearLayout card;
+        Long Lcount;
+         int SaveJobID=0;
 
 
 
@@ -80,12 +127,117 @@ public class ViewHolder_Homepage extends RecyclerView.Adapter<ViewHolder_Homepag
 
             bookmark.setOnCheckedChangeListener(this);
             card.setOnClickListener(this);
+
+//            DatabaseReference dbsave = FirebaseDatabase.getInstance().getReference("user")
+//                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+//                    .child("savejobs");
+//            int position = getAbsoluteAdapterPosition();
+//            HomeList home = list.get(position);
+//            String savejob = home.id + home.jobid;
+//            dbsave.addValueEventListener(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                    for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+//                        String jid = dataSnapshot.getKey();
+//                        if (savejob.equals(jid)){
+//                            bookmark.setChecked(true);
+//                        }
+//                    }
+//                }
+//
+//                @Override
+//                public void onCancelled(@NonNull DatabaseError error) {
+//
+//                }
+//            });
+
+
         }
 
-        //Help with boolean check checkbutton is check or not
+
+//        @Override
+//        public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+//
+//            if (FirebaseAuth.getInstance().getCurrentUser() == null){
+//                Toast.makeText(context, "Please Login First", Toast.LENGTH_SHORT).show();
+//                //user not login so make cheack box false
+//                compoundButton.setChecked(false);
+//                context.startActivity(new Intent(context,LoginActivity.class));
+//
+//                return;
+//            }
+//            DatabaseReference dbsave = FirebaseDatabase.getInstance().getReference("user")
+//                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+//                    .child("savejobs");
+//            int position = getAbsoluteAdapterPosition();
+//            HomeList home = list.get(position);
+//
+//            if(b){
+//                compoundButton.setChecked(true);
+//                dbsave.child(home.id).child(home.jobid).setValue(home);
+//                DatabaseReference rr = FirebaseDatabase.getInstance().getReference().child("user").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+//                rr.addListenerForSingleValueEvent(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                       Lcount = (Long) snapshot.child("SaveJobID").getValue();
+////                        assert Lcount != null;
+//                        SaveJobID = Lcount.intValue();
+//                    }
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError error) {
+//
+//                    }
+//                });
+//                SaveJobID++;
+//
+//                Map<String,Object> user = new HashMap<>();
+//                user.put("SaveJobID",  SaveJobID);
+//                rr.updateChildren(user);
+//
+//
+//
+//            }else{
+//                dbsave.child(home.id).child(home.jobid).setValue(null);
+//            }
+//           dbsave.addValueEventListener(new ValueEventListener() {
+//               @Override
+//               public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                   for (DataSnapshot dataSnapshot : snapshot.getChildren()){
+//                       String id = dataSnapshot.getKey();
+//                       System.out.println(id+" Fucku");
+//                       for (DataSnapshot ds : snapshot.getChildren()){
+//                           String idjob = ds.getKey();
+//                           if(ds.exists()){
+//                               compoundButton.setChecked(true);
+//                           }
+//                       }
+//                   }
+//               }
+//
+//               @Override
+//               public void onCancelled(@NonNull DatabaseError error) {
+//
+//               }
+//           });
+//        }
+
+        @Override
+        public void onClick(View view) {
+            int position = getAbsoluteAdapterPosition();
+            HomeList home = list.get(position);
+            String userid = home.id;
+            String jobid = home.jobid;
+
+            Intent intent = new Intent(view.getContext(), ViewjobM.class);
+            intent.putExtra("user_id", userid);
+            intent.putExtra("job_id", jobid);
+
+            view.getContext().startActivity(intent);
+        }
+
+        //Help with boolean, check checkbutton is check or not
         @Override
         public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-
             if (FirebaseAuth.getInstance().getCurrentUser() == null){
                 Toast.makeText(context, "Please Login First", Toast.LENGTH_SHORT).show();
                 //user not login so make cheack box false
@@ -99,50 +251,36 @@ public class ViewHolder_Homepage extends RecyclerView.Adapter<ViewHolder_Homepag
                     .child("savejobs");
             int position = getAbsoluteAdapterPosition();
             HomeList home = list.get(position);
+            String savejob = home.id + home.jobid;
 
-            if(b){
+            dbsave.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                        String tid = dataSnapshot.getKey();
+                        System.out.println(tid + "ddd");
+                        assert tid != null;
+                        if (tid.equals(savejob)) {
+                            System.out.println(tid+ "ccce");
+                            compoundButton.setChecked(true);
+                        }
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+
+            if (b){
                 compoundButton.setChecked(true);
-                dbsave.child(home.id).child(home.jobid).setValue(home);
-
-
-            }else{
-                dbsave.child(home.id).child(home.jobid).setValue(null);
+                dbsave.child(savejob).setValue(home);
+            }else {
+                dbsave.child(savejob).setValue(null);
             }
-           dbsave.addValueEventListener(new ValueEventListener() {
-               @Override
-               public void onDataChange(@NonNull DataSnapshot snapshot) {
-                   for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                       String id = dataSnapshot.getKey();
-                       System.out.println(id+" Fucku");
-                       for (DataSnapshot ds : snapshot.getChildren()){
-                           String idjob = ds.getKey();
-                           if(ds.exists()){
-                               compoundButton.setChecked(true);
-                           }
-                       }
-                   }
-               }
 
-               @Override
-               public void onCancelled(@NonNull DatabaseError error) {
-
-               }
-           });
-        }
-
-        @Override
-        public void onClick(View view) {
-            int position = getAbsoluteAdapterPosition();
-            HomeList home = list.get(position);
-            String userid = home.id;
-            String jobid = home.jobid;
-//            Intent intent;
-//            context.startActivity(new intent(context, New_Saved_Jobs.class));
-            Intent intent = new Intent(view.getContext(), ViewjobM.class);
-            intent.putExtra("user_id", userid);
-            intent.putExtra("job_id", jobid);
-
-            view.getContext().startActivity(intent);
         }
     }
 

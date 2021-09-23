@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,11 +30,14 @@ public class Homepage_new extends AppCompatActivity {
     private ViewHolder_Homepage viewHolder_homepage;
     private ArrayList<HomeList> list;
     private Button savejobs;
+//    private CheckBox save;
+    private SearchView search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage_new);
+
 
         savejobs = findViewById(R.id.d_test_btn);
         savejobs.setOnClickListener(new View.OnClickListener() {
@@ -52,9 +58,14 @@ public class Homepage_new extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(Homepage_new.this));
 
         list = new ArrayList<>();
-        viewHolder_homepage = new ViewHolder_Homepage(Homepage_new.this, list);
 
-        recyclerView.setAdapter(viewHolder_homepage);
+
+        DatabaseReference dbsave = FirebaseDatabase.getInstance().getReference("user")
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .child("savejobs");
+
+//        save = findViewById(R.id.d_img_bookmark);
+//        save.setChecked(true);
 
         root = FirebaseDatabase.getInstance().getReference();
 
@@ -79,6 +90,9 @@ public class Homepage_new extends AppCompatActivity {
                         HomeList home = new HomeList(id, jobid, name, title, salary1, job_type, description, email1, phone1, district, img);
                         list.add(home);
                     }
+                    viewHolder_homepage = new ViewHolder_Homepage(Homepage_new.this, list);
+
+                    recyclerView.setAdapter(viewHolder_homepage);
                     viewHolder_homepage.notifyDataSetChanged();
 
                 }
@@ -87,6 +101,22 @@ public class Homepage_new extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+        search = (SearchView) findViewById(R.id.d_search);
+        search.setImeOptions(EditorInfo.IME_ACTION_DONE);
+
+        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                viewHolder_homepage.getFilter().filter(s);
+                System.out.println(s);
+                return false;
             }
         });
     }
