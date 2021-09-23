@@ -7,6 +7,7 @@
     android:background="@drawable/pexels_vlad_bagacian_1061623"
     tools:context=".UserloginActivity">
 
+
     <ImageView
         android:id="@+id/image_login"
         android:layout_width="269dp"

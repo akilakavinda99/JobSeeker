@@ -49,7 +49,7 @@ public class UserloginActivity extends AppCompatActivity {
 
         rootNode=FirebaseDatabase.getInstance();
 
-
+        //
         // if the user is not registered
         signup.setOnClickListener(new View.OnClickListener() {
         @Override
