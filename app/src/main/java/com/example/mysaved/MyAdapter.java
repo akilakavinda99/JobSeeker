@@ -79,10 +79,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         public void onClick(View view) {
             int Position = getAbsoluteAdapterPosition();
             Model model = mList.get(Position);
-            Intent intent = new Intent(view.getContext(),CreateJob.class);
+            Intent intent = new Intent(view.getContext(),ViewjobM.class);
             intent.putExtra("Job", model.JobID);
             view.getContext().startActivity(intent);
-            System.out.println(model.JobID);
         }
    }
     }

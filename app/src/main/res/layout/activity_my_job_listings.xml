@@ -78,6 +78,8 @@
                 android:id="@+id/my_listing_recyclerview"
                 android:layout_width="379dp"
                 android:layout_height="583dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

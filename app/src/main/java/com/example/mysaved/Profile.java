@@ -126,7 +126,7 @@ public class Profile extends AppCompatActivity {
             edit_user_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(getApplicationContext(), EditProfile.class));
+                    startActivity(new Intent(getApplicationContext(), CreateJob.class));
                 }
             });
 
