@@ -8,14 +8,16 @@ public class HomeList {
     @Exclude
     String jobid;
 
-    String name,title,salary1,job_type,description,email1,phone1,district,img;
+    String date,name,title,salary1,job_type,description,email1,phone1,district,img;
+
 
     public HomeList() {
     }
 
-    public HomeList(String id, String jobid, String name, String title, String salary1, String job_type, String description, String email1, String phone1, String district, String img) {
+    public HomeList(String id, String jobid, String date, String name, String title, String salary1, String job_type, String description, String email1, String phone1, String district, String img) {
         this.id = id;
         this.jobid = jobid;
+        this.date = date;
         this.name = name;
         this.title = title;
         this.salary1 = salary1;
@@ -41,6 +43,14 @@ public class HomeList {
 
     public void setJobid(String jobid) {
         this.jobid = jobid;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getName() {
@@ -120,6 +130,7 @@ public class HomeList {
         return "HomeList{" +
                 "id='" + id + '\'' +
                 ", jobid='" + jobid + '\'' +
+                ", date='" + date + '\'' +
                 ", name='" + name + '\'' +
                 ", title='" + title + '\'' +
                 ", salary1='" + salary1 + '\'' +

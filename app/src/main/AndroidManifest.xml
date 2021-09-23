@@ -12,7 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MySaved">
-
+        <activity
+            android:name=".New_SaveReq_Jobs"
+            android:exported="true" />
+        <activity
+            android:name=".NewReqJob_Homepage"
+            android:exported="true" />
         <activity
             android:name=".UserloginActivity"
             android:exported="true" />
@@ -32,6 +37,9 @@
         <activity
             android:name=".Homepage_new"
             android:exported="true" />
+
+        <activity android:name=".Profile" />
+
         <activity
             android:name=".ViewJob"
             android:exported="true" />
@@ -66,13 +74,14 @@
         <activity
             android:name=".EditJob"
             android:exported="true" />
-
         <activity
             android:name=".ViewReqJob"
             android:exported="true" />
 
-        <activity android:name=".ViewjobM"
-            android:exported="true"/>
+        <activity
+            android:name=".ViewjobM"
+            android:exported="true" />
+
 
         <activity
             android:name=".RegisterUserActivity"

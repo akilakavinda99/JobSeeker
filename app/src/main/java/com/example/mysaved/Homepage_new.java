@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -22,6 +23,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Homepage_new extends AppCompatActivity {
 
@@ -32,13 +35,14 @@ public class Homepage_new extends AppCompatActivity {
     private Button savejobs;
 //    private CheckBox save;
     private SearchView search;
+    private ProgressBar load;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage_new);
 
-
+        load = findViewById(R.id.d_progressBar4);
         savejobs = findViewById(R.id.d_test_btn);
         savejobs.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,9 +64,9 @@ public class Homepage_new extends AppCompatActivity {
         list = new ArrayList<>();
 
 
-        DatabaseReference dbsave = FirebaseDatabase.getInstance().getReference("user")
-                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                .child("savejobs");
+//        DatabaseReference dbsave = FirebaseDatabase.getInstance().getReference("user")
+//                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+//                .child("savejobs");
 
 //        save = findViewById(R.id.d_img_bookmark);
 //        save.setChecked(true);
@@ -77,6 +81,7 @@ public class Homepage_new extends AppCompatActivity {
                     String id = dataSnapshot.getKey();
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         String jobid = ds.getKey();
+                        String date = ds.child("date").getValue(String.class);
                         String name = ds.child("name").getValue(String.class);
                         String title = ds.child("title").getValue(String.class);
                         String salary1 = ds.child("salary1").getValue(String.class);
@@ -87,9 +92,18 @@ public class Homepage_new extends AppCompatActivity {
                         String district = ds.child("district").getValue(String.class);
                         String img = ds.child("img").getValue(String.class);
 
-                        HomeList home = new HomeList(id, jobid, name, title, salary1, job_type, description, email1, phone1, district, img);
+                        HomeList home = new HomeList(id, jobid,date,name, title, salary1, job_type, description, email1, phone1, district, img);
                         list.add(home);
+                        load.setVisibility(View.INVISIBLE);
                     }
+//                    Collections.reverse(list);
+                    Collections.sort(list, new Comparator<HomeList>() {
+                        @Override
+                        public int compare(HomeList homeList, HomeList t1) {
+                            return homeList.date.compareToIgnoreCase(t1.date);
+                        }
+                    });
+                    Collections.reverse(list);
                     viewHolder_homepage = new ViewHolder_Homepage(Homepage_new.this, list);
 
                     recyclerView.setAdapter(viewHolder_homepage);
