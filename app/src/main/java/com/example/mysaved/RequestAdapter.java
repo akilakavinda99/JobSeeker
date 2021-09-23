@@ -79,7 +79,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
         public void onClick(View view) {
             int Position = getAbsoluteAdapterPosition();
             ModelRequest modelRequest = rList.get(Position);
-            Intent intent = new Intent(view.getContext(),ViewjobM.class);
+            Intent intent = new Intent(view.getContext(),ViewReqJob.class);
             intent.putExtra("ReqId", modelRequest.ReqId);
             view.getContext().startActivity(intent);
         }
