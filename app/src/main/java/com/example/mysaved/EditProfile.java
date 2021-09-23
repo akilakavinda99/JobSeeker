@@ -225,7 +225,7 @@ public class EditProfile extends AppCompatActivity {
                 //Creating dialog box
                 AlertDialog alert = builder.create();
                 //Setting the title manually
-                alert.setTitle("Delete Listing");
+                alert.setTitle("Delete Profile");
                 alert.show();
 
             }
