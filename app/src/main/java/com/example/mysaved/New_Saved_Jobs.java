@@ -1,17 +1,20 @@
 package com.example.mysaved;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,7 +35,6 @@ public class New_Saved_Jobs extends AppCompatActivity {
     private Button back;
     private TextView savejobs;
     private int count = 0;
-//    private String test;
 
 
     @Override
@@ -40,9 +42,7 @@ public class New_Saved_Jobs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_saved_jobs);
 
-//        Intent intent = getIntent();
-//        test = intent.getStringExtra("user_id");
-//        System.out.println(test+" adoo");
+
 
         back = findViewById(R.id.d_test_btn2);
         back.setOnClickListener(new View.OnClickListener() {
@@ -60,33 +60,18 @@ public class New_Saved_Jobs extends AppCompatActivity {
         savejobs = findViewById(R.id.tv_count);
         dbcount = FirebaseDatabase.getInstance().getReference().child("user").child(currentUserId);
 
+
         dbcount.child("savejobs").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                   if (dataSnapshot.exists())
-                   {
-                       System.out.println(dataSnapshot);
-                       count = 0;
-                       count = (int) dataSnapshot.getChildrenCount();
-                       System.out.println(count+"count");
-                       savejobs.setText(Integer.toString(count));
-//                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
-//                        if (ds.exists()) {
-//
-//                            count = (int) ds.getChildrenCount();
-//                            System.out.println(ds);
-//                            savejobs.setText(Integer.toString(count));
-//
-//                        } else {
-//                            savejobs.setText("0");
-//                        }
-//                    }
-                   } else {
+                    if (snapshot.exists()){
+                        count =(int) snapshot.getChildrenCount();
+                        savejobs.setText(Integer.toString(count));
+                        System.out.println(count);
+                    } else {
                        savejobs.setText("0");
                    }
                 }
-            }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -112,30 +97,43 @@ public class New_Saved_Jobs extends AppCompatActivity {
                 list.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
 
-                    String id = dataSnapshot.getKey();
+                    String id = dataSnapshot.child("id").getValue(String.class);
+                    String jobid = dataSnapshot.child("jobid").getValue(String.class);
+                    String name = dataSnapshot.child("name").getValue(String.class);
+                    String title = dataSnapshot.child("title").getValue(String.class);
+                    String salary1 = dataSnapshot.child("salary1").getValue(String.class);
+                    String job_type = dataSnapshot.child("job_type").getValue(String.class);
+                    String description = dataSnapshot.child("description").getValue(String.class);
+                    String email1 = dataSnapshot.child("email1").getValue(String.class);
+                    String phone1 = dataSnapshot.child("phone1").getValue(String.class);
+                    String district = dataSnapshot.child("district").getValue(String.class);
+                    String img = dataSnapshot.child("img").getValue(String.class);
 
-                    for(DataSnapshot ds : dataSnapshot.getChildren()){
-                        String jobid = ds.getKey();
-                        String name = ds.child("name").getValue(String.class);
-                        String title = ds.child("title").getValue(String.class);
-                        String salary1 = ds.child("salary1").getValue(String.class);
-                        String job_type = ds.child("job_type").getValue(String.class);
-                        String description = ds.child("description").getValue(String.class);
-                        String email1 = ds.child("email1").getValue(String.class);
-                        String phone1 = ds.child("phone1").getValue(String.class);
-                        String district = ds.child("district").getValue(String.class);
-                        String img = ds.child("img").getValue(String.class);
+                    HomeList home = new HomeList(id,jobid,name,title,salary1,job_type,description,email1,phone1,district,img);
+                    list.add(home);
 
-                        HomeList home = new HomeList(id,jobid,name,title,salary1,job_type,description,email1,phone1,district,img);
-                        list.add(home);
-                    }
+//                    for(DataSnapshot ds : dataSnapshot.getChildren()){
+//                        String jobid = ds.getKey();
+//                        String name = ds.child("name").getValue(String.class);
+//                        String title = ds.child("title").getValue(String.class);
+//                        String salary1 = ds.child("salary1").getValue(String.class);
+//                        String job_type = ds.child("job_type").getValue(String.class);
+//                        String description = ds.child("description").getValue(String.class);
+//                        String email1 = ds.child("email1").getValue(String.class);
+//                        String phone1 = ds.child("phone1").getValue(String.class);
+//                        String district = ds.child("district").getValue(String.class);
+//                        String img = ds.child("img").getValue(String.class);
+//
+//                        HomeList home = new HomeList(id,jobid,name,title,salary1,job_type,description,email1,phone1,district,img);
+//                        list.add(home);
+//                    }
                 }
                 viewHolder_saveJobs.notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                System.out.println("The read failed: " + error.getCode());
             }
         });
 

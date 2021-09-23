@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,11 +58,12 @@ public class ViewHolder_SaveJobs extends RecyclerView.Adapter<ViewHolder_SaveJob
         return Hlist.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder implements CompoundButton.OnCheckedChangeListener {
+    class MyViewHolder extends RecyclerView.ViewHolder implements CompoundButton.OnCheckedChangeListener , View.OnClickListener {
 
         ImageView imageView;
         TextView jobtitle,jobtype,joblocation,count;
         CheckBox remove;
+        LinearLayout save_card;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -71,9 +73,11 @@ public class ViewHolder_SaveJobs extends RecyclerView.Adapter<ViewHolder_SaveJob
             imageView = itemView.findViewById(R.id.d_img_profile2);
             remove = itemView.findViewById(R.id.d_img_delete);
 //             count = itemView.findViewById(R.id.tv_count);
+            save_card = itemView.findViewById(R.id.d_save_card);
 
             remove.setOnCheckedChangeListener(this);
-
+            save_card.setOnClickListener(this);
+            System.out.println(getItemCount()+" ssss");
 
         }
 
@@ -94,11 +98,30 @@ public class ViewHolder_SaveJobs extends RecyclerView.Adapter<ViewHolder_SaveJob
 
             int position = getAbsoluteAdapterPosition();
             HomeList home = Hlist.get(position);
+            String savejob = home.id + home.jobid;
+            System.out.println(savejob+ " save job");
 
             if(b){
-                dbremove.child(home.id).child(home.jobid).setValue(null);
+                System.out.println(home.id);
+                System.out.println(home.jobid);
+                dbremove.child(savejob).setValue(null);
                 compoundButton.setChecked(false);
             }
+        }
+
+        @Override
+        public void onClick(View view) {
+            int position = getAbsoluteAdapterPosition();
+            HomeList home = Hlist.get(position);
+            String userid = home.id;
+            String jobid = home.jobid;
+//            Intent intent;
+//            context.startActivity(new intent(context, New_Saved_Jobs.class));
+            Intent intent = new Intent(view.getContext(), ViewjobM.class);
+            intent.putExtra("user_id", userid);
+            intent.putExtra("job_id", jobid);
+
+            view.getContext().startActivity(intent);
         }
     }
 }
