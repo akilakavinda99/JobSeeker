@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,6 +36,7 @@ public class New_Saved_Jobs extends AppCompatActivity {
     private Button back;
     private TextView savejobs;
     private int count = 0;
+    private ProgressBar load;
 
 
     @Override
@@ -42,14 +44,13 @@ public class New_Saved_Jobs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_saved_jobs);
 
-
+        load = findViewById(R.id.d_progressbar);
 
         back = findViewById(R.id.d_test_btn2);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), Homepage_new.class));
-                finish();
             }
         });
 
@@ -99,6 +100,7 @@ public class New_Saved_Jobs extends AppCompatActivity {
 
                     String id = dataSnapshot.child("id").getValue(String.class);
                     String jobid = dataSnapshot.child("jobid").getValue(String.class);
+                    String date = dataSnapshot.child("date").getValue(String.class);
                     String name = dataSnapshot.child("name").getValue(String.class);
                     String title = dataSnapshot.child("title").getValue(String.class);
                     String salary1 = dataSnapshot.child("salary1").getValue(String.class);
@@ -109,8 +111,9 @@ public class New_Saved_Jobs extends AppCompatActivity {
                     String district = dataSnapshot.child("district").getValue(String.class);
                     String img = dataSnapshot.child("img").getValue(String.class);
 
-                    HomeList home = new HomeList(id,jobid,name,title,salary1,job_type,description,email1,phone1,district,img);
+                    HomeList home = new HomeList(id,jobid,date,name,title,salary1,job_type,description,email1,phone1,district,img);
                     list.add(home);
+                    load.setVisibility(View.INVISIBLE);
 
 //                    for(DataSnapshot ds : dataSnapshot.getChildren()){
 //                        String jobid = ds.getKey();
