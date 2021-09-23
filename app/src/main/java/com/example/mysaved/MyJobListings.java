@@ -65,6 +65,7 @@ public class MyJobListings extends AppCompatActivity {
         recyclerView = findViewById(R.id.my_listing_recyclerview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(MyJobListings.this,2));
+
         list = new ArrayList<>();
         adapter = new MyAdapter(MyJobListings.this,list);
 
@@ -76,16 +77,16 @@ public class MyJobListings extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 list.clear();
                 for (DataSnapshot ds: snapshot.getChildren()){
-                       String JobID = ds.getKey();
-                       String name = ds.child("name").getValue(String.class);
-                       String title = ds.child("title").getValue(String.class);
-                       String job_type = ds.child("job_type").getValue(String.class);
-                       String img = ds.child("img").getValue(String.class);
-                       String salary1 = ds.child("salary1").getValue(String.class);
-                       String phone1 = ds.child("phone1").getValue(String.class);
-                       String district = ds.child("district").getValue(String.class);
-                       Model model = new Model(JobID,name,title,job_type,img,salary1,phone1,district);
-                       list.add(model);
+                    String JobID = ds.getKey();
+                    String name = ds.child("name").getValue(String.class);
+                    String title = ds.child("title").getValue(String.class);
+                    String job_type = ds.child("job_type").getValue(String.class);
+                    String img = ds.child("img").getValue(String.class);
+                    String salary1 = ds.child("salary1").getValue(String.class);
+                    String phone1 = ds.child("phone1").getValue(String.class);
+                    String district = ds.child("district").getValue(String.class);
+                    Model model = new Model(JobID,name,title,job_type,img,salary1,phone1,district);
+                    list.add(model);
 
                 }
                 adapter.notifyDataSetChanged();

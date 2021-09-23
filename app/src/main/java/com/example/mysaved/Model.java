@@ -9,9 +9,11 @@ public class Model {
 
     String name,title,job_type,img,salary1,phone1,district;
 
+    //Default constructor
     public Model() {
     }
 
+    //Overload Constructor
     public Model(String jobID, String name, String title, String job_type, String img, String salary1, String phone1, String district) {
         JobID = jobID;
         this.name = name;
