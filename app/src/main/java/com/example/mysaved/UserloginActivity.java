@@ -83,15 +83,19 @@ public class UserloginActivity extends AppCompatActivity {
 
 
             //authenticate user
-            fAuth.signInWithEmailAndPassword(text_email,text_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            fAuth.signInWithEmailAndPassword(text_email, text_password).addOnSuccessListener(new OnSuccessListener<AuthResult>(){
                 @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
-                        startActivity(new Intent(getApplicationContext(), CreateJob.class));
-                    }
-                    else {
-                        Toast.makeText(UserloginActivity.this, "Login Unsuccessful", Toast.LENGTH_SHORT).show();
-                    }
+                public void onSuccess(AuthResult authResult) {
+
+                    Toast.makeText(UserloginActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(UserloginActivity.this, Homepage_new.class));
+                    finish();
+                }
+
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(UserloginActivity.this, "Login Unsuccessful", Toast.LENGTH_SHORT).show();
                 }
             });
         }

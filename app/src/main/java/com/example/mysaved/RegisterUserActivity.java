@@ -35,6 +35,8 @@ public class RegisterUserActivity extends AppCompatActivity {
     Button accountCreate;
     FirebaseAuth fAuth;
     String userID;
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    String phonePattern = "[0-9]{10}";
 
 
     @Override
@@ -58,10 +60,12 @@ public class RegisterUserActivity extends AppCompatActivity {
 
         //if user is already registered send to Userprofile page
         if (fAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+            startActivity(new Intent(getApplicationContext(), UserloginActivity.class));
             //using finish method then the user cannot access the back button after going to the homepage
             finish();
         }
+
+
 
 
         // assigning the function when the user clicks the accountCreate button
@@ -79,16 +83,20 @@ public class RegisterUserActivity extends AppCompatActivity {
                 String dgender_spiner = gender_spinner.getSelectedItem().toString();
 
                 //Validations
-                if (TextUtils.isEmpty(dregEmail)) {
-                    regEmail.setError("Email is required");
-                    return;
+                if(regEmail.getText().toString().isEmpty()) {
+                    regEmail.setError("Email is Required");
+                }else {
+                    if (!regEmail.getText().toString().trim().matches(emailPattern)) {
+                        regEmail.setError("Invalid Email Address");
+                        return;
+                    }
                 }
                 if (TextUtils.isEmpty(dregPassword)) {
                     regPassword.setError("Password is required");
                     return;
                 }
                 if (dregPassword.length() < 6) {
-                    regPassword.setError("Password must greater than 4 characters");
+                    regPassword.setError("Password must greater than 6 characters");
                 }
                 if (TextUtils.isEmpty(dregName)) {
                     regName.setError("First name is required");
@@ -98,6 +106,11 @@ public class RegisterUserActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(dregPhone)) {
                     regPhone.setError("Phone number is required");
                     return;
+                }else {
+                    if (!regPhone.getText().toString().trim().matches(phonePattern)) {
+                        regPhone.setError("Invalid Phone Number");
+                        return;
+                    }
                 }
 
                 if (ddistrict_spinner.equals("Select District")) {
@@ -141,6 +154,7 @@ public class RegisterUserActivity extends AppCompatActivity {
                             user.put("District",ddistrict_spinner);
                             user.put("Gender",dgender_spiner);
                             user.put("JobId",0);
+                            user.put("ReqId",0);
 
 
                             reference.setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
