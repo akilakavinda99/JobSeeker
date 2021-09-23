@@ -13,19 +13,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MySaved">
 
-        <activity android:name=".Profile"></activity>
+        <activity
+            android:name=".UserloginActivity"
+            android:exported="true" />
 
+        <activity
+            android:name=".Profile"
+            android:exported="true" />
+
+        <activity
+            android:name=".EditProfile"
+            android:exported="true" />
 
         <activity
             android:name=".New_Saved_Jobs"
             android:exported="true" />
+
         <activity
             android:name=".Homepage_new"
             android:exported="true" />
-
         <activity
             android:name=".ViewJob"
             android:exported="true" />
+
         <activity
             android:name=".RequestJob"
             android:exported="true" />
@@ -37,25 +47,22 @@
             android:name=".MyJobListings"
             android:exported="true" />
 
-
-        <activity
-            android:name=".UserloginActivity"
-            android:exported="true" />
-
-
-
         <activity
             android:name=".NavigationBarActivity"
             android:exported="true" />
+
         <activity
             android:name=".ProfileActivity"
             android:exported="true" />
+
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
+
         <activity
             android:name=".MyRequestedJobs"
             android:exported="true" />
+
         <activity
             android:name=".EditJob"
             android:exported="true" />
@@ -66,6 +73,7 @@
 
         <activity android:name=".ViewjobM"
             android:exported="true"/>
+
         <activity
             android:name=".RegisterUserActivity"
             android:exported="true">
