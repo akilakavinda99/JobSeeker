@@ -3,6 +3,34 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/TV Series/MAD/app/src/main/res/drawable/addicon.xml" value="0.14635416666666667" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/drawable/baseline_add_circle_24.xml" value="0.14635416666666667" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/drawable/baseline_arrow_back_ios_24.xml" value="0.14635416666666667" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/drawable/hover.xml" value="0.14635416666666667" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/drawable/hover1.xml" value="0.22407407407407406" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/drawable/hover3.xml" value="0.22407407407407406" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.23333333333333334" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/drawable/ic_da_person.xml" value="0.22407407407407406" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14635416666666667" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/drawable/location_background.xml" value="0.14635416666666667" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/drawable/round.xml" value="0.14635416666666667" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/drawable/round_account_circle_20.xml" value="0.14635416666666667" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/drawable/round_arrow_drop_down_20.xml" value="0.14635416666666667" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/drawable/rounded_corner_background.xml" value="0.14635416666666667" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/drawable/rounded_view_register.xml" value="0.14635416666666667" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/drawable/textview_backgound.xml" value="0.14635416666666667" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/drawable/verify_now_btn.xml" value="0.14635416666666667" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/layout/activity_edit_job.xml" value="0.25416666666666665" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/layout/activity_edit_jobreq.xml" value="0.4" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/layout/activity_editprofile.xml" value="0.2" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/layout/activity_homepage_new.xml" value="0.264" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/layout/activity_navigation_bar.xml" value="0.264" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/layout/activity_new_saved_jobs.xml" value="0.6" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/layout/activity_profile.xml" value="0.4" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/layout/activity_requestjob.xml" value="0.5176651305683564" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/layout/activity_userlogin.xml" value="0.4" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/layout/register_user.xml" value="0.5470914127423823" />
+        <entry key="..\:/TV Series/MAD/app/src/main/res/layout/toolbar1.xml" value="0.3531047265987025" />
         <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/drawable/progressbar.xml" value="0.3828125" />
         <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/activity_create_job.xml" value="0.33" />
         <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/activity_edit_job.xml" value="0.264" />

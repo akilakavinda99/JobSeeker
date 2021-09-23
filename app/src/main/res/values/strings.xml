@@ -207,46 +207,6 @@
 
     <!--    Pankaja's Strings-->
 
-    <string name="txt_sign_in">Sign In</string>
-    <string name="log_password_txt">Password</string>
-    <string name="log_email_txt">Email</string>
-    <string name="lg_button">Login</string>
-    <string name="sign_up_button">Sign Up</string>
-    <string name="fgt_password">Forget Password?</string>
-    <string name="txt_view">Request a Job</string>
-    <string name="req_job">Enter the Job title you want to request</string>
-    <string name="ent_name">Enter Name</string>
-    <string name="ent_age">Enter Age</string>
-    <string name="description">Enter Description about yourself</string>
-    <string name="ent_email">Enter Email Address</string>
-    <string name="ent_p_no">Enter Phone Number</string>
-    <string name="add_image">Add Image</string>
-    <string name="create_button">Create</string>
-    <string name="txt_profile">Profile</string>
-    <string name="verify_now_btn">Verify Now</string>
-    <string name="txt_name">Name</string>
-    <string name="txt_mobileno">Mobile No</string>
-    <string name="txt_Gender">Gender</string>
-    <string name="txt_district">District</string>
-    <string name="txt_city">City</string>
-    <string name="txt_email">Email</string>
-    <string name="edit_user_btn">Edit</string>
-    <string name="txt_editprofile">Edit Profile</string>
-    <string name="edit_name_txt">Name</string>
-    <string name="edit_Mno_txt">Mobile No</string>
-    <string name="edit_email_txt">Email</string>
-    <string name="update_user_btn">Update</string>
-    <string name="Nav_login">Log In</string>
-    <string name="nav_logout">Log Out</string>
-    <string name="nav_home_txt">Home</string>
-    <string name="nav_createjob_txt">Create  a Job</string>
-    <string name="nav_myjobs_txt">My Jobs</string>
-    <string name="nav_requestedjobs_txt">Requested Jobs</string>
-    <string name="nav_myreqjobs_txt">My Requested Jobs</string>
-    <string name="nav_savedjobs_txt">Saved Jobs</string>
-    <string name="nav_profile_txt">Profile</string>
-
-
     <string name="tv_sign_in">Sign In</string>
     <string name="et_log_email">Email</string>
     <string name="et_log_password">Password</string>
@@ -294,16 +254,53 @@
     <string name="et_user_email">Email</string>
     <string name="btn_updateE">Update</string>
 
+    <string-array name="districts_vp">
+        <item> Ampara</item>
+        <item> Anuradhapura</item>
+        <item> Badulla</item>
+        <item> Batticaloa</item>
+        <item> Colombo</item>
+        <item> Galle</item>
+        <item> Gampaha</item>
+        <item> Hambantota</item>
+        <item> Jaffna</item>
+        <item> Kalutara</item>
+        <item> Kandy</item>
+        <item> Kegalle</item>
+        <item> Kilinochchi</item>
+        <item> Kurunegala</item>
+        <item> Mannar</item>
+        <item> Matale</item>
+        <item> Matara</item>
+        <item> Monaragala</item>
+        <item> Mullaitivu</item>
+        <item> Nuwara Eliya</item>
+        <item> Polonnaruwa</item>
+        <item> Puttalam</item>
+        <item> Ratnapura</item>
+        <item> Trincomalee</item>
+        <item> Vavuniya</item>
+    </string-array>
+
+    <string-array name="gender_vp">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <!--    Pankaja's Strings-->
+
     <string name="phone6">Phone</string>
     <string name="title8">Title</string>
 
     <string name="d_tv_jobtype">Jobtype</string>
     <string name="d_tv_joblocation">location</string>
 
+    <string-array name="genderR">
+        <item>Enter Gender</item>
+        <item> Male</item>
+        <item> Female</item>
+    </string-array>
 
-
-
-    <!--    Pankaja's Strings-->
 
 
 </resources>

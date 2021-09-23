@@ -24,8 +24,9 @@
     <color name="my_spinner_text_color">#FF4C4C4C</color>
     <color name="btn_logout" />
     <color name="btn_nav_logout" />
-    <color name="btn_verify_now" />
     <color name="btn_nav_login" />
+    <color name="btn_sign_up" />
+
 
 </resources>
 
