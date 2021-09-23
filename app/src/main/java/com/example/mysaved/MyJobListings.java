@@ -64,8 +64,7 @@ public class MyJobListings extends AppCompatActivity {
         userID = fAuth.getCurrentUser().getUid();
         recyclerView = findViewById(R.id.my_listing_recyclerview);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new GridLayoutManager(MyJobListings.this, 2));
-       // recyclerView.GridLayoutManager  = new GridLayoutManager(this, 2);
+        recyclerView.setLayoutManager(new GridLayoutManager(MyJobListings.this,2));
         list = new ArrayList<>();
         adapter = new MyAdapter(MyJobListings.this,list);
 
