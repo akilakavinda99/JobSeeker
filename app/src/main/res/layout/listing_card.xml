@@ -112,8 +112,7 @@
 
             <TextView
                 android:id="@+id/district3"
-                android:layout_width="65dp"
-                android:layout_height="10dp"
+                
 
                 android:text="Colombo"
                 android:textAlignment="textEnd"
