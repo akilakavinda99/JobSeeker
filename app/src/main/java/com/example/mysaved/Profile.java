@@ -126,7 +126,7 @@ public class Profile extends AppCompatActivity {
             edit_user_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(getApplicationContext(), CreateJob.class));
+                    startActivity(new Intent(getApplicationContext(), EditProfile.class));
                 }
             });
 
@@ -135,7 +135,7 @@ public class Profile extends AppCompatActivity {
         user_back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), CreateJob.class));
+                startActivity(new Intent(getApplicationContext(), Homepage_new.class));
             }
         });
 
