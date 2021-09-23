@@ -22,11 +22,12 @@
         <activity
             android:name=".Homepage_new"
             android:exported="true" />
-        <activity android:name=".Profile" />
-
 
         <activity
             android:name=".ViewJob"
+            android:exported="true" />
+        <activity
+            android:name=".RequestJob"
             android:exported="true" />
         <activity
             android:name=".Request_jobs_home"

@@ -83,6 +83,11 @@
     <string name="tv_mrjl">My Requested Jobs</string>
     <string name="btn_newreq">New Request</string>
 
+    <string name="phone6">Phone</string>
+    <string name="title8">Title</string>
+    <string name="d_tv_jobtype">Jobtype</string>
+    <string name="d_tv_joblocation">location</string>
+
     <string-array name="job_type_sm">
         <item> Select Job Type</item>
         <item> Full Time</item>
@@ -91,7 +96,7 @@
     </string-array>
 
     <string-array name="job_type_ddm">
-        <item> Select Job Ty[pe</item>
+        <item> Select Job Type</item>
         <item> Full Time</item>
         <item> Part Time</item>
         <item> Intern</item>
@@ -294,14 +299,11 @@
     <string name="et_user_email">Email</string>
     <string name="btn_updateE">Update</string>
 
-    <string name="phone6">Phone</string>
-    <string name="title8">Title</string>
-
-    <string name="d_tv_jobtype">Jobtype</string>
-    <string name="d_tv_joblocation">location</string>
-
-
-
+    <string-array name="genderR">
+        <item>Enter Gender</item>
+        <item> Male</item>
+        <item> Female</item>
+    </string-array>
 
     <!--    Pankaja's Strings-->
 

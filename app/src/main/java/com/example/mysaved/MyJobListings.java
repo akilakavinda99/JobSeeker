@@ -2,6 +2,7 @@ package com.example.mysaved;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -63,8 +64,8 @@ public class MyJobListings extends AppCompatActivity {
         userID = fAuth.getCurrentUser().getUid();
         recyclerView = findViewById(R.id.my_listing_recyclerview);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(MyJobListings.this));
-
+        recyclerView.setLayoutManager(new GridLayoutManager(MyJobListings.this, 2));
+       // recyclerView.GridLayoutManager  = new GridLayoutManager(this, 2);
         list = new ArrayList<>();
         adapter = new MyAdapter(MyJobListings.this,list);
 
