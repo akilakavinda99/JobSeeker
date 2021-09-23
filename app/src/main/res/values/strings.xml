@@ -295,7 +295,12 @@
     <string name="btn_updateE">Update</string>
     <string name="d_tv_jobtype">Jobtype</string>
     <string name="d_tv_joblocation">location</string>
-
+    <string name="tv_reqtitle">Saved Request Jon</string>
+    <string name="tv_reqtitle2">Saved Requested Jobs</string>
+    <string name="tv_allreqjob">All Requested</string>
+    <string name="d_tv_reqjobage2">0</string>
+    <string name="d_yearsold">Years Old</string>
+    <string name="d_tv_reqjobgender2">Gender</string>
 
 
     <!--    Pankaja's Strings-->
