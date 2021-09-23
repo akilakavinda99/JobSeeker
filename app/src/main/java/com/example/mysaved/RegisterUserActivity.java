@@ -66,6 +66,8 @@ public class RegisterUserActivity extends AppCompatActivity {
         }
 
 
+
+
         // assigning the function when the user clicks the accountCreate button
         accountCreate.setOnClickListener(new View.OnClickListener() {
             @Override
