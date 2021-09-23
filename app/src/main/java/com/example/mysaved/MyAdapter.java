@@ -85,7 +85,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             intent.putExtra("user_id", auth);
             intent.putExtra("job_id", model.JobID);
             view.getContext().startActivity(intent);
-            System.out.println(model.JobID);
         }
     }
 }
