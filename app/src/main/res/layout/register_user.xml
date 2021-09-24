@@ -59,14 +59,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <pl.droidsonroids.gif.GifImageView
         android:id="@+id/iv_regupimg"
         android:layout_width="137dp"
         android:layout_height="197dp"
         android:layout_marginEnd="16dp"
+        android:src="@drawable/register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/userregister" />
+          />
 
     <EditText
         android:id="@+id/et_mobile"
@@ -113,7 +114,12 @@
         android:background="@drawable/border2"
         android:hint="@string/btn_acCeate"
         android:text="Create Account"
-        app:backgroundTint="#477EEC"
+
+        app:backgroundTint="@color/modern_blue"
+        app:cornerRadius="50dp"
+
+        
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
