@@ -25,7 +25,7 @@ import java.util.Objects;
 public class ViewReqJob extends AppCompatActivity {
 
     ImageView ReqJobImage;
-    TextView tv_req_job_title, ReqJobName, ReqJobAge, ReqJobGender, ReqJobDescription, tv_emailR, tv_phoneR;
+    TextView tv_req_job_title, ReqJobName, ReqJobAge, ReqJobGender, ReqJobDescription, tv_emailR, tv_phoneR,textView5;
     Button btn_emaill_jv3, btn_call_jvr, edit_reqJob_btn;
 
     DatabaseReference databaseReference;
@@ -48,7 +48,7 @@ public class ViewReqJob extends AppCompatActivity {
         ReqJobDescription = findViewById(R.id.textView10);
         btn_emaill_jv3 = findViewById(R.id.btn_emaill_jv3);
         btn_call_jvr = findViewById(R.id.btn_call_jvr);
-
+        textView5 = findViewById(R.id.textView5);
         edit_reqJob_btn = findViewById(R.id.edit_reqJob_btn);
         tv_emailR = findViewById(R.id.tv_emailR);
         tv_phoneR = findViewById(R.id.tv_phoneR);
@@ -70,6 +70,8 @@ public class ViewReqJob extends AppCompatActivity {
                     ReqJobDescription.setText(snapshot.child("description").getValue().toString());
                     tv_phoneR.setText(snapshot.child("phone1").getValue().toString());
                     tv_emailR.setText(snapshot.child("email1").getValue().toString());
+                    textView5.setText(snapshot.child("date").getValue().toString());
+
 
 tv_emailR.setVisibility(View.INVISIBLE);
 tv_phoneR.setVisibility(View.INVISIBLE);
@@ -142,6 +144,7 @@ tv_phoneR.setVisibility(View.INVISIBLE);
                 intent.putExtra("DESCRIPTION", ReqJobDescription.getText().toString());
                 intent.putExtra("MOBILE", tv_phoneR.getText().toString());
                 intent.putExtra("EMAIL", tv_emailR.getText().toString());
+                intent.putExtra("DATE", textView5.getText().toString());
                 intent.putExtra("imageurl", imageUrl);
 
 
