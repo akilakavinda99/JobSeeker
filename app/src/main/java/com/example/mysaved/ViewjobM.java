@@ -30,7 +30,7 @@ import java.util.concurrent.TimeUnit;
 public class ViewjobM extends AppCompatActivity {
     TextView jobTitle_tv, jobLocation_tv, jobType_tv_jobView, jobCompany_tv_jobView, jobSalary_tv_jobView, jobViews_tv_jobView,  jobDescription_tv_jobView,
             jobEmail_tv_jobView, jobDate_tv_jobView,jobDaysAgo_tv_jobView,textView2;
-    ImageView jobImage_tv_jobView;
+    ImageView jobImage_tv_jobView,backbtn_img;
 
     Button btn_email_jv2, btn_call_jv4,Edit_JobView_btn;
     DatabaseReference databaseReference;
@@ -64,6 +64,8 @@ public class ViewjobM extends AppCompatActivity {
         jobDaysAgo_tv_jobView=findViewById(R.id.jobDaysAgo_tv_jobView);
         Edit_JobView_btn=findViewById(R.id.Edit_JobView_btn);
         textView2=findViewById(R.id.textView2);
+        backbtn_img=findViewById(R.id.imageView22);
+
 
         try {
             currentDate = sdf.parse(date);
@@ -151,6 +153,14 @@ public class ViewjobM extends AppCompatActivity {
 
                 startActivity(Intent.createChooser(sendIntent, "Send email"));
 
+            }
+        });
+
+        backbtn_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Homepage_new.class));
+                overridePendingTransition(R.anim.animation_enter, R.anim.animation_leave);
             }
         });
 
