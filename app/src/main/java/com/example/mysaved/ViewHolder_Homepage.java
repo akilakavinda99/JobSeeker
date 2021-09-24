@@ -18,17 +18,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
 
 public class ViewHolder_Homepage extends RecyclerView.Adapter<ViewHolder_Homepage.ViewHolder> implements Filterable {
 
@@ -55,10 +51,10 @@ public class ViewHolder_Homepage extends RecyclerView.Adapter<ViewHolder_Homepag
         holder.jobtype.setText(homeList.getJob_type());
         holder.joblocation.setText(homeList.getDistrict());
 
+
         String imageUrl = null;
         imageUrl = homeList.getImg();
         Picasso.get().load(imageUrl).resize(50,50).centerCrop().into(holder.imageView);
-
     }
 
     @Override
@@ -110,9 +106,6 @@ public class ViewHolder_Homepage extends RecyclerView.Adapter<ViewHolder_Homepag
         TextView jobtitle, jobtype, joblocation;
         CheckBox bookmark;
         LinearLayout card;
-        Long Lcount;
-         int SaveJobID=0;
-
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -127,6 +120,7 @@ public class ViewHolder_Homepage extends RecyclerView.Adapter<ViewHolder_Homepag
 
             bookmark.setOnCheckedChangeListener(this);
             card.setOnClickListener(this);
+
 
 //            DatabaseReference dbsave = FirebaseDatabase.getInstance().getReference("user")
 //                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -153,6 +147,7 @@ public class ViewHolder_Homepage extends RecyclerView.Adapter<ViewHolder_Homepag
 
 
         }
+
 
 
 //        @Override
@@ -242,7 +237,7 @@ public class ViewHolder_Homepage extends RecyclerView.Adapter<ViewHolder_Homepag
                 Toast.makeText(context, "Please Login First", Toast.LENGTH_SHORT).show();
                 //user not login so make cheack box false
                 compoundButton.setChecked(false);
-                context.startActivity(new Intent(context,LoginActivity.class));
+                context.startActivity(new Intent(context,UserloginActivity.class));
 
                 return;
             }
@@ -252,27 +247,6 @@ public class ViewHolder_Homepage extends RecyclerView.Adapter<ViewHolder_Homepag
             int position = getAbsoluteAdapterPosition();
             HomeList home = list.get(position);
             String savejob = home.id + home.jobid;
-
-            dbsave.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                        String tid = dataSnapshot.getKey();
-                        System.out.println(tid + "ddd");
-                        assert tid != null;
-                        if (tid.equals(savejob)) {
-                            System.out.println(tid+ "ccce");
-                            compoundButton.setChecked(true);
-                        }
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
-
 
             if (b){
                 compoundButton.setChecked(true);
