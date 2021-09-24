@@ -43,7 +43,6 @@ public class New_Saved_Jobs extends AppCompatActivity {
     private ArrayList<HomeList> list;
     private String currentUserId;
     private FirebaseAuth auth2;
-    private Button back;
     private TextView savejobs;
     private int count = 0;
     private ProgressBar load;
@@ -53,6 +52,10 @@ public class New_Saved_Jobs extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_saved_jobs);
+
+        if (FirebaseAuth.getInstance().getCurrentUser()==null){
+            startActivity(new Intent(New_Saved_Jobs.this,UserloginActivity.class));
+        }
 
 
         drawerLayout = findViewById(R.id.drawer_layout);

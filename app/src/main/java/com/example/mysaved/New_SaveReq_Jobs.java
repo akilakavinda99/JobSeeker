@@ -49,7 +49,9 @@ public class New_SaveReq_Jobs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_save_req_jobs);
 
-
+        if (FirebaseAuth.getInstance().getCurrentUser()==null){
+            startActivity(new Intent(New_SaveReq_Jobs.this,UserloginActivity.class));
+        }
         drawerLayout = findViewById(R.id.drawer_layout);
 
         nav_login = findViewById(R.id.btn_nav_login);
