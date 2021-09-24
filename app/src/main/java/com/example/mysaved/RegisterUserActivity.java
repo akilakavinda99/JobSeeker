@@ -59,11 +59,11 @@ public class RegisterUserActivity extends AppCompatActivity {
 
 
         //if user is already registered send to Userprofile page
-        if (fAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), UserloginActivity.class));
-            //using finish method then the user cannot access the back button after going to the homepage
-            finish();
-        }
+//        if (fAuth.getCurrentUser() != null) {
+//            startActivity(new Intent(getApplicationContext(), UserloginActivity.class));
+//            //using finish method then the user cannot access the back button after going to the homepage
+//            finish();
+//        }
 
 
 

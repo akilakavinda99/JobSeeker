@@ -153,7 +153,6 @@ public class ViewHolder_ReqHomepage extends RecyclerView.Adapter<ViewHolder_ReqH
             String reqjob = reqJobList.reqid + reqJobList.reqjobid;
 
             if (b){
-                compoundButton.setChecked(true);
                 dbsave.child(reqjob).setValue(reqJobList);
             }else {
                 dbsave.child(reqjob).setValue(null);
