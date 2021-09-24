@@ -249,7 +249,6 @@ public class ViewHolder_Homepage extends RecyclerView.Adapter<ViewHolder_Homepag
             String savejob = home.id + home.jobid;
 
             if (b){
-                compoundButton.setChecked(true);
                 dbsave.child(savejob).setValue(home);
             }else {
                 dbsave.child(savejob).setValue(null);
