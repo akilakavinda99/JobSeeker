@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,7 +20,6 @@ public class NavigationBarActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     TextView nav_home_txt, nav_createjob_txt, nav_myjobs_txt, nav_requestedjobs_txt, nav_myreqjobs_txt,
             nav_savedjobs_txt, nav_profile_txt;
-    ProgressBar progressBar_listings;
     FirebaseAuth fAuth;
     String userID;
 
@@ -44,7 +42,6 @@ public class NavigationBarActivity extends AppCompatActivity {
         nav_myreqjobs_txt = findViewById(R.id.tv_nav_myreqjobs);
         nav_savedjobs_txt = findViewById(R.id.tv_nav_savedjobs);
         nav_profile_txt = findViewById(R.id.tv_nav_profile);
-        progressBar_listings = findViewById(R.id.progressBar_listings);
 
 
 
