@@ -73,12 +73,6 @@ public class MyRequestedJobs extends AppCompatActivity {
             nav_login.setVisibility(View.INVISIBLE);
             nav_logout.setVisibility(View.VISIBLE);
 
-
-            //Check user already login
-            if (fAuth.getCurrentUser() == null) {
-                startActivity(new Intent(getApplicationContext(), UserloginActivity.class));
-            }
-
             new_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
