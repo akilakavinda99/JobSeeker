@@ -13,8 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MySaved">
         <activity android:name=".SplashScreen"
-            android:exported="true"
-            ></activity>
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".New_SaveReq_Jobs"
             android:exported="true" />
@@ -74,11 +79,7 @@
         <activity
             android:name=".Homepage_new"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".CreateJob"

@@ -223,7 +223,10 @@ public class ViewjobM extends AppCompatActivity {
                 Edit_JobView_btn.setVisibility(View.VISIBLE);
             } else Edit_JobView_btn.setVisibility(View.INVISIBLE);
 
-
+        //check if user is already logged in
+        if (fAuth.getCurrentUser() == null){
+            Edit_JobView_btn.setVisibility(View.INVISIBLE);
+        }
     }
 }
 

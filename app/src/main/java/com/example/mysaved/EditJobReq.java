@@ -22,8 +22,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class EditJobReq extends AppCompatActivity {
     EditText et_jobtitle,et_name,et_age,et_description,et_email,et_phone;
-    Spinner  et_gender;
-    Button btn_edit;
+    Spinner  et_gender_editjobReq;
+    Button btn_editreq;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     String phonePattern = "[0-9]{10}";
     DatabaseReference databaseReference;
@@ -35,7 +35,7 @@ public class EditJobReq extends AppCompatActivity {
         setContentView(R.layout.activity_edit_jobreq);
 
         String UserID = getIntent().getExtras().getString("UserID");
-        String ReqJobID = getIntent().getExtras().getString("ReqJobID");
+        String ReqJobID = getIntent().getExtras().getString("JobID");
         String JobTitle= getIntent().getExtras().getString("JOBTITLE");
         String EName= getIntent().getExtras().getString("NAME");
         String EAge= getIntent().getExtras().getString("AGE");
@@ -44,7 +44,8 @@ public class EditJobReq extends AppCompatActivity {
         String EPhone = getIntent().getExtras().getString("MOBILE");
         String EGender= getIntent().getExtras().getString("GENDER");
         String date = getIntent().getExtras().getString("POSTDATE");
-        String EImage = getIntent().getExtras().getString("IMAGEurl");
+        String Image = getIntent().getExtras().getString("imageurl");
+
 
 
         et_jobtitle=findViewById(R.id.et_jobtitle_editjob);
@@ -53,8 +54,8 @@ public class EditJobReq extends AppCompatActivity {
         et_description=findViewById(R.id.et_description_editjob);
         et_email=findViewById(R.id.et_email_editjob);
         et_phone=findViewById(R.id.et_phone_editjob);
-        et_gender=(Spinner)findViewById(R.id.et_gender_editjob);
-        btn_edit=findViewById(R.id.btn_edit);
+        et_gender_editjobReq=(Spinner)findViewById(R.id.et_gender_editjobReq);
+        btn_editreq=findViewById(R.id.btn_editjobreq);
         imageView_deletejobReq=findViewById(R.id.img_dlt);
         edit_reqjob_back_btn = findViewById(R.id.editreqjob_back_btn);
 
@@ -67,18 +68,18 @@ public class EditJobReq extends AppCompatActivity {
         et_description.setText(EDescription);
 
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.job_type_ddm, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        et_gender.setAdapter(adapter);
+        ArrayAdapter<CharSequence> adapterE = ArrayAdapter.createFromResource(this, R.array.gender_vp, android.R.layout.simple_spinner_item);
+        adapterE.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        et_gender_editjobReq.setAdapter(adapterE);
         if (EGender != null) {
-            int spinnerPosition = adapter.getPosition(EGender);
-            et_gender.setSelection(spinnerPosition);
+            int spinnerPosition = adapterE.getPosition(EGender);
+            et_gender_editjobReq.setSelection(spinnerPosition);
         }
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("create_job").child(UserID).child(ReqJobID);
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("job_request").child(UserID).child(ReqJobID);
 
 
-        btn_edit.setOnClickListener(new View.OnClickListener() {
+        btn_editreq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String name = et_jobtitle.getText().toString();
@@ -87,7 +88,7 @@ public class EditJobReq extends AppCompatActivity {
                 String description = et_description.getText().toString();
                 String email1 = et_email.getText().toString();
                 String phone1 = et_phone.getText().toString();
-                String gender = et_gender.getSelectedItem().toString();
+                String gender = et_gender_editjobReq.getSelectedItem().toString();
 
 
 
@@ -130,21 +131,21 @@ public class EditJobReq extends AppCompatActivity {
                     return;
                 }
 
-
-
                 databaseReference.setValue(helperClass);
-                databaseReference.child("img").setValue(EImage).addOnSuccessListener(new OnSuccessListener<Void>() {
+                databaseReference.child("img").setValue(Image).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         Toast.makeText(EditJobReq.this, " Successful", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(view.getContext(), ViewjobM.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         intent.putExtra("user_id",UserID);
-                        intent.putExtra("job_id",ReqJobID);
+                        intent.putExtra("job_id",ReqJobID );
                         startActivity(intent);
                         overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                     }
                 });
+
+
             }
         });
 
