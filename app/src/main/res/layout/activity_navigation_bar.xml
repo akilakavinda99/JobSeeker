@@ -7,183 +7,238 @@
     android:orientation="vertical"
     tools:context=".NavigationBarActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp">
 
-    <Button
-        android:id="@+id/btn_nav_logout"
-        android:layout_width="90dp"
-        android:layout_height="35dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/button_red_border"
-        android:onClick="@string/btn_nav_logout"
-        android:text="@string/btn_nav_logout"
-        android:textAllCaps="false"
-        android:textColor="@color/nav_logout"
-        android:visibility="gone"
-        tools:ignore="OnClick" />
+        <Button
+            android:id="@+id/btn_nav_logout"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/button_red_border"
+            android:onClick="logout"
+            android:text="@string/a"
+            android:textAllCaps="false"
+            android:textColor="@color/nav_logout"
+            android:visibility="gone"
+            app:backgroundTint="@color/btn_nav_logout" />
 
-    <Button
-        android:id="@+id/btn_nav_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/border1"
-        android:onClick="@string/btn_nav_login"
-        android:text="@string/btn_nav_login"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:visibility="visible"
-        app:backgroundTint="@color/nav_login"
-        tools:ignore="OnClick" />
+        <Button
+            android:id="@+id/btn_nav_login"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/button_blue_border"
+            android:onClick="@string/btn_nav_login"
+            android:text="@string/btn_nav_login"
+            android:textAllCaps="false"
+            android:textColor="@color/nav_login"
+            android:visibility="visible"
+            app:backgroundTint="@color/btn_nav_login" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="173dp"
+            android:layout_height="112dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/js_png" />
+
+    </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="16dp" />
 
     <LinearLayout
         android:id="@+id/nav_home"
-        android:onClick="navClickHome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_height="65dp"
+        android:background="@drawable/hover"
         android:gravity="center_vertical"
-        tools:ignore="OnClick">
+        android:onClick="navClickHome"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            app:srcCompat="@drawable/home__1_"
+            tools:srcCompat="@drawable/home__1_" />
 
         <TextView
             android:id="@+id/tv_nav_home"
-            android:layout_width="0dp"
+            android:layout_width="289dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:fontFamily="@font/segoe_bold"
             android:padding="12dp"
             android:text="@string/tv_nav_home"
             android:textColor="@color/nav"
-            android:textSize="25dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
     </LinearLayout>
     <LinearLayout
-        android:onClick="navClickCreateJob"
         android:id="@+id/nav_createjob"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_height="65dp"
         android:gravity="center_vertical"
-        tools:ignore="OnClick">
+        android:onClick="navClickCreateJob"
+        android:background="@drawable/hover"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            app:srcCompat="@drawable/plus__1_"
+            tools:srcCompat="@drawable/plus__1_" />
 
         <TextView
             android:id="@+id/tv_nav_createjob"
-            android:layout_width="0dp"
+            android:layout_width="289dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:fontFamily="@font/segoe_bold"
             android:padding="12dp"
             android:text="@string/tv_nav_createjob"
             android:textColor="@color/nav"
-            android:textSize="25dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
-</LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
-        android:onClick="navClickMyjobs"
         android:id="@+id/nav_Myjobs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="65dp"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
-        tools:ignore="OnClick">
+        android:onClick="navClickMyjobs"
+        android:background="@drawable/hover"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            app:srcCompat="@drawable/_05581_200"
+            tools:srcCompat="@drawable/_05581_200" />
 
         <TextView
             android:id="@+id/tv_nav_myjobs"
-            android:layout_width="0dp"
+            android:layout_width="289dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:fontFamily="@font/segoe_bold"
             android:padding="12dp"
             android:text="@string/tv_nav_myjobs"
             android:textColor="@color/nav"
-            android:textSize="25dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
     </LinearLayout>
 
     <LinearLayout
-    android:onClick="navClickRequestedjobs"
-    android:id="@+id/nav_requestedjobs"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:gravity="center_vertical"
-    tools:ignore="OnClick">
+        android:id="@+id/nav_requestedjobs"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:gravity="center_vertical"
+        android:onClick="navClickRequestedjobs"
+        android:background="@drawable/hover"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            app:srcCompat="@drawable/job"
+            tools:srcCompat="@drawable/job" />
 
         <TextView
             android:id="@+id/tv_nav_requestedjobs"
-            android:layout_width="0dp"
+            android:layout_width="289dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:fontFamily="@font/segoe_bold"
             android:padding="12dp"
             android:text="@string/tv_nav_requestedjobs"
             android:textColor="@color/nav"
-            android:textSize="25dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
-</LinearLayout>
-<LinearLayout
-android:onClick="navClickMyreqjobs"
-android:id="@+id/nav_myrequestedjobs"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:orientation="horizontal"
-android:gravity="center_vertical"
-    tools:ignore="OnClick">
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_nav_myreqjobs"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_weight="1"
-        android:fontFamily="@font/segoe_bold"
-        android:padding="12dp"
-        android:text="@string/tv_nav_myreqjobs"
-        android:textColor="@color/nav"
-        android:textSize="25dp"
-        android:textStyle="bold" />
-
-</LinearLayout>
     <LinearLayout
-        android:onClick="navClickSavedjobs"
+        android:id="@+id/nav_myrequestedjobs"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:gravity="center_vertical"
+        android:onClick="navClickMyreqjobs"
+        android:background="@drawable/hover"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            app:srcCompat="@drawable/need"
+            tools:srcCompat="@drawable/need" />
+
+        <TextView
+            android:id="@+id/tv_nav_myreqjobs"
+            android:layout_width="289dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/segoe_bold"
+            android:padding="12dp"
+            android:text="@string/tv_nav_myreqjobs"
+            android:textColor="@color/nav"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/nav_myjobs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_height="65dp"
         android:gravity="center_vertical"
-        tools:ignore="OnClick,UsingOnClickInXml">
+        android:onClick="navClickSavedjobs"
+        android:background="@drawable/hover"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            app:srcCompat="@drawable/bookmark__1_"
+            tools:srcCompat="@drawable/bookmark__1_" />
 
         <TextView
             android:id="@+id/tv_nav_savedjobs"
-            android:layout_width="0dp"
+            android:layout_width="289dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:fontFamily="@font/segoe_bold"
             android:padding="12dp"
             android:text="@string/tv_nav_savedjobs"
             android:textColor="@color/nav"
-            android:textSize="25dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
     </LinearLayout>
-
 
     <View
         android:layout_width="match_parent"
@@ -198,8 +253,8 @@ android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_vertical"
-        tools:ignore="OnClick">
+        android:background="@drawable/hover"
+        android:gravity="center_vertical">
 
         <ImageView
 
@@ -219,7 +274,7 @@ android:gravity="center_vertical"
             android:padding="12dp"
             android:text="@string/tv_nav_profile"
             android:textColor="@color/nav"
-            android:textSize="25dp"
+            android:textSize="25sp"
             android:textStyle="bold" />
     </LinearLayout>
 

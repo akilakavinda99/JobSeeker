@@ -85,8 +85,6 @@
 
     <string name="phone6">Phone</string>
     <string name="title8">Title</string>
-    <string name="d_tv_jobtype">Jobtype</string>
-    <string name="d_tv_joblocation">location</string>
 
     <string-array name="job_type_sm">
         <item> Select Job Type</item>
@@ -230,7 +228,7 @@
     <string name="btn_createR">Create</string>
 
     <string name="btn_nav_login">Login</string>
-    <string name="btn_nav_logout">Log out</string>
+    <string name="a">Log out</string>
     <string name="tv_nav_home">Home</string>
     <string name="tv_nav_createjob">Create a Job</string>
     <string name="tv_nav_myjobs">My Jobs</string>
@@ -267,6 +265,8 @@
     <string name="d_tv_reqjobage2">0</string>
     <string name="d_yearsold">Years Old</string>
     <string name="d_tv_reqjobgender2">Gender</string>
+    <string name="nav_home">navClickHome</string>
+    <string name="btn_nav_logout">logout</string>
 
     <string-array name="districts_vp">
         <item> Ampara</item>
