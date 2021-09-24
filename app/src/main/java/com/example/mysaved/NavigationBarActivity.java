@@ -76,7 +76,7 @@ public class NavigationBarActivity extends AppCompatActivity {
     //navigation drawer button functions
     public void login(View view) {
 
-        Intent i = new Intent(getApplicationContext(), UserloginActivity.class).putExtra("from", "NavigationBarActivity");
+        Intent i = new Intent(getApplicationContext(), UserloginActivity.class);
         startActivity(i);
 
     }
