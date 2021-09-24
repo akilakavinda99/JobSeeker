@@ -43,7 +43,7 @@ public class EditJobReq extends AppCompatActivity {
         String EEmail = getIntent().getExtras().getString("EMAIL");
         String EPhone = getIntent().getExtras().getString("MOBILE");
         String EGender= getIntent().getExtras().getString("GENDER");
-        String date = getIntent().getExtras().getString("POSTDATE");
+        String date = getIntent().getExtras().getString("DATE");
         String Image = getIntent().getExtras().getString("imageurl");
 
 
@@ -136,7 +136,7 @@ public class EditJobReq extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void unused) {
                         Toast.makeText(EditJobReq.this, " Successful", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(view.getContext(), ViewjobM.class);
+                        Intent intent = new Intent(view.getContext(), ViewReqJob.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         intent.putExtra("user_id",UserID);
                         intent.putExtra("job_id",ReqJobID );
