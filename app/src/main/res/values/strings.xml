@@ -230,11 +230,11 @@
     <string name="btn_nav_login">Login</string>
     <string name="a">Log out</string>
     <string name="tv_nav_home">Home</string>
-    <string name="tv_nav_createjob">Create a Job</string>
-    <string name="tv_nav_myjobs">My Jobs</string>
+    <string name="tv_nav_myjobs">My Job Listing</string>
+    <string name="tv_nav_savedjobs">Saved Jobs</string>
     <string name="tv_nav_requestedjobs">Requested Jobs</string>
     <string name="tv_nav_myreqjobs">My Requested Jobs</string>
-    <string name="tv_nav_savedjobs">Saved Jobs</string>
+    <string name="tv_nav_savedreqjobs">Saved Requested Jobs</string>
     <string name="tv_nav_profile">Profile</string>
 
     <string name="tv_Profile">Profile</string>
@@ -269,6 +269,7 @@
     <string name="btn_nav_logout">logout</string>
     <string name="tv_editReqjob">Edit Requested Job</string>
     <string name="tv_editjobreq">Edit Requested Job</string>
+
 
     <string-array name="districts_vp">
         <item> Ampara</item>

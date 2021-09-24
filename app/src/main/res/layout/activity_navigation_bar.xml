@@ -85,36 +85,6 @@
             android:textStyle="bold" />
 
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/nav_createjob"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:gravity="center_vertical"
-        android:onClick="navClickCreateJob"
-        android:background="@drawable/hover"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            app:srcCompat="@drawable/plus__1_"
-            tools:srcCompat="@drawable/plus__1_" />
-
-        <TextView
-            android:id="@+id/tv_nav_createjob"
-            android:layout_width="289dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/segoe_bold"
-            android:padding="12dp"
-            android:text="@string/tv_nav_createjob"
-            android:textColor="@color/nav"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/nav_Myjobs"
@@ -141,6 +111,37 @@
             android:fontFamily="@font/segoe_bold"
             android:padding="12dp"
             android:text="@string/tv_nav_myjobs"
+            android:textColor="@color/nav"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nav_myjobs"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:gravity="center_vertical"
+        android:onClick="navClickSavedjobs"
+        android:background="@drawable/hover"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            app:srcCompat="@drawable/bookmark__1_"
+            tools:srcCompat="@drawable/bookmark__1_" />
+
+        <TextView
+            android:id="@+id/tv_nav_savedjobs"
+            android:layout_width="289dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/segoe_bold"
+            android:padding="12dp"
+            android:text="@string/tv_nav_savedjobs"
             android:textColor="@color/nav"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -210,16 +211,16 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/nav_myjobs"
+        android:id="@+id/nav_createjob"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:gravity="center_vertical"
-        android:onClick="navClickSavedjobs"
+        android:onClick="navClickCreateJob"
         android:background="@drawable/hover"
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/imageView10"
+            android:id="@+id/imageView8"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="10dp"
@@ -227,18 +228,20 @@
             tools:srcCompat="@drawable/bookmark__1_" />
 
         <TextView
-            android:id="@+id/tv_nav_savedjobs"
+            android:id="@+id/tv_nav_savedreqjobs"
             android:layout_width="289dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/segoe_bold"
             android:padding="12dp"
-            android:text="@string/tv_nav_savedjobs"
+            android:text="@string/tv_nav_savedreqjobs"
             android:textColor="@color/nav"
             android:textSize="20sp"
             android:textStyle="bold" />
 
     </LinearLayout>
+
+
 
     <View
         android:layout_width="match_parent"
