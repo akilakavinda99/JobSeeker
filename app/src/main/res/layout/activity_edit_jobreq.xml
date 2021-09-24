@@ -5,39 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/editjob"
-    tools:context=".EditjobReq">
+    tools:context=".EditJobReq">
 
     <TextView
-        android:id="@+id/tv_editjob"
-        android:layout_width="189dp"
-        android:layout_height="64dp"
+        android:id="@+id/tv_editjobreq"
+        android:layout_width="237dp"
+        android:layout_height="71dp"
         android:layout_marginTop="44dp"
-        android:layout_marginEnd="12dp"
-        android:fontFamily="@font/actor"
-        android:text="@string/tv_editjob"
-        android:textColor="#070707"
-        android:textSize="48sp"
+        android:fontFamily="sans-serif-medium"
+        android:hint="@string/tv_editjobreq"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.168"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/img_dlt"
-        android:layout_width="45dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toEndOf="@+id/tv_editjobreq"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/deletebtn"
         tools:ignore="VectorDrawableCompat" />
 
     <EditText
         android:id="@+id/et_jobtitle_editjob"
-        android:layout_width="269dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/rounded_view_register"
         android:ems="10"
         android:hint="@string/et_name_editjob"
@@ -45,14 +47,15 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_editjob" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_editjobreq" />
 
     <EditText
         android:id="@+id/et_name_editjob"
-        android:layout_width="269dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/rounded_view_register"
         android:ems="10"
         android:hint="@string/et_name_editjob1"
@@ -61,30 +64,14 @@
         android:paddingEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_editjob" />
-
-    <EditText
-        android:id="@+id/et_gender_editjob"
-        android:layout_width="117dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/rounded_view_register"
-        android:ems="10"
-        android:hint="@string/et_gender_editjob"
-        android:inputType="textPersonName"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.761"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_name_editjob" />
+        app:layout_constraintTop_toBottomOf="@+id/et_jobtitle_editjob" />
 
     <EditText
         android:id="@+id/et_age_editjob"
-        android:layout_width="125dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_view_register"
         android:ems="10"
         android:hint="@string/et_age_editjob"
@@ -94,22 +81,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_name_editjob" />
 
+    <Spinner
+        android:id="@+id/et_gender_editjob"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_view_register"
+        android:ems="10"
+        android:hint="@string/et_gender_editjob"
+        android:inputType="textPersonName"
+        android:entries="@array/gender_vp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.352"
+        app:layout_constraintStart_toEndOf="@+id/et_age_editjob"
+        app:layout_constraintTop_toBottomOf="@+id/et_name_editjob" />
+
     <ImageView
         android:id="@+id/image_request_job"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="76dp"
+        android:layout_marginEnd="56dp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_gender_editjob"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_name_editjob"
+        app:layout_constraintTop_toTopOf="@+id/et_gender_editjob"
         app:srcCompat="@drawable/dropdown_arrow"
         tools:ignore="VectorDrawableCompat" />
 
     <EditText
         android:id="@+id/et_description_editjob"
-        android:layout_width="260dp"
-        android:layout_height="79dp"
-        android:layout_marginTop="68dp"
+        android:layout_width="325dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_view_register"
         android:ems="10"
         android:hint="@string/et_description_editjob"
@@ -117,31 +121,15 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.465"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_name_editjob" />
-
-    <EditText
-        android:id="@+id/et_qualifications_editjob"
-        android:layout_width="260dp"
-        android:layout_height="79dp"
-        android:layout_marginTop="88dp"
-        android:background="@drawable/rounded_view_register"
-        android:ems="10"
-        android:hint="@string/et_qualifications_editjob"
-        android:inputType="textPersonName"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/et_description_editjob" />
+        app:layout_constraintTop_toBottomOf="@+id/et_gender_editjob" />
 
     <EditText
         android:id="@+id/et_email_editjob"
-        android:layout_width="260dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_view_register"
         android:ems="10"
         android:hint="@string/et_email_editjob"
@@ -149,15 +137,15 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.465"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_qualifications_editjob" />
+        app:layout_constraintTop_toBottomOf="@+id/et_description_editjob" />
 
     <EditText
         android:id="@+id/et_phone_editjob"
-        android:layout_width="260dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_view_register"
         android:ems="10"
         android:hint="@string/et_phone_editjob"
@@ -165,34 +153,32 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.465"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/et_email_editjob" />
+        app:layout_constraintTop_toBottomOf="@+id/et_email_editjob" />
 
     <Button
         android:id="@+id/btn_editjob"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="28dp"
         android:text="@string/btn_editjob"
         app:backgroundTint="@color/modern_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="80dp"
         android:layout_height="63dp"
-        android:layout_marginTop="64dp"
         android:background="@drawable/border2"
+        app:layout_constraintBottom_toTopOf="@+id/btn_editjob"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/et_phone_editjob"
+        app:layout_constraintTop_toBottomOf="@+id/et_phone_editjob"
         app:srcCompat="@drawable/addicon"
         tools:ignore="VectorDrawableCompat" />
 
@@ -200,10 +186,24 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="48dp"
         android:text="Add Image"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_phone_editjob" />
+
+    <ImageView
+        android:id="@+id/editreqjob_back_btn"
+        android:layout_width="23dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_editjobreq"
+        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back"
+        tools:ignore="VectorDrawableCompat" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
