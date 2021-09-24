@@ -48,20 +48,20 @@
         android:layout_margin="3dp"
         android:clickable="true"
         android:focusable="true"
-        android:paddingTop="150dp"
+        android:paddingTop="70dp"
         tools:layout_editor_absoluteX="3dp"
         tools:layout_editor_absoluteY="74dp" />
 
 
-    <Button
-        android:id="@+id/d_test_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
-        android:text="My Saved"
+        android:src="@drawable/d_search"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include" />
+        app:layout_constraintTop_toBottomOf="@+id/include"/>
+
 
     <SearchView
         android:id="@+id/d_search"
@@ -95,7 +95,7 @@
         android:layout_gravity="start"
         android:background="@android:color/white">
 
-        <include layout="@layout/activity_navigation_bar"/>
+        <include layout="@layout/activity_navigation_bar" />
 
     </RelativeLayout>
 
