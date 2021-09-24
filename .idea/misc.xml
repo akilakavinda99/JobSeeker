@@ -28,6 +28,7 @@
         <entry key="..\:/aaaaaaaaaaaaaaaaaaaaaaaaaa/app/src/main/res/drawable/hovercolor2.xml" value="0.1" />
         <entry key="..\:/aaaaaaaaaaaaaaaaaaaaaaaaaa/app/src/main/res/layout/activity_edit_job.xml" value="0.4" />
         <entry key="..\:/aaaaaaaaaaaaaaaaaaaaaaaaaa/app/src/main/res/layout/activity_edit_jobreq.xml" value="0.2" />
+        <entry key="..\:/aaaaaaaaaaaaaaaaaaaaaaaaaa/app/src/main/res/layout/activity_homepage_new.xml" value="0.152" />
         <entry key="..\:/aaaaaaaaaaaaaaaaaaaaaaaaaa/app/src/main/res/layout/activity_navigation_bar.xml" value="0.264" />
       </map>
     </option>
@@ -41,7 +42,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.2" />
+        <option name="scale" value="0.152" />
       </ProjectState>
     </option>
   </component>
