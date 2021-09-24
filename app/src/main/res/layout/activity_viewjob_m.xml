@@ -3,6 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
@@ -11,6 +12,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="41dp"
+            android:background="@color/white"
             android:orientation="horizontal">
 
                 <ImageView
@@ -23,7 +25,7 @@
                 <ImageView
                     android:id="@+id/imageView23"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="53dp"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/jslogo" />
         </LinearLayout>
@@ -31,7 +33,7 @@
         <ImageView
             android:id="@+id/jobImage_tv_jobView"
             android:layout_width="423dp"
-            android:layout_height="199dp"
+            android:layout_height="228dp"
             android:adjustViewBounds="true"
             android:background="@color/white"
             android:scaleType="centerInside"
@@ -40,7 +42,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/rounded_corner_background"
             android:orientation="vertical">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -82,7 +83,8 @@
                             android:textSize="14sp"
                             app:layout_constraintBaseline_toBaselineOf="@+id/jobTitle_tv"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/jobTitle_tv" />
+                            app:layout_constraintHorizontal_bias="0.952"
+                            app:layout_constraintStart_toStartOf="@+id/jobTitle_tv" />
 
                         <View
                             android:id="@+id/divider5"
@@ -230,7 +232,6 @@
                             android:id="@+id/jobDescription_tv_jobView"
                             android:layout_width="323dp"
                             android:layout_height="101dp"
-                            android:background="@drawable/textview_backgound"
                             android:padding="15dp"
                             android:text="TextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextView"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -250,7 +251,7 @@
                             android:id="@+id/btn_email_jv2"
                             android:layout_width="94dp"
                             android:layout_height="45dp"
-                            android:layout_marginStart="28dp"
+                            android:layout_marginStart="12dp"
                             android:layout_marginBottom="16dp"
                             android:background="@drawable/button_blue_bo"
                             android:text="@string/btn_email_jv"
@@ -262,7 +263,7 @@
                             android:id="@+id/btn_call_jv4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="284dp"
+                            android:layout_marginStart="256dp"
                             android:layout_marginBottom="16dp"
                             android:background="@drawable/button_blue_bo"
                             android:text="@string/btn_call_jv"
@@ -325,16 +326,22 @@
                             app:cornerRadius="58dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@+id/btn_call_jv4"
-                            app:layout_constraintHorizontal_bias="0.529"
+                            app:layout_constraintHorizontal_bias="0.554"
                             app:layout_constraintStart_toEndOf="@+id/btn_email_jv2" />
 
                         <TextView
                             android:id="@+id/textView2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="48dp"
+                            android:layout_marginEnd="56dp"
+                            android:layout_marginBottom="42dp"
                             android:text="TextView"
-                            tools:layout_editor_absoluteX="297dp"
-                            tools:layout_editor_absoluteY="49dp" />
+                            app:layout_constraintBottom_toTopOf="@+id/btn_call_jv4"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/jobEmail_tv_jobView"
+                            app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

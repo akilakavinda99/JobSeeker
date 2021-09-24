@@ -125,8 +125,8 @@ public class RequestJob extends AppCompatActivity {
 
                 //This codes are execuded after click
 
-                String name = req_title.getText().toString();
-                String title = c_name.getText().toString();
+                String name = c_name.getText().toString();
+                String title = req_title.getText().toString();
                 String c_age1 = c_age.getText().toString();
                 String description = req_description.getText().toString();
                 String email1 = email.getText().toString();
@@ -242,7 +242,7 @@ public class RequestJob extends AppCompatActivity {
                         Map<String,Object> user = new HashMap<>();
                         user.put("ReqId",req_id);
                         rr.updateChildren(user);
-                        startActivity(new Intent(getApplicationContext(), MyJobListings.class));
+                        startActivity(new Intent(getApplicationContext(), MyRequestedJobs.class));
                     }
                 });
             }

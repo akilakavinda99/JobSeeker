@@ -35,7 +35,7 @@ public class ViewReqJob extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         userid = getIntent().getStringExtra("user_id");
-        jobid = getIntent().getStringExtra("job_id");
+        jobid = getIntent().getStringExtra("ReqId");
         setContentView(R.layout.activity_view_req_job);
         ReqJobImage = findViewById(R.id.imageView2);
         tv_req_job_title = findViewById(R.id.tv_req_job_title);

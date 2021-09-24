@@ -73,13 +73,6 @@ public class MyJobListings extends AppCompatActivity {
             nav_login.setVisibility(View.INVISIBLE);
             nav_logout.setVisibility(View.VISIBLE);
 
-
-
-
-            if (fAuth.getCurrentUser() == null) {
-                startActivity(new Intent(getApplicationContext(), UserloginActivity.class));
-            }
-
             create_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,14 +15,17 @@
             android:layout_height="31dp"
             android:layout_centerVertical="true"
             android:onClick="ClickMenu"
-            android:src="@drawable/ic_baseline_menu_24"/>
+            android:src="@drawable/ic_baseline_menu_24" />
+
         <ImageView
             android:id="@+id/logo_icon"
             android:layout_width="195dp"
-            android:layout_height="99dp"
-            android:layout_centerVertical="true"
+            android:layout_height="89dp"
             android:layout_alignParentEnd="true"
+            android:layout_marginStart="131dp"
+            android:layout_marginEnd="33dp"
+            android:layout_toEndOf="@+id/back_icon"
             android:scaleType="centerCrop"
-            android:src="@drawable/jslogo"/>
+            android:src="@drawable/jslogo" />
     </RelativeLayout>
 </RelativeLayout>

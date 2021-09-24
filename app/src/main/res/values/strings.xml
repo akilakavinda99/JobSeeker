@@ -129,6 +129,12 @@
         <item> Vavuniya</item>
     </string-array>
 
+    <string-array name="genderR">
+        <item>Enter Gender</item>
+        <item> Male</item>
+        <item> Female</item>
+    </string-array>
+
     <string-array name="districts_smm">
         <item> Select District</item>
         <item> Ampara</item>
@@ -300,12 +306,6 @@
     <string-array name="gender_vp">
         <item>Male</item>
         <item>Female</item>
-    </string-array>
-
-    <string-array name="genderR">
-        <item>Enter Gender</item>
-        <item> Male</item>
-        <item> Female</item>
     </string-array>
 
     <!--    Pankaja's Strings-->
