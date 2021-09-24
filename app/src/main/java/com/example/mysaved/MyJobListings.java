@@ -73,13 +73,6 @@ public class MyJobListings extends AppCompatActivity {
             nav_login.setVisibility(View.INVISIBLE);
             nav_logout.setVisibility(View.VISIBLE);
 
-
-
-
-            if (fAuth.getCurrentUser() == null) {
-                startActivity(new Intent(getApplicationContext(), UserloginActivity.class));
-            }
-
             create_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -147,7 +140,7 @@ public class MyJobListings extends AppCompatActivity {
     public void logout(View view) {
 
         FirebaseAuth.getInstance().signOut();
-        Intent i = new Intent(getApplicationContext(), Homepage_new.class).putExtra("from", "New_Saved_Jobs");
+        Intent i = new Intent(getApplicationContext(), Homepage_new.class);
         startActivity(i);
 
     }

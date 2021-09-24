@@ -23,17 +23,7 @@
         <entry key="..\:/Users/USER/Videos/JobSeeker/app/src/main/res/layout/activity_edit_jobreq.xml" value="0.33" />
         <entry key="..\:/Users/USER/Videos/JobSeeker/app/src/main/res/layout/activity_my_job_listings.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/USER/Videos/JobSeeker/app/src/main/res/layout/activity_my_requested_jobs.xml" value="0.36666666666666664" />
-        <entry key="..\:/aaaaaaaaaaaaaaaaaaaaaaaaaa/app/src/main/res/drawable/hover.xml" value="0.1" />
-        <entry key="..\:/aaaaaaaaaaaaaaaaaaaaaaaaaa/app/src/main/res/drawable/hovercolor1.xml" value="0.1" />
-        <entry key="..\:/aaaaaaaaaaaaaaaaaaaaaaaaaa/app/src/main/res/drawable/hovercolor2.xml" value="0.1" />
-        <entry key="..\:/aaaaaaaaaaaaaaaaaaaaaaaaaa/app/src/main/res/layout/activity_edit_job.xml" value="0.4" />
-        <entry key="..\:/aaaaaaaaaaaaaaaaaaaaaaaaaa/app/src/main/res/layout/activity_edit_jobreq.xml" value="0.2" />
-        <entry key="..\:/aaaaaaaaaaaaaaaaaaaaaaaaaa/app/src/main/res/layout/activity_homepage_new.xml" value="0.152" />
-        <entry key="..\:/aaaaaaaaaaaaaaaaaaaaaaaaaa/app/src/main/res/layout/activity_my_job_listings.xml" value="0.17145505097312327" />
-        <entry key="..\:/aaaaaaaaaaaaaaaaaaaaaaaaaa/app/src/main/res/layout/activity_navigation_bar.xml" value="0.264" />
-        <entry key="..\:/aaaaaaaaaaaaaaaaaaaaaaaaaa/app/src/main/res/layout/activity_new_req_job_homepage.xml" value="0.46274149034038636" />
-        <entry key="..\:/aaaaaaaaaaaaaaaaaaaaaaaaaa/app/src/main/res/layout/activity_new_save_req_jobs.xml" value="0.47562097516099355" />
-        <entry key="..\:/aaaaaaaaaaaaaaaaaaaaaaaaaa/app/src/main/res/layout/activity_new_saved_jobs.xml" value="0.46274149034038636" />
+
       </map>
     </option>
   </component>
@@ -46,8 +36,50 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.152" />
+        <option name="scale" value="0.264" />
       </ProjectState>
     </option>
   </component>
+</project>
+    <?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+<component name="DesignSurface">
+  <option name="filePathToZoomLevelMap">
+    <map>
+      <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/drawable/progressbar.xml" value="0.3828125" />
+      <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/activity_create_job.xml" value="0.33" />
+      <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/activity_edit_job.xml" value="0.264" />
+      <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/activity_homepage.xml" value="0.35190217391304346" />
+      <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/activity_my_job_listings.xml" value="0.264" />
+      <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/activity_my_requested_jobs.xml" value="0.2828125" />
+      <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/activity_requestjob.xml" value="0.33" />
+      <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/activity_userlogin.xml" value="0.36666666666666664" />
+      <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/activity_viewjob_m.xml" value="0.5" />
+      <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/item.xml" value="0.67" />
+      <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/item2.xml" value="0.2994791666666667" />
+      <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/listing_ad_box_view.xml" value="0.5" />
+      <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/listing_card.xml" value="0.67" />
+      <entry key="..\:/Users/USER/Pictures/JobSeeker/app/src/main/res/layout/register_user.xml" value="0.36666666666666664" />
+      <entry key="..\:/Users/USER/Pictures/Resourse/JobSeeker/app/src/main/res/layout/activity_create_job.xml" value="0.3423913043478261" />
+      <entry key="..\:/Users/USER/Videos/JobSeeker/app/src/main/res/layout/activity_create_job.xml" value="0.36666666666666664" />
+      <entry key="..\:/Users/USER/Videos/JobSeeker/app/src/main/res/layout/activity_edit_job.xml" value="0.36666666666666664" />
+      <entry key="..\:/Users/USER/Videos/JobSeeker/app/src/main/res/layout/activity_edit_jobreq.xml" value="0.33" />
+      <entry key="..\:/Users/USER/Videos/JobSeeker/app/src/main/res/layout/activity_my_job_listings.xml" value="0.36666666666666664" />
+      <entry key="..\:/Users/USER/Videos/JobSeeker/app/src/main/res/layout/activity_my_requested_jobs.xml" value="0.36666666666666664" />
+    </map>
+  </option>
+</component>
+<component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <output url="file://$PROJECT_DIR$/build/classes" />
+</component>
+<component name="ProjectType">
+  <option name="id" value="Android" />
+</component>
+<component name="VisualizationToolProject">
+  <option name="state">
+    <ProjectState>
+      <option name="scale" value="0.264" />
+    </ProjectState>
+  </option>
+</component>
 </project>

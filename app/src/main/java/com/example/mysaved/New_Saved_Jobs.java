@@ -54,8 +54,6 @@ public class New_Saved_Jobs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_saved_jobs);
 
-        load = findViewById(R.id.d_progressbar);
-        back = findViewById(R.id.d_test_btn2);
 
         drawerLayout = findViewById(R.id.drawer_layout);
 
@@ -140,7 +138,6 @@ public class New_Saved_Jobs extends AppCompatActivity {
 
                         HomeList home = new HomeList(id, jobid, date, name, title, salary1, job_type, description, email1, phone1, district, img);
                         list.add(home);
-                        load.setVisibility(View.INVISIBLE);
 
 //                    for(DataSnapshot ds : dataSnapshot.getChildren()){
 //                        String jobid = ds.getKey();
@@ -167,13 +164,6 @@ public class New_Saved_Jobs extends AppCompatActivity {
                 }
             });
 
-
-            back.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    startActivity(new Intent(getApplicationContext(), Homepage_new.class));
-                }
-            });
         }
 
     }
@@ -192,7 +182,7 @@ public class New_Saved_Jobs extends AppCompatActivity {
     public void logout(View view) {
 
         FirebaseAuth.getInstance().signOut();
-        Intent i = new Intent(getApplicationContext(), Homepage_new.class).putExtra("from", "New_Saved_Jobs");
+        Intent i = new Intent(getApplicationContext(), Homepage_new.class);
         startActivity(i);
 
     }

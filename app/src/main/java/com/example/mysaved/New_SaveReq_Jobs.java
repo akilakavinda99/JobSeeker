@@ -40,18 +40,15 @@ public class New_SaveReq_Jobs extends AppCompatActivity {
     private ArrayList<ReqJobList> list;
     private String currentUserId;
     private FirebaseAuth auth2;
-    private Button back;
     private TextView savejobs;
     private int count = 0;
-    private ProgressBar load;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_save_req_jobs);
 
-        load = findViewById(R.id.d_progressBar2);
-        back = findViewById(R.id.d_reqtest_btn2);
 
         drawerLayout = findViewById(R.id.drawer_layout);
 
@@ -78,13 +75,6 @@ public class New_SaveReq_Jobs extends AppCompatActivity {
             nav_login.setVisibility(View.INVISIBLE);
             nav_logout.setVisibility(View.VISIBLE);
 
-            back.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    startActivity(new Intent(getApplicationContext(), NewReqJob_Homepage.class));
-                    finish();
-                }
-            });
 
             auth2 = FirebaseAuth.getInstance();
             currentUserId = auth2.getCurrentUser().getUid();
@@ -139,7 +129,6 @@ public class New_SaveReq_Jobs extends AppCompatActivity {
 
                         ReqJobList reqJobList = new ReqJobList(reqid, reqjobid, date, name, title, phone1, c_age1, description, email1, gender, img);
                         list.add(reqJobList);
-                        load.setVisibility(View.INVISIBLE);
                     }
                     viewHolder_saveReqJob.notifyDataSetChanged();
                 }
@@ -166,7 +155,7 @@ public class New_SaveReq_Jobs extends AppCompatActivity {
     public void logout(View view) {
 
         FirebaseAuth.getInstance().signOut();
-        Intent i = new Intent(getApplicationContext(), Homepage_new.class).putExtra("from", "New_Saved_Jobs");
+        Intent i = new Intent(getApplicationContext(), Homepage_new.class);
         startActivity(i);
 
     }

@@ -51,10 +51,9 @@
         <activity
             android:name=".MyJobListings"
             android:exported="true" />
+       
         <activity
-            android:name=".NavigationBarActivity"
-            android:exported="true" />
-        <activity
+
             android:name=".ProfileActivity"
             android:exported="true" />
         <activity

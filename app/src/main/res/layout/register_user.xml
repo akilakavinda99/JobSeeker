@@ -18,6 +18,8 @@
         android:inputType="textPersonName"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
+        android:textColor="#FF4C4C4C"
+        android:textColorHint="#FF4C4C4C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,6 +36,8 @@
         android:inputType="textPersonName"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
+        android:textColor="#FF4C4C4C"
+        android:textColorHint="#FF4C4C4C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,6 +80,8 @@
         android:inputType="phone"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
+        android:textColor="#FF4C4C4C"
+        android:textColorHint="#FF4C4C4C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,6 +98,8 @@
         android:inputType="textPassword"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
+        android:textColor="#FF4C4C4C"
+        android:textColorHint="#FF4C4C4C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,14 +107,19 @@
 
     <Button
         android:id="@+id/btn_acCeate"
-        android:layout_width="183dp"
-        android:layout_height="63dp"
+        android:layout_width="175dp"
+        android:layout_height="48dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="63dp"
+        android:background="@drawable/border2"
         android:hint="@string/btn_acCeate"
         android:text="Create Account"
+
         app:backgroundTint="@color/modern_blue"
         app:cornerRadius="50dp"
+
+        
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

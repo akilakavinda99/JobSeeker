@@ -80,17 +80,6 @@ public class NewReqJob_Homepage extends AppCompatActivity {
 
         load = findViewById(R.id.d_progressBar3);
 
-        saveReqjobs = findViewById(R.id.d_reqtest_btn);
-        saveReqjobs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (FirebaseAuth.getInstance().getCurrentUser()!= null) {
-                    startActivity(new Intent(getApplicationContext(), New_SaveReq_Jobs.class));
-                }else{
-                    Toast.makeText(NewReqJob_Homepage.this, "Please Login First", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
 
         recyclerView = findViewById(R.id.d_reqrecycle);
         recyclerView.setHasFixedSize(true);
