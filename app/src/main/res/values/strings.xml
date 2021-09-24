@@ -267,6 +267,8 @@
     <string name="d_tv_reqjobgender2">Gender</string>
     <string name="nav_home">navClickHome</string>
     <string name="btn_nav_logout">logout</string>
+    <string name="tv_editReqjob">Edit Requested Job</string>
+    <string name="tv_editjobreq">Edit Requested Job</string>
 
     <string-array name="districts_vp">
         <item> Ampara</item>

@@ -45,6 +45,11 @@
         <activity
             android:name=".RequestJob"
             android:exported="true" />
+
+        <activity
+            android:name=".EditJobReq"
+            android:exported="true" />
+
         <activity
             android:name=".Request_jobs_home"
             android:exported="true" />
