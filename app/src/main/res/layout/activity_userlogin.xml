@@ -11,46 +11,44 @@
         android:id="@+id/login_back_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/image_login"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="44dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/baseline_arrow_back_ios_24"
         tools:ignore="VectorDrawableCompat" />
 
     <ImageView
         android:id="@+id/image_login"
-        android:layout_width="269dp"
-        android:layout_height="138dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="600dp"
+        android:layout_height="246dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_sign_in"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/jslogo" />
 
     <TextView
         android:id="@+id/tv_sign_in"
         android:layout_width="148dp"
         android:layout_height="58dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginBottom="48dp"
         android:fontFamily="@font/segoe"
         android:text="@string/tv_sign_in"
         android:textColor="@color/black"
         android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_log_email"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.105"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_login" />
+        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/et_log_email"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="28dp"
         android:background="@android:drawable/editbox_background"
         android:ems="10"
         android:hint="@string/et_log_email"
@@ -61,16 +59,14 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/et_log_password"
         app:layout_constraintEnd_toEndOf="@+id/et_log_password"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/et_log_password"
-        app:layout_constraintTop_toBottomOf="@+id/tv_sign_in"
-        app:layout_constraintVertical_bias="0.812" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/et_log_password" />
 
     <EditText
         android:id="@+id/et_log_password"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="292dp"
+        android:layout_marginBottom="32dp"
         android:background="@android:drawable/editbox_background"
         android:ems="10"
         android:hint="@string/et_log_password"
@@ -78,7 +74,7 @@
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,45 +84,43 @@
         android:id="@+id/btn_login"
         android:layout_width="142dp"
         android:layout_height="47dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/button_blue_border"
         android:text="@string/btn_login"
         android:textColor="@color/white"
         app:backgroundTint="@color/nav_login"
+        app:layout_constraintBottom_toTopOf="@+id/btn_sign_up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_log_password" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_sign_up"
         android:layout_width="142dp"
         android:layout_height="47dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="48dp"
         android:background="@drawable/button_blue_border"
         android:text="@string/btn_sign_up"
         android:textColor="@color/nav_login"
         app:backgroundTint="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/tv_fgt_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login"
         tools:ignore="MissingConstraints,UnknownId" />
 
     <TextView
         android:id="@+id/tv_fgt_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="60dp"
         android:text="@string/tv_fgt_password"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.064"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_sign_up"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
