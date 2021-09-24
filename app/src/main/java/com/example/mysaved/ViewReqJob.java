@@ -27,12 +27,15 @@ public class ViewReqJob extends AppCompatActivity {
     TextView tv_req_job_title, ReqJobName, ReqJobAge, ReqJobGender, ReqJobDescription;
     Button btn_emaill_jv3, btn_call_jvr;
     DatabaseReference databaseReference;
-    String imageUrl;
+    String imageUrl,userid,jobid;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        userid = getIntent().getStringExtra("user_id");
+        jobid = getIntent().getStringExtra("job_id");
         setContentView(R.layout.activity_view_req_job);
         ReqJobImage = findViewById(R.id.imageView2);
         tv_req_job_title = findViewById(R.id.tv_req_job_title);
@@ -44,7 +47,7 @@ public class ViewReqJob extends AppCompatActivity {
         btn_call_jvr = findViewById(R.id.btn_call_jvr);
 
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("job_request").child("LNCyr36rpbTusWh9flliPSW2U2l2").child("2");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("job_request").child(userid).child(jobid);
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

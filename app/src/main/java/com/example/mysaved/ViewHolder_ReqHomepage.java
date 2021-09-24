@@ -128,7 +128,7 @@ public class ViewHolder_ReqHomepage extends RecyclerView.Adapter<ViewHolder_ReqH
             String userid = reqJobList.reqid;
             String jobid = reqJobList.reqjobid;
 
-            Intent intent = new Intent(view.getContext(), ViewjobM.class);
+            Intent intent = new Intent(view.getContext(), ViewReqJob.class);
             intent.putExtra("user_id", userid);
             intent.putExtra("job_id", jobid);
 
