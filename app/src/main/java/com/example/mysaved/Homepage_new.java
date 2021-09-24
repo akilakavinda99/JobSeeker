@@ -185,7 +185,7 @@ public class Homepage_new extends AppCompatActivity {
     //navigation drawer button functions
     public void login(View view) {
 
-        Intent i = new Intent(getApplicationContext(), UserloginActivity.class).putExtra("from", "Homepage_new");
+        Intent i = new Intent(getApplicationContext(), UserloginActivity.class);
         startActivity(i);
 
     }
