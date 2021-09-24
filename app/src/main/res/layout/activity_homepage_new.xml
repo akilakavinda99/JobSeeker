@@ -48,7 +48,7 @@
         android:layout_margin="3dp"
         android:clickable="true"
         android:focusable="true"
-        android:paddingTop="70dp"
+        android:paddingTop="80dp"
         tools:layout_editor_absoluteX="3dp"
         tools:layout_editor_absoluteY="74dp" />
 
@@ -65,9 +65,11 @@
 
     <SearchView
         android:id="@+id/d_search"
+        android:background="#F5FCFF"
         android:layout_width="216dp"
         android:layout_height="33dp"
         android:layout_marginTop="12dp"
+        android:layout_marginStart="12dp"
         app:layout_constraintEnd_toStartOf="@+id/d_test_btn"
         app:layout_constraintHorizontal_bias="0.231"
         app:layout_constraintStart_toStartOf="parent"

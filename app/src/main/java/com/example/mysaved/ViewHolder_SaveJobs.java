@@ -117,7 +117,7 @@ public class ViewHolder_SaveJobs extends RecyclerView.Adapter<ViewHolder_SaveJob
             String jobid = home.jobid;
 //            Intent intent;
 //            context.startActivity(new intent(context, New_Saved_Jobs.class));
-            Intent intent = new Intent(view.getContext(), ViewReqJob.class);
+            Intent intent = new Intent(view.getContext(), ViewjobM.class);
             intent.putExtra("user_id", userid);
             intent.putExtra("job_id", jobid);
 
