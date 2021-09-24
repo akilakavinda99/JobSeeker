@@ -211,12 +211,12 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/nav_createjob"
+        android:id="@+id/nav_savedreqjobs"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:gravity="center_vertical"
-        android:onClick="navClickCreateJob"
         android:background="@drawable/hover"
+        android:gravity="center_vertical"
+        android:onClick="navClickSavedReqjobs"
         android:orientation="horizontal">
 
         <ImageView

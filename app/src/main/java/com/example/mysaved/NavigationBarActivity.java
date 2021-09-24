@@ -138,7 +138,7 @@ public class NavigationBarActivity extends AppCompatActivity {
         nav_savedreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
         nav_profile_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
 
-        startActivity(new Intent(getApplicationContext(), Request_jobs_home.class));
+        startActivity(new Intent(getApplicationContext(), NewReqJob_Homepage.class));
 
     }
 
@@ -155,7 +155,7 @@ public class NavigationBarActivity extends AppCompatActivity {
 
     }
 
-    public void navClickCreateJob(View view) {
+    public void navClickSavedReqjobs(View view) {
         nav_home_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
         nav_myjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
         nav_savedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
@@ -164,7 +164,7 @@ public class NavigationBarActivity extends AppCompatActivity {
         nav_savedreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black));
         nav_profile_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
 
-        startActivity(new Intent(getApplicationContext(), CreateJob.class));
+        startActivity(new Intent(getApplicationContext(), New_SaveReq_Jobs.class));
 
     }
 
