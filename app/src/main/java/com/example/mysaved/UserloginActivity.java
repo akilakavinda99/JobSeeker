@@ -11,6 +11,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class UserloginActivity extends AppCompatActivity {
     EditText email,password;
     Button signup,login;
     TextView fgt_password;
+    ImageView login_back_btn;
     FirebaseAuth fAuth;
 
 
@@ -44,6 +46,8 @@ public class UserloginActivity extends AppCompatActivity {
         signup = findViewById(R.id.btn_sign_up);
         fgt_password = findViewById(R.id.tv_fgt_password);
 
+        login_back_btn = findViewById(R.id.login_back_btn);
+
         //get current instance of firebase authentication
         fAuth = FirebaseAuth.getInstance();
 
@@ -55,6 +59,7 @@ public class UserloginActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             startActivity(new Intent(getApplicationContext(), RegisterUserActivity.class));
+            overridePendingTransition(R.anim.animation_enter, R.anim.animation_leave);
         }
     });
 
@@ -89,6 +94,7 @@ public class UserloginActivity extends AppCompatActivity {
 
                     Toast.makeText(UserloginActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(UserloginActivity.this, Homepage_new.class));
+                    overridePendingTransition(R.anim.animation_enter, R.anim.animation_leave);
                     finish();
                 }
 
@@ -134,5 +140,11 @@ public class UserloginActivity extends AppCompatActivity {
             }
         });
 
+        login_back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Homepage_new.class));
+            }
+        });
     }
 }

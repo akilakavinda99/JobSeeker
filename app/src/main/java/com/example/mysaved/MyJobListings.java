@@ -147,7 +147,7 @@ public class MyJobListings extends AppCompatActivity {
     public void logout(View view) {
 
         FirebaseAuth.getInstance().signOut();
-        Intent i = new Intent(getApplicationContext(), Homepage_new.class).putExtra("from", "New_Saved_Jobs");
+        Intent i = new Intent(getApplicationContext(), Homepage_new.class);
         startActivity(i);
 
     }
