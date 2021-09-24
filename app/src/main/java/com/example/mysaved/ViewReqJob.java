@@ -23,7 +23,7 @@ import java.text.ParseException;
 import java.util.Objects;
 
 public class ViewReqJob extends AppCompatActivity {
-    ImageView ReqJobImage;
+    ImageView ReqJobImage,imageView20;
     TextView tv_req_job_title, ReqJobName, ReqJobAge, ReqJobGender, ReqJobDescription;
     Button btn_emaill_jv3, btn_call_jvr;
     DatabaseReference databaseReference;
@@ -45,6 +45,7 @@ public class ViewReqJob extends AppCompatActivity {
         ReqJobDescription = findViewById(R.id.textView10);
         btn_emaill_jv3 = findViewById(R.id.btn_emaill_jv3);
         btn_call_jvr = findViewById(R.id.btn_call_jvr);
+        imageView20 = findViewById(R.id.imageView20);
 
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("job_request").child(userid).child(jobid);
@@ -75,6 +76,7 @@ public class ViewReqJob extends AppCompatActivity {
 
             }
         });
+
 
 //
 //        btn_call_jv4.setOnClickListener(new View.OnClickListener() {

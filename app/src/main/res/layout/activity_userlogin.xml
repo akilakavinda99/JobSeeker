@@ -20,21 +20,20 @@
 
     <ImageView
         android:id="@+id/image_login"
-        android:layout_width="600dp"
-        android:layout_height="246dp"
+        android:layout_width="412dp"
+        android:layout_height="353dp"
         app:layout_constraintBottom_toTopOf="@+id/tv_sign_in"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.35"
         app:srcCompat="@drawable/jslogo" />
 
     <TextView
         android:id="@+id/tv_sign_in"
         android:layout_width="148dp"
         android:layout_height="58dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="30dp"
         android:fontFamily="@font/segoe"
         android:text="@string/tv_sign_in"
         android:textColor="@color/black"
@@ -56,6 +55,8 @@
         android:maxLength="50"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
+        android:textColor="#FF4C4C4C"
+        android:textColorHint="#FF4C4C4C"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/et_log_password"
         app:layout_constraintEnd_toEndOf="@+id/et_log_password"
@@ -73,6 +74,8 @@
         android:inputType="textPassword"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
+        android:textColor="#FF4C4C4C"
+        android:textColorHint="#FF4C4C4C"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_login"
         app:layout_constraintEnd_toEndOf="parent"
@@ -119,7 +122,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
 

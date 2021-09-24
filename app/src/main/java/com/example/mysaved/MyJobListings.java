@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,8 +30,8 @@ public class MyJobListings extends AppCompatActivity {
 
     Button nav_logout,nav_login;
     DrawerLayout drawerLayout;
-    TextView nav_home_txt, nav_savedreqjobs_txt, nav_myjobs_txt, nav_requestedjobs_txt, nav_myreqjobs_txt,
-            nav_savedjobs_txt, nav_profile_txt;
+    TextView nav_home_txt, nav_savedreqjobs_txt, nav_myjobs_txt, nav_requestedjobs_txt, nav_myreqjobs_txt,nav_savedjobs_txt, nav_profile_txt;
+    ProgressBar progressBar_listings_da;
 
 
     TextView joblist;
@@ -59,8 +60,9 @@ public class MyJobListings extends AppCompatActivity {
         nav_myreqjobs_txt = findViewById(R.id.tv_nav_myreqjobs);
         nav_savedreqjobs_txt = findViewById(R.id.tv_nav_savedreqjobs);
         nav_profile_txt = findViewById(R.id.tv_nav_profile);
+        progressBar_listings_da = findViewById(R.id.progressBar_listings_da);
 
-        fAuth = FirebaseAuth.getInstance();
+                fAuth = FirebaseAuth.getInstance();
         joblist = findViewById(R.id.tv_mrjl);
         create_btn = findViewById(R.id.btn_newreq);
 
@@ -113,6 +115,7 @@ public class MyJobListings extends AppCompatActivity {
                         String district = ds.child("district").getValue(String.class);
                         Model model = new Model(JobID, name, title, job_type, img, salary1, phone1, district);
                         list.add(model);
+                        progressBar_listings_da.setVisibility(View.INVISIBLE);
 
                     }
                     adapter.notifyDataSetChanged();
