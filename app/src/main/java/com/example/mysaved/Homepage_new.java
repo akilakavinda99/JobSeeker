@@ -42,7 +42,6 @@ public class Homepage_new extends AppCompatActivity {
     private DatabaseReference root;
     private ViewHolder_Homepage viewHolder_homepage;
     private ArrayList<HomeList> list;
-    private Button savejobs;
 //    private CheckBox save;
     private SearchView search;
     private ProgressBar load;
@@ -80,18 +79,7 @@ public class Homepage_new extends AppCompatActivity {
         }
 
         load = findViewById(R.id.d_progressBar4);
-        savejobs = findViewById(R.id.d_test_btn);
-        savejobs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (FirebaseAuth.getInstance().getCurrentUser()!=null){
-                    startActivity(new Intent(getApplicationContext(), New_Saved_Jobs.class));
 
-                }else{
-                    Toast.makeText(Homepage_new.this,"Please Login!!!", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
         Toast.makeText(Homepage_new.this, "Welcome", Toast.LENGTH_SHORT).show();
 
         recyclerView = findViewById(R.id.d_recycle);
