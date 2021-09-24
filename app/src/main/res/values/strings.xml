@@ -228,7 +228,7 @@
     <string name="btn_createR">Create</string>
 
     <string name="btn_nav_login">Login</string>
-    <string name="a">Log out</string>
+    <string name="btn_nav_logout">logout</string>
     <string name="tv_nav_home">Home</string>
     <string name="tv_nav_myjobs">My Job Listing</string>
     <string name="tv_nav_savedjobs">Saved Jobs</string>
@@ -265,8 +265,6 @@
     <string name="d_tv_reqjobage2">0</string>
     <string name="d_yearsold">Years Old</string>
     <string name="d_tv_reqjobgender2">Gender</string>
-    <string name="nav_home">navClickHome</string>
-    <string name="btn_nav_logout">logout</string>
     <string name="tv_editReqjob">Edit Requested Job</string>
     <string name="tv_editjobreq">Edit Requested Job</string>
 
