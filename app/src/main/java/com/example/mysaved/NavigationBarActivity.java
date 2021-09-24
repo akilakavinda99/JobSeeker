@@ -18,7 +18,7 @@ public class NavigationBarActivity extends AppCompatActivity {
 
     Button nav_logout, nav_login;
     DrawerLayout drawerLayout;
-    TextView nav_home_txt, nav_createjob_txt, nav_myjobs_txt, nav_requestedjobs_txt, nav_myreqjobs_txt,
+    TextView nav_home_txt, nav_savedreqjobs_txt, nav_myjobs_txt, nav_requestedjobs_txt, nav_myreqjobs_txt,
             nav_savedjobs_txt, nav_profile_txt;
     FirebaseAuth fAuth;
     String userID;
@@ -36,11 +36,11 @@ public class NavigationBarActivity extends AppCompatActivity {
         nav_logout = findViewById(R.id.btn_nav_logout);
 
         nav_home_txt = findViewById(R.id.tv_nav_home);
-        nav_createjob_txt = findViewById(R.id.tv_nav_createjob);
         nav_myjobs_txt = findViewById(R.id.tv_nav_myjobs);
+        nav_savedjobs_txt = findViewById(R.id.tv_nav_savedjobs);
         nav_requestedjobs_txt = findViewById(R.id.tv_nav_requestedjobs);
         nav_myreqjobs_txt = findViewById(R.id.tv_nav_myreqjobs);
-        nav_savedjobs_txt = findViewById(R.id.tv_nav_savedjobs);
+        nav_savedreqjobs_txt = findViewById(R.id.tv_nav_savedreqjobs);
         nav_profile_txt = findViewById(R.id.tv_nav_profile);
 
 
@@ -91,58 +91,90 @@ public class NavigationBarActivity extends AppCompatActivity {
     //side_nav buttons
     public void navClickHome(View view) {
         nav_home_txt.setTextColor(ContextCompat.getColor(this, R.color.black));
+        nav_myjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_savedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_requestedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_myreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_savedreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_profile_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+
         startActivity(new Intent(getApplicationContext(), Homepage_new.class));
 
 
     }
 
-    public void navClickCreateJob(View view) {
-        nav_home_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
-        nav_createjob_txt.setTextColor(ContextCompat.getColor(this, R.color.black));
-
-
-        startActivity(new Intent(getApplicationContext(), CreateJob.class));
-
-    }
-
     public void navClickMyjobs(View view) {
-        nav_createjob_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_home_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
         nav_myjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black));
-
+        nav_savedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_requestedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_myreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_savedreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_profile_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
 
         startActivity(new Intent(getApplicationContext(), MyJobListings.class));
 
     }
 
-    public void navClickRequestedjobs(View view) {
+    public void navClickSavedjobs(View view) {
+        nav_home_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
         nav_myjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
-        nav_requestedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black));
+        nav_savedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black));
+        nav_requestedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_myreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_savedreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_profile_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
 
+        startActivity(new Intent(getApplicationContext(), New_Saved_Jobs.class));
+
+    }
+
+    public void navClickRequestedjobs(View view) {
+        nav_home_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_myjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_savedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_requestedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black));
+        nav_myreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_savedreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_profile_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
 
         startActivity(new Intent(getApplicationContext(), Request_jobs_home.class));
 
     }
 
     public void navClickMyreqjobs(View view) {
+        nav_home_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_myjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_savedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
         nav_requestedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
         nav_myreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black));
-
+        nav_savedreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_profile_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
 
         startActivity(new Intent(getApplicationContext(), MyRequestedJobs.class));
 
     }
 
-    public void navClickSavedjobs(View view) {
+    public void navClickCreateJob(View view) {
+        nav_home_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_myjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_savedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_requestedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
         nav_myreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
-        nav_savedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black));
+        nav_savedreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.black));
+        nav_profile_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
 
-
-        startActivity(new Intent(getApplicationContext(), New_Saved_Jobs.class));
+        startActivity(new Intent(getApplicationContext(), CreateJob.class));
 
     }
 
     public void navClickProfile(View view) {
+        nav_home_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_myjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
         nav_savedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_requestedjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_myreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
+        nav_savedreqjobs_txt.setTextColor(ContextCompat.getColor(this, R.color.nav));
         nav_profile_txt.setTextColor(ContextCompat.getColor(this, R.color.black));
 
         startActivity(new Intent(getApplicationContext(), Profile.class));
