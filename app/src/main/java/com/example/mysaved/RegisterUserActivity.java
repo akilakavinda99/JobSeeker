@@ -130,20 +130,6 @@ public class RegisterUserActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
 
-                            //getting the current user and sending verification link to email
-                            FirebaseUser fuser = fAuth.getCurrentUser();
-                            fuser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Toast.makeText(RegisterUserActivity.this, "Verification Email Has Been Sent", Toast.LENGTH_SHORT).show();
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-
-                                }
-                            });
-
                             //sending other data to realtime DB
                             userID = fAuth.getCurrentUser().getUid();
                             reference = rootNode.getReference().child("user").child(userID);
@@ -160,6 +146,7 @@ public class RegisterUserActivity extends AppCompatActivity {
                             reference.setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
+                                    Toast.makeText(RegisterUserActivity.this, "Registered Succesfully", Toast.LENGTH_SHORT).show();
                                     Log.d(TAG,"user profile is created for "+ userID);
                                 }
                             });
