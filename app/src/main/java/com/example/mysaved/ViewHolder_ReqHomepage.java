@@ -130,7 +130,7 @@ public class ViewHolder_ReqHomepage extends RecyclerView.Adapter<ViewHolder_ReqH
 
             Intent intent = new Intent(view.getContext(), ViewReqJob.class);
             intent.putExtra("user_id", userid);
-            intent.putExtra("job_id", jobid);
+            intent.putExtra("ReqId", jobid);
 
             view.getContext().startActivity(intent);
         }

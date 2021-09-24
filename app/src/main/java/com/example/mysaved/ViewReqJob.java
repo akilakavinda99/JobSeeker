@@ -23,9 +23,11 @@ import java.text.ParseException;
 import java.util.Objects;
 
 public class ViewReqJob extends AppCompatActivity {
+
     ImageView ReqJobImage;
     TextView tv_req_job_title, ReqJobName, ReqJobAge, ReqJobGender, ReqJobDescription, tv_emailR, tv_phoneR;
     Button btn_emaill_jv3, btn_call_jvr, edit_reqJob_btn;
+
     DatabaseReference databaseReference;
     String imageUrl, userid, jobid;
     FirebaseAuth fAuth;
@@ -36,7 +38,7 @@ public class ViewReqJob extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         userid = getIntent().getStringExtra("user_id");
-        jobid = getIntent().getStringExtra("ReqId");
+        jobid = getIntent().getStringExtra("job_id");
         setContentView(R.layout.activity_view_req_job);
         ReqJobImage = findViewById(R.id.imageView2);
         tv_req_job_title = findViewById(R.id.tv_req_job_title);
@@ -46,11 +48,13 @@ public class ViewReqJob extends AppCompatActivity {
         ReqJobDescription = findViewById(R.id.textView10);
         btn_emaill_jv3 = findViewById(R.id.btn_emaill_jv3);
         btn_call_jvr = findViewById(R.id.btn_call_jvr);
+
         edit_reqJob_btn = findViewById(R.id.edit_reqJob_btn);
         tv_emailR = findViewById(R.id.tv_emailR);
         tv_phoneR = findViewById(R.id.tv_phoneR);
 
         fAuth = FirebaseAuth.getInstance();
+
 
 
 
@@ -85,6 +89,7 @@ tv_phoneR.setVisibility(View.INVISIBLE);
 
             }
         });
+
 
         if (fAuth.getCurrentUser() != null)
             if ( fAuth.getCurrentUser().getUid().equals(userid)){
