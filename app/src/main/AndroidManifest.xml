@@ -35,10 +35,8 @@
             android:exported="true" />
 
         <activity
-            android:name=".Homepage_new"
+            android:name=".RegisterUserActivity"
             android:exported="true" />
-
-        <activity android:name=".Profile" />
 
         <activity
             android:name=".ViewJob"
@@ -84,7 +82,7 @@
 
 
         <activity
-            android:name=".RegisterUserActivity"
+            android:name=".Homepage_new"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
