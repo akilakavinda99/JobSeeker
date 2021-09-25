@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg12"
     tools:context=".EditProfile">
 
     <ImageView
@@ -26,10 +27,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="108dp"
+        android:layout_marginEnd="40dp"
         android:fontFamily="@font/segoe_bold"
         android:text="@string/tv_edit_profile"
         android:textColor="@color/nav"
         android:textSize="40dp"
+        app:layout_constraintEnd_toStartOf="@+id/user_delete_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,40 +54,41 @@
 
     <EditText
         android:id="@+id/et_user_name"
-        android:layout_width="275dp"
+        android:layout_width="324dp"
         android:layout_height="45dp"
         android:background="@drawable/rounded_view_register"
         android:ems="10"
         android:inputType="textPersonName"
-        android:textSize="15dp"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
+        android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/et_user_Mno"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline6"
         app:layout_constraintVertical_bias="0.481" />
 
     <EditText
         android:id="@+id/et_user_Mno"
-        android:layout_width="275dp"
+        android:layout_width="324dp"
         android:layout_height="45dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_view_register"
         android:ems="10"
         android:inputType="phone"
-        android:textSize="15dp"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
+        android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/user_gender_spinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
 
     <Spinner
         android:id="@+id/user_gender_spinner"
-        android:layout_width="275dp"
+        android:layout_width="324dp"
         android:layout_height="45dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/spinner_box"
@@ -97,7 +101,7 @@
 
     <Spinner
         android:id="@+id/user_district_spinner"
-        android:layout_width="275dp"
+        android:layout_width="324dp"
         android:layout_height="45dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/spinner_box"
@@ -112,17 +116,18 @@
 
     <EditText
         android:id="@+id/et_user_email"
-        android:layout_width="275dp"
+        android:layout_width="324dp"
         android:layout_height="45dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/rounded_view_register"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:textSize="15dp"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
+        android:textSize="15dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -130,11 +135,11 @@
         android:layout_width="105dp"
         android:layout_height="39dp"
         android:layout_marginTop="52dp"
-        android:background="@drawable/button_blue_border"
+        android:background="@drawable/border2"
         android:text="@string/btn_updateE"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        app:backgroundTint="@color/nav_login"
+        app:backgroundTint="#477EEC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -145,18 +150,15 @@
 
     <ImageView
 
-     
 
         android:id="@+id/imageView4"
         android:layout_width="27dp"
         android:layout_height="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/user_gender_spinner"
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.746"
-        app:layout_constraintStart_toStartOf="@+id/user_gender_spinner"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/user_gender_spinner"
+        app:layout_constraintEnd_toEndOf="@+id/user_gender_spinner"
         app:layout_constraintTop_toTopOf="@+id/user_gender_spinner"
-        app:layout_constraintVertical_bias="0.55"
         app:srcCompat="@drawable/round_arrow_drop_down_20"
         tools:ignore="MissingConstraints,VectorDrawableCompat" />
 
@@ -164,26 +166,25 @@
         android:id="@+id/imageView5"
         android:layout_width="27dp"
         android:layout_height="26dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/user_district_spinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.747"
-        app:layout_constraintStart_toStartOf="@+id/user_district_spinner"
+        app:layout_constraintEnd_toEndOf="@+id/user_district_spinner"
         app:layout_constraintTop_toTopOf="@+id/user_district_spinner"
-        app:layout_constraintVertical_bias="0.421"
         app:srcCompat="@drawable/round_arrow_drop_down_20"
         tools:ignore="MissingConstraints,VectorDrawableCompat" />
 
     <ImageView
         android:id="@+id/user_delete_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="44dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="70dp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_edit_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_edit_profile"
         app:layout_constraintTop_toTopOf="@+id/tv_edit_profile"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/round_delete_forever_24"
         tools:ignore="VectorDrawableCompat" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
