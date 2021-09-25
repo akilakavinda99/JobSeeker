@@ -64,20 +64,23 @@
         app:layout_constraintTop_toTopOf="@+id/tv_allsaved"
         app:layout_constraintVertical_bias="1.0" />
 
-    <TextView
-        android:id="@+id/tv_reqtitle"
-        android:layout_width="212dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/tv_reqtitle2"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
+            <TextView
+                android:id="@+id/tv_reqtitle"
+                android:layout_width="268dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/tv_reqtitle2"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/d_reqrecycle2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.075"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider"
+                app:layout_constraintVertical_bias="0.004" />
 
-    <View
+            <View
         android:id="@+id/divider"
         android:layout_width="413dp"
         android:layout_height="5dp"
@@ -89,14 +92,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/d_reqrecycle2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="3dp"
-        android:paddingTop="140dp"
-        tools:layout_editor_absoluteX="-36dp"
-        tools:layout_editor_absoluteY="3dp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/d_reqrecycle2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="3dp"
+                android:paddingTop="140dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/divider"
+                app:layout_constraintStart_toEndOf="@+id/divider"
+                app:layout_constraintTop_toBottomOf="@+id/divider" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -109,7 +118,7 @@ android:layout_height="match_parent"
 android:layout_gravity="start"
 android:background="@android:color/white">
 
-<include layout="@layout/activity_navigation_bar"/>
+    <include layout="@layout/activity_navigation_bar" />
 
 </RelativeLayout>
 
