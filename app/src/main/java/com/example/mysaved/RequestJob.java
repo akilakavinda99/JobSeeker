@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -82,6 +83,7 @@ public class RequestJob extends AppCompatActivity {
         insertimg = findViewById(R.id.image_add_imageR);
         progressBar2 = findViewById(R.id.progressBarR);
         progressBar2.setVisibility(View.INVISIBLE);
+        req_description.setMovementMethod(new ScrollingMovementMethod());
 
         insertimg.setOnClickListener(new View.OnClickListener() {
 

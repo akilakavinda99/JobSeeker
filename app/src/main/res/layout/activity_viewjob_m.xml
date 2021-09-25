@@ -32,8 +32,8 @@
 
         <ImageView
             android:id="@+id/jobImage_tv_jobView"
-            android:layout_width="423dp"
-            android:layout_height="228dp"
+            android:layout_width="match_parent"
+            android:layout_height="225dp"
             android:adjustViewBounds="true"
             android:background="@color/white"
             android:scaleType="centerInside"
@@ -185,20 +185,20 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="22dp"
+                    android:layout_height="37dp"
                     android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/jobViews_tv_jobView"
                             android:layout_width="212dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:paddingLeft="20dp" />
 
                         <TextView
                             android:id="@+id/jobDaysAgo_tv_jobView"
                             android:layout_width="25dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="90 Days Ago" />
                 </LinearLayout>
@@ -233,7 +233,9 @@
                             android:layout_width="323dp"
                             android:layout_height="101dp"
                             android:padding="15dp"
+                            android:scrollbars="vertical"
                             android:text="TextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextView"
+                            android:textAlignment="center"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.497"
@@ -323,10 +325,11 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="16dp"
                             android:text="Edit"
+                            app:backgroundTint="#477EEC"
                             app:cornerRadius="58dp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@+id/btn_call_jv4"
-                            app:layout_constraintHorizontal_bias="0.554"
+                            app:layout_constraintHorizontal_bias="0.516"
                             app:layout_constraintStart_toEndOf="@+id/btn_email_jv2" />
 
                         <TextView

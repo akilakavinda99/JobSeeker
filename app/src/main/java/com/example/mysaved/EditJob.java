@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -28,10 +29,10 @@ public class EditJob extends AppCompatActivity {
     EditText et_companyed,et_titleed,et_salaryed,et_descriptioned,et_emailed,et_phoneed;
     Spinner  et_jobtypeed,et_dised;
     Button btn_edit;
-    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z0-9]+\\.+[a-z]+";
     String phonePattern = "[0-9]{10}";
     DatabaseReference databaseReference;
-    ImageView imageView_deletejob;
+    ImageView imageView_deletejob, imageView155;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class EditJob extends AppCompatActivity {
         String CompanyName= getIntent().getExtras().getString("JOBCOMPANY");
         String JobTitle= getIntent().getExtras().getString("JOBTITLE");
         String Salary= getIntent().getExtras().getString("SALARY");
-//        String JobType= getIntent().getExtras().getString("JOBTYPE");
+//      String JobType= getIntent().getExtras().getString("JOBTYPE");
         String JobType= getIntent().getExtras().getString("JOBTYPE");
         String Description= getIntent().getExtras().getString("DESCRIPTION");
         String Email = getIntent().getExtras().getString("EMAIL");
@@ -66,6 +67,7 @@ public class EditJob extends AppCompatActivity {
         et_jobtypeed=(Spinner)findViewById(R.id.et_jobtypeed);
         et_dised=(Spinner)findViewById(R.id.et_dised);
         imageView_deletejob=findViewById(R.id.imageView_deletejob);
+        imageView155 = findViewById(R.id.imageView155);
 
 
         et_companyed.setText(CompanyName);
@@ -74,6 +76,15 @@ public class EditJob extends AppCompatActivity {
        et_emailed.setText(Email);
        et_phoneed.setText(Mobile);
        et_descriptioned.setText(Description);
+        et_descriptioned.setMovementMethod(new ScrollingMovementMethod());
+
+        imageView155.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ViewjobM.class));
+                overridePendingTransition(R.anim.animation_enter, R.anim.animation_leave);
+            }
+        });
 
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.job_type_ddm, android.R.layout.simple_spinner_item);

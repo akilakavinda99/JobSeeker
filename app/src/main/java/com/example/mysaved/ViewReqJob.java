@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -53,6 +54,8 @@ public class ViewReqJob extends AppCompatActivity {
         tv_emailR = findViewById(R.id.tv_emailR);
         tv_phoneR = findViewById(R.id.tv_phoneR);
         backbtn_img=findViewById(R.id.imageView20);
+
+        ReqJobDescription.setMovementMethod(new ScrollingMovementMethod());
 
         fAuth = FirebaseAuth.getInstance();
 

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -47,7 +48,7 @@ public class CreateJob extends AppCompatActivity {
     Button create_btn;
     ImageView b1_btn,addimage;
     ProgressBar progressBar;
-    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z0-9]+\\.+[a-z]+";
     String phonePattern = "[0-9]{10}";
     int job_id = 0;
     Long Lcount;
@@ -81,6 +82,7 @@ public class CreateJob extends AppCompatActivity {
         addimage = findViewById(R.id.imageButton_addimage);
         progressBar = findViewById(R.id.progressBar_cj);
         progressBar.setVisibility(View.INVISIBLE);
+        job_description.setMovementMethod(new ScrollingMovementMethod());
 
         addimage.setOnClickListener(new View.OnClickListener() {
 

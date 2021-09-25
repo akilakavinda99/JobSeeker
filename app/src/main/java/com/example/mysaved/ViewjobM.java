@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -65,6 +66,8 @@ public class ViewjobM extends AppCompatActivity {
         Edit_JobView_btn=findViewById(R.id.Edit_JobView_btn);
         textView2=findViewById(R.id.textView2);
         backbtn_img=findViewById(R.id.imageView22);
+
+        jobDescription_tv_jobView.setMovementMethod(new ScrollingMovementMethod());
 
 
         try {

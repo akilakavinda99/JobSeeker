@@ -7,13 +7,36 @@
     android:background="@color/white"
     tools:context=".ViewReqJob">
 
+<!--    <LinearLayout-->
+<!--        android:id="@+id/linearLayout"-->
+<!--        android:layout_width="406dp"-->
+<!--        android:layout_height="41dp"-->
+<!--        android:layout_marginEnd="5dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView20"-->
+<!--            android:layout_width="88dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            app:srcCompat="@drawable/back" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView18"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="53dp"-->
+<!--            android:layout_weight="1"-->
+<!--            app:srcCompat="@drawable/jslogo" />-->
+<!--    </LinearLayout>-->
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="406dp"
-        android:layout_height="67dp"
-        android:layout_marginEnd="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:background="@color/white"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -22,9 +45,7 @@
             android:layout_width="36dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:clickable="true"
-            app:srcCompat="@drawable/back"
-            android:focusable="true" />
+            app:srcCompat="@drawable/back" />
 
         <ImageView
             android:id="@+id/imageView18"
@@ -62,8 +83,10 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="421dp"
-        android:layout_height="248dp"
+        android:layout_width="411dp"
+        android:layout_height="225dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_req_job_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
@@ -177,6 +200,8 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
 
@@ -185,9 +210,13 @@
         android:layout_width="317dp"
         android:layout_height="123dp"
         android:layout_marginTop="88dp"
+        android:scrollbars="vertical"
+        android:textAlignment="center"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.702"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_emaill_jv3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
         app:layout_constraintVertical_bias="0.0" />
@@ -197,12 +226,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Edit"
+        app:backgroundTint="#477EEC"
         app:cornerRadius="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_call_jvr"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.593"
         app:layout_constraintStart_toEndOf="@+id/btn_emaill_jv3"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintVertical_bias="0.722" />
 
     <TextView
         android:id="@+id/tv_emailR"

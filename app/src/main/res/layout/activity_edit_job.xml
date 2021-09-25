@@ -86,10 +86,11 @@
         android:background="@drawable/border2"
         android:ems="10"
         android:hint="@string/et_descriptioned"
-        android:inputType="textPersonName"
+        android:inputType="textImeMultiLine"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:paddingBottom="56dp"
+        android:scrollbars="vertical"
         android:textColor="#FF4C4C4C"
         android:textColorHint="#FF4C4C4C"
         android:textSize="16sp"
@@ -188,13 +189,13 @@
         android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/et_company"
         app:layout_constraintEnd_toStartOf="@+id/imageView_deletejob"
-        app:layout_constraintStart_toEndOf="@+id/imageView15"
+        app:layout_constraintStart_toEndOf="@+id/imageView155"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="UnknownIdInLayout" />
 
     <ImageView
-        android:id="@+id/imageView15"
+        android:id="@+id/imageView155"
         android:layout_width="23dp"
         android:layout_height="40dp"
         android:layout_marginStart="40dp"
