@@ -79,7 +79,7 @@ public class ViewHolder_ReqHomepage extends RecyclerView.Adapter<ViewHolder_ReqH
                 String filterPattern = charSequence.toString().toLowerCase().trim();
 
                 for (ReqJobList reqJobList : Hlistfull){
-                    if (reqJobList.getTitle().toLowerCase().contains(filterPattern)){
+                    if (reqJobList.getTitle().toLowerCase().contains(filterPattern) || reqJobList.getC_age1().toLowerCase().contains(filterPattern) || reqJobList.getGender().toLowerCase().contains(filterPattern)){
                         filteredReqJobList.add(reqJobList);
                     }
                 }
