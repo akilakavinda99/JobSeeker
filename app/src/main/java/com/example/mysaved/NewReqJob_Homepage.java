@@ -156,7 +156,7 @@ public class NewReqJob_Homepage extends AppCompatActivity {
         });
 
         searchView = (SearchView) findViewById(R.id.d_reqsearch);
-        searchView.setQueryHint("Enter Job title");
+        searchView.setQueryHint("Search employees");
         searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
