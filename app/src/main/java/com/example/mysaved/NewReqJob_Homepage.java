@@ -130,7 +130,8 @@ public class NewReqJob_Homepage extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                System.out.println("The read failed: " + error.getCode());
+                Toast.makeText(NewReqJob_Homepage.this, "DataBase Error try again", Toast.LENGTH_SHORT).show();
             }
         });
 

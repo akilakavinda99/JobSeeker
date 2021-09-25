@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -52,10 +53,6 @@ public class New_Saved_Jobs extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_saved_jobs);
-
-        if (FirebaseAuth.getInstance().getCurrentUser()==null){
-            startActivity(new Intent(New_Saved_Jobs.this,UserloginActivity.class));
-        }
 
 
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -104,7 +101,8 @@ public class New_Saved_Jobs extends AppCompatActivity {
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
-
+                    System.out.println("The read failed: " + error.getCode());
+                    Toast.makeText(New_Saved_Jobs.this, "DataBase Error try again", Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -142,21 +140,6 @@ public class New_Saved_Jobs extends AppCompatActivity {
                         HomeList home = new HomeList(id, jobid, date, name, title, salary1, job_type, description, email1, phone1, district, img);
                         list.add(home);
 
-//                    for(DataSnapshot ds : dataSnapshot.getChildren()){
-//                        String jobid = ds.getKey();
-//                        String name = ds.child("name").getValue(String.class);
-//                        String title = ds.child("title").getValue(String.class);
-//                        String salary1 = ds.child("salary1").getValue(String.class);
-//                        String job_type = ds.child("job_type").getValue(String.class);
-//                        String description = ds.child("description").getValue(String.class);
-//                        String email1 = ds.child("email1").getValue(String.class);
-//                        String phone1 = ds.child("phone1").getValue(String.class);
-//                        String district = ds.child("district").getValue(String.class);
-//                        String img = ds.child("img").getValue(String.class);
-//
-//                        HomeList home = new HomeList(id,jobid,name,title,salary1,job_type,description,email1,phone1,district,img);
-//                        list.add(home);
-//                    }
                     }
                     viewHolder_saveJobs.notifyDataSetChanged();
                 }
@@ -164,6 +147,7 @@ public class New_Saved_Jobs extends AppCompatActivity {
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
                     System.out.println("The read failed: " + error.getCode());
+                    Toast.makeText(New_Saved_Jobs.this, "DataBase Error try again", Toast.LENGTH_SHORT).show();
                 }
             });
 

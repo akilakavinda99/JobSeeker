@@ -1,6 +1,7 @@
 package com.example.mysaved;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
@@ -8,7 +9,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkCapabilities;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -80,7 +86,6 @@ public class Homepage_new extends AppCompatActivity {
 
         load = findViewById(R.id.d_progressBar4);
 
-        Toast.makeText(Homepage_new.this, "Welcome", Toast.LENGTH_SHORT).show();
 
         recyclerView = findViewById(R.id.d_recycle);
         recyclerView.setHasFixedSize(true);
@@ -139,7 +144,8 @@ public class Homepage_new extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                System.out.println("The read failed: " + error.getCode());
+                Toast.makeText(Homepage_new.this, "DataBase Error try again", Toast.LENGTH_SHORT).show();
             }
         });
         search = (SearchView) findViewById(R.id.d_search);
@@ -159,7 +165,49 @@ public class Homepage_new extends AppCompatActivity {
                 return false;
             }
         });
+        if(!isNetworkAvailable())
+        {
+            new AlertDialog.Builder(this)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setTitle("Internet Connection Alert")
+                    .setMessage("Please Check Your Internet Connection")
+                    .setPositiveButton("Close", null).show();
+        }
+        else if(isNetworkAvailable())
+        {
+            Toast.makeText(Homepage_new.this, "Welcome", Toast.LENGTH_LONG).show();
+        }
+
     }
+
+    public boolean isNetworkAvailable() {
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        if (connectivityManager != null) {
+
+
+            if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                NetworkCapabilities capabilities = connectivityManager.getNetworkCapabilities(connectivityManager.getActiveNetwork());
+                if (capabilities != null) {
+                    if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
+
+                        return true;
+                    } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
+
+                        return true;
+                    } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)) {
+
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+
+    }
+
     public void ClickMenu(View view) {
         //open drawer
         openDrawer(drawerLayout);

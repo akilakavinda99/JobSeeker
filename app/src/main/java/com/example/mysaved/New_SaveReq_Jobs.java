@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -49,9 +50,6 @@ public class New_SaveReq_Jobs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_save_req_jobs);
 
-        if (FirebaseAuth.getInstance().getCurrentUser()==null){
-            startActivity(new Intent(New_SaveReq_Jobs.this,UserloginActivity.class));
-        }
         drawerLayout = findViewById(R.id.drawer_layout);
 
         nav_login = findViewById(R.id.btn_nav_login);
@@ -97,7 +95,8 @@ public class New_SaveReq_Jobs extends AppCompatActivity {
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
-
+                    System.out.println("The read failed: " + error.getCode());
+                    Toast.makeText(New_SaveReq_Jobs.this, "DataBase Error try again", Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -137,7 +136,8 @@ public class New_SaveReq_Jobs extends AppCompatActivity {
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
-
+                    System.out.println("The read failed: " + error.getCode());
+                    Toast.makeText(New_SaveReq_Jobs.this, "DataBase Error try again", Toast.LENGTH_SHORT).show();
                 }
             });
         }
