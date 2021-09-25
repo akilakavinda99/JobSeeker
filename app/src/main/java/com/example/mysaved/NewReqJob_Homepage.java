@@ -62,7 +62,7 @@ public class NewReqJob_Homepage extends AppCompatActivity {
 
         if(connected()){
 
-            Toast.makeText(NewReqJob_Homepage.this, "Network Concted", Toast.LENGTH_SHORT).show();
+            Toast.makeText(NewReqJob_Homepage.this, "Network Connected", Toast.LENGTH_SHORT).show();
         }else{
             android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(NewReqJob_Homepage.this);
             builder.setMessage("Please Check Your Internet Connection").setPositiveButton("ok",null);

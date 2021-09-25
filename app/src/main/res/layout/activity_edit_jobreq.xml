@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/editjob"
+    android:background="@drawable/bg12"
     tools:context=".EditJobReq">
 
     <TextView
@@ -133,11 +133,10 @@
         android:background="@drawable/border2"
         android:ems="10"
         android:hint="@string/et_description_editjob"
-        android:inputType="textImeMultiLine"
+        android:inputType="textMultiLine"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
         android:paddingBottom="56dp"
-        android:scrollbars="vertical"
         android:textColor="#FF4C4C4C"
         android:textColorHint="#FF4C4C4C"
         android:textSize="16sp"
@@ -203,17 +202,18 @@
         android:id="@+id/editreqjob_back_btn"
         android:layout_width="23dp"
         android:layout_height="40dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="52dp"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintBottom_toTopOf="@+id/et_jobtitle_editjob"
         app:layout_constraintEnd_toStartOf="@+id/tv_editjobreq"
-        app:layout_constraintHorizontal_bias="0.024"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/back"
         tools:ignore="VectorDrawableCompat" />
 

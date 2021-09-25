@@ -51,16 +51,9 @@
             android:name=".EditJobReq"
             android:exported="true" />
         <activity
-            android:name=".Request_jobs_home"
-            android:exported="true" />
-        <activity
             android:name=".MyJobListings"
             android:exported="true" />
-       
-        <activity
 
-            android:name=".ProfileActivity"
-            android:exported="true" />
         <activity
             android:name=".LoginActivity"
             android:exported="true" />

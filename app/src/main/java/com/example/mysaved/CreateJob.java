@@ -82,7 +82,6 @@ public class CreateJob extends AppCompatActivity {
         addimage = findViewById(R.id.imageButton_addimage);
         progressBar = findViewById(R.id.progressBar_cj);
         progressBar.setVisibility(View.INVISIBLE);
-        job_description.setMovementMethod(new ScrollingMovementMethod());
 
         addimage.setOnClickListener(new View.OnClickListener() {
 

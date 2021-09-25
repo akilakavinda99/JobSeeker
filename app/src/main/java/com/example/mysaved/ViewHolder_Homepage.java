@@ -54,7 +54,7 @@ public class ViewHolder_Homepage extends RecyclerView.Adapter<ViewHolder_Homepag
 
         String imageUrl = null;
         imageUrl = homeList.getImg();
-        Picasso.get().load(imageUrl).resize(50,50).centerCrop().into(holder.imageView);
+        Picasso.get().load(imageUrl).fit().into(holder.imageView);
     }
 
     @Override

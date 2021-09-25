@@ -53,7 +53,7 @@ public class ViewHolder_ReqHomepage extends RecyclerView.Adapter<ViewHolder_ReqH
 
         String imageUrl = null;
         imageUrl = reqJobList.getImg();
-        Picasso.get().load(imageUrl).resize(50,50).centerCrop().into(holder.imageView);
+        Picasso.get().load(imageUrl).fit().into(holder.imageView);
 
     }
 

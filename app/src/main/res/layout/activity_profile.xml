@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Profile">
 
     <ImageView
@@ -12,6 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="44dp"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_arrow_back_ios_24"
@@ -19,14 +22,17 @@
 
     <TextView
         android:id="@+id/tv_Profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
+        android:layout_width="136dp"
+        android:layout_height="46dp"
         android:layout_marginTop="204dp"
+        android:clickable="true"
+        android:focusable="true"
         android:fontFamily="@font/segoe_bold"
         android:text="@string/tv_Profile"
         android:textColor="@color/nav"
         android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,14 +41,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="45dp" />
+        app:layout_constraintGuide_begin="28dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="151dp" />
+        app:layout_constraintGuide_begin="138dp" />
 
     <TextView
         android:id="@+id/tv_nameP"
@@ -57,9 +63,9 @@
 
     <TextView
         android:id="@+id/tv_mobilenoP"
-        android:layout_width="93dp"
-        android:layout_height="31dp"
-        android:text="@string/tv_mobilenoP"
+        android:layout_width="101dp"
+        android:layout_height="32dp"
+        android:text="Contact No :"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/tv_genderP"
@@ -165,14 +171,14 @@
 
     <Button
         android:id="@+id/btn_edit_user"
-        android:layout_width="93dp"
-        android:layout_height="36dp"
+        android:layout_width="112dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="28dp"
-        android:background="@drawable/button_blue_border"
+        android:background="@drawable/border2"
         android:text="@string/btn_edit_user"
         android:textAllCaps="false"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/nav_login"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#477EEC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -185,6 +191,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="112dp"
         android:background="@drawable/button_red_border"
+        android:clickable="true"
+        android:focusable="true"
         android:text="@string/btn_nav_logout"
         android:textAllCaps="false"
         android:textColor="@color/nav_logout"
@@ -195,17 +203,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.377" />
 
-    <ImageView
+    <pl.droidsonroids.gif.GifImageView
         android:id="@+id/image_profile"
-        android:layout_width="119dp"
-        android:layout_height="112dp"
+        android:layout_width="166dp"
+        android:layout_height="143dp"
         android:layout_marginTop="28dp"
+        android:src="@drawable/pp"
         app:layout_constraintBottom_toTopOf="@+id/tv_Profile"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/userprofile_back_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.812"
-        app:srcCompat="@drawable/_168742" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"

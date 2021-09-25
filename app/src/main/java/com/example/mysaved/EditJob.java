@@ -76,7 +76,6 @@ public class EditJob extends AppCompatActivity {
        et_emailed.setText(Email);
        et_phoneed.setText(Mobile);
        et_descriptioned.setText(Description);
-        et_descriptioned.setMovementMethod(new ScrollingMovementMethod());
 
         imageView155.setOnClickListener(new View.OnClickListener() {
             @Override

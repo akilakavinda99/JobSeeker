@@ -58,7 +58,6 @@ public class EditJobReq extends AppCompatActivity {
         btn_editreq = findViewById(R.id.btn_editjobreq);
         imageView_deletejobReq = findViewById(R.id.img_dlt);
         edit_reqjob_back_btn = findViewById(R.id.editreqjob_back_btn);
-        et_description.setMovementMethod(new ScrollingMovementMethod());
 
         et_name.setText(EName);
         et_jobtitle.setText(JobTitle);
@@ -164,7 +163,7 @@ public class EditJobReq extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int which) {
                         databaseReference.removeValue();
                         Toast.makeText(getApplicationContext(), "Deleted", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), Homepage_new.class));
+                        startActivity(new Intent(getApplicationContext(),NewReqJob_Homepage.class));
 
                     }
                 }).setNegativeButton("Cancel", null);

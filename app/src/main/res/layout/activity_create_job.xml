@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg1"
+    android:background="@drawable/bg12"
     tools:context=".CreateJob">
 
 
@@ -154,11 +154,8 @@
         android:background="@drawable/border2"
         android:ems="10"
         android:hint="@string/et_description"
-        android:inputType="textImeMultiLine"
+        android:inputType="textMultiLine"
         android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:paddingBottom="56dp"
-        android:scrollbars="vertical"
         android:textColor="#FF4C4C4C"
         android:textColorHint="#FF4C4C4C"
         android:textSize="16sp"

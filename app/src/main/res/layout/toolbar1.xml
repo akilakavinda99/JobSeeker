@@ -23,7 +23,7 @@
             android:layout_height="89dp"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="131dp"
-            android:layout_marginEnd="33dp"
+            android:layout_marginEnd="39dp"
             android:layout_toEndOf="@+id/back_icon"
             android:scaleType="centerCrop"
             android:src="@drawable/jslogo" />

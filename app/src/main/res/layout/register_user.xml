@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/regbackground"
+    android:background="@drawable/bg12"
     tools:context=".RegisterUserActivity">
 
     <EditText
         android:id="@+id/et_email_reg2"
-        android:layout_width="275dp"
+        android:layout_width="324dp"
         android:layout_height="44dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_view_register"
@@ -20,14 +20,15 @@
         android:paddingEnd="15dp"
         android:textColor="#FF4C4C4C"
         android:textColorHint="#FF4C4C4C"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_name_reg" />
 
     <EditText
         android:id="@+id/et_name_reg"
-        android:layout_width="275dp"
+        android:layout_width="324dp"
         android:layout_height="44dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/rounded_view_register"
@@ -38,16 +39,17 @@
         android:paddingEnd="15dp"
         android:textColor="#FF4C4C4C"
         android:textColorHint="#FF4C4C4C"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="197dp"
-        android:layout_height="98dp"
-        android:layout_marginStart="27dp"
+        android:layout_width="181dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="72dp"
         android:layout_marginEnd="12dp"
         android:fontFamily="@font/actor"
@@ -55,7 +57,7 @@
         android:textColor="#070707"
         android:textSize="48sp"
         app:layout_constraintEnd_toStartOf="@+id/iv_regupimg"
-        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,12 +68,11 @@
         android:layout_marginEnd="16dp"
         android:src="@drawable/register"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-          />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_mobile"
-        android:layout_width="275dp"
+        android:layout_width="324dp"
         android:layout_height="44dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_view_register"
@@ -82,14 +83,15 @@
         android:paddingEnd="15dp"
         android:textColor="#FF4C4C4C"
         android:textColorHint="#FF4C4C4C"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gender_spinner" />
 
     <EditText
         android:id="@+id/et_password"
-        android:layout_width="275dp"
+        android:layout_width="324dp"
         android:layout_height="44dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_view_register"
@@ -100,8 +102,9 @@
         android:paddingEnd="15dp"
         android:textColor="#FF4C4C4C"
         android:textColorHint="#FF4C4C4C"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_mobile" />
 
@@ -115,37 +118,38 @@
         android:hint="@string/btn_acCeate"
         android:text="Create Account"
 
-        app:backgroundTint="@color/modern_blue"
+        app:backgroundTint="#477EEC"
         app:cornerRadius="50dp"
 
-        
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_password"
         app:layout_constraintVertical_bias="1.0" />
 
     <Spinner
         android:id="@+id/district_spinner"
-        android:layout_width="275dp"
+        android:layout_width="324dp"
         android:layout_height="44dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_view_register"
         android:entries="@array/districts"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_email_reg2" />
 
     <Spinner
         android:id="@+id/gender_spinner"
-        android:layout_width="275dp"
+        android:layout_width="324dp"
         android:layout_height="44dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_view_register"
         android:entries="@array/gender"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/district_spinner" />
 
@@ -153,10 +157,10 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="68dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email_reg2"
+        app:layout_constraintBottom_toBottomOf="@+id/district_spinner"
+        app:layout_constraintEnd_toEndOf="@+id/district_spinner"
+        app:layout_constraintTop_toTopOf="@+id/district_spinner"
+        app:layout_constraintVertical_bias="0.714"
         app:srcCompat="@drawable/dropdown_arrow"
         tools:ignore="VectorDrawableCompat" />
 
@@ -164,10 +168,9 @@
         android:id="@+id/imageView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="68dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email_reg2"
+        app:layout_constraintBottom_toBottomOf="@+id/gender_spinner"
+        app:layout_constraintEnd_toEndOf="@+id/gender_spinner"
+        app:layout_constraintTop_toTopOf="@+id/gender_spinner"
         app:srcCompat="@drawable/dropdown_arrow"
         tools:ignore="VectorDrawableCompat" />
 

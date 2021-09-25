@@ -49,7 +49,7 @@
                 android:layout_margin="3dp"
                 android:clickable="true"
                 android:focusable="true"
-                android:paddingTop="70dp"
+                android:paddingTop="80dp"
                 tools:layout_editor_absoluteX="3dp"
                 tools:layout_editor_absoluteY="74dp" />
 
@@ -59,16 +59,17 @@
                 android:layout_height="100dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="16dp"
-                android:src="@drawable/d_search"
+                android:src="@drawable/s2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/include" />
 
             <SearchView
-                android:background="@color/white"
                 android:id="@+id/d_reqsearch"
                 android:layout_width="216dp"
                 android:layout_height="33dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="12dp"
+                android:background="@color/white"
                 app:layout_constraintEnd_toStartOf="@+id/d_reqtest_btn"
                 app:layout_constraintHorizontal_bias="0.231"
                 app:layout_constraintStart_toStartOf="parent"

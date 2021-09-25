@@ -115,10 +115,10 @@ public class MyJobListings extends AppCompatActivity {
                         String district = ds.child("district").getValue(String.class);
                         Model model = new Model(JobID, name, title, job_type, img, salary1, phone1, district);
                         list.add(model);
-                        progressBar_listings_da.setVisibility(View.INVISIBLE);
 
                     }
                     adapter.notifyDataSetChanged();
+                    progressBar_listings_da.setVisibility(View.INVISIBLE);
                 }
 
                 @Override

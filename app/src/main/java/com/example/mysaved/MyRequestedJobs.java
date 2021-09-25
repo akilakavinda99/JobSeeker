@@ -115,10 +115,10 @@ public class MyRequestedJobs extends AppCompatActivity {
                         String gender = ds.child("gender").getValue(String.class);
                         ModelRequest modelRequest = new ModelRequest(ReqId, name, title, c_age1, img, email1, phone1, gender);
                         list.add(modelRequest);
-                        progressBarre.setVisibility(View.INVISIBLE);
 
                     }
                     adapter.notifyDataSetChanged();
+                    progressBarre.setVisibility(View.INVISIBLE);
                 }
 
                 @Override

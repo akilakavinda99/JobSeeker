@@ -32,7 +32,7 @@
         android:layout_width="334dp"
         android:layout_height="49dp"
         android:layout_marginBottom="160dp"
-        android:fontFamily="cursive"
+        android:fontFamily="@font/belleza"
         android:letterSpacing="0.3"
         android:text="Find Your Dream Job"
         android:textAlignment="center"
