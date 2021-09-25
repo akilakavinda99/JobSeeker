@@ -149,7 +149,7 @@ public class Homepage_new extends AppCompatActivity {
             }
         });
         search = (SearchView) findViewById(R.id.d_search);
-        search.setQueryHint("Enter Job title");
+        search.setQueryHint("Search Jobs");
         search.setImeOptions(EditorInfo.IME_ACTION_DONE);
 
         search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {

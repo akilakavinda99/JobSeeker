@@ -8,7 +8,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -46,10 +49,27 @@ public class NewReqJob_Homepage extends AppCompatActivity {
     private SearchView searchView;
     private ProgressBar load;
 
+    private boolean connected(){
+        ConnectivityManager connectivityManager=(ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo !=null && activeNetworkInfo.isConnected();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_req_job_homepage);
+
+        if(connected()){
+
+            Toast.makeText(NewReqJob_Homepage.this, "Network Concted", Toast.LENGTH_SHORT).show();
+        }else{
+            android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(NewReqJob_Homepage.this);
+            builder.setMessage("Please Check Your Internet Connection").setPositiveButton("ok",null);
+            android.app.AlertDialog alert =builder.create();
+            alert.show();
+//            Toast.makeText(UserloginActivity.this, "Please Check Your Connection!", Toast.LENGTH_SHORT).show();
+        }
 
         drawerLayout = findViewById(R.id.drawer_layout);
 
@@ -136,7 +156,7 @@ public class NewReqJob_Homepage extends AppCompatActivity {
         });
 
         searchView = (SearchView) findViewById(R.id.d_reqsearch);
-        searchView.setQueryHint("Enter Job title");
+        searchView.setQueryHint("Search employees");
         searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {

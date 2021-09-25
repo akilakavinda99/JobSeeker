@@ -80,7 +80,7 @@ public class ViewHolder_Homepage extends RecyclerView.Adapter<ViewHolder_Homepag
                 String filterPattern = charSequence.toString().toLowerCase().trim();
 
                 for (HomeList homeList : listfull){
-                    if (homeList.getTitle().toLowerCase().contains(filterPattern)){
+                    if (homeList.getTitle().toLowerCase().contains(filterPattern) || (homeList.getJob_type().toLowerCase().contains(filterPattern)) || (homeList.getDistrict().toLowerCase().contains(filterPattern))){
                         filteredJobList.add(homeList);
                     }
                 }
