@@ -24,7 +24,7 @@ import java.util.Objects;
 
 public class ViewReqJob extends AppCompatActivity {
 
-    ImageView ReqJobImage;
+    ImageView ReqJobImage,backbtn_img;
     TextView tv_req_job_title, ReqJobName, ReqJobAge, ReqJobGender, ReqJobDescription, tv_emailR, tv_phoneR,textView5;
     Button btn_emaill_jv3, btn_call_jvr, edit_reqJob_btn;
 
@@ -52,6 +52,7 @@ public class ViewReqJob extends AppCompatActivity {
         edit_reqJob_btn = findViewById(R.id.edit_reqJob_btn);
         tv_emailR = findViewById(R.id.tv_emailR);
         tv_phoneR = findViewById(R.id.tv_phoneR);
+        backbtn_img=findViewById(R.id.imageView20);
 
         fAuth = FirebaseAuth.getInstance();
 
@@ -127,6 +128,14 @@ tv_phoneR.setVisibility(View.INVISIBLE);
 
                 startActivity(Intent.createChooser(sendIntent, "Send email"));
 
+            }
+        });
+
+        backbtn_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), NewReqJob_Homepage.class));
+                overridePendingTransition(R.anim.animation_enter, R.anim.animation_leave);
             }
         });
 
