@@ -101,7 +101,7 @@ public class UserloginActivity extends AppCompatActivity {
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(UserloginActivity.this, "Login Unsuccessful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserloginActivity.this, "Login Unsuccessful!!", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -110,26 +110,26 @@ public class UserloginActivity extends AppCompatActivity {
         fgt_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText resetmail = new EditText(v.getContext());
+                EditText resetemail = new EditText(v.getContext());
                 AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
                 passwordResetDialog.setTitle("Reset Password");
                 passwordResetDialog.setMessage("Enter your email To receive reset link");
-                passwordResetDialog.setView(resetmail);
+                passwordResetDialog.setView(resetemail);
 
                 passwordResetDialog.setPositiveButton("Send Link", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //extract email and send email
-                        String mail = resetmail.getText().toString();
+                        String mail = resetemail.getText().toString();
                         fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(UserloginActivity.this, "Reset link sent to your email", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(UserloginActivity.this, "Reset link sent, Check your mail", Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(UserloginActivity.this, "Error! Link is not sent", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(UserloginActivity.this, "Error!! Link is not sent", Toast.LENGTH_SHORT).show();
                             }
                         });
 
