@@ -49,7 +49,7 @@
                 android:layout_margin="3dp"
                 android:clickable="true"
                 android:focusable="true"
-                android:paddingTop="80dp"
+                android:paddingTop="125dp"
                 tools:layout_editor_absoluteX="3dp"
                 tools:layout_editor_absoluteY="74dp" />
 
@@ -63,17 +63,30 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/include" />
 
-            <SearchView
-                android:id="@+id/d_reqsearch"
-                android:layout_width="216dp"
-                android:layout_height="33dp"
+            <TextView
+                android:id="@+id/d_findemployees"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="12dp"
-                android:background="@color/white"
+                android:text="@string/d_findemployees"
+                android:textColor="@color/black"
+                android:textSize="29sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+            <SearchView
+                android:id="@+id/d_reqsearch"
+                android:layout_width="241dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/border2"
                 app:layout_constraintEnd_toStartOf="@+id/d_reqtest_btn"
                 app:layout_constraintHorizontal_bias="0.231"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/divider3" />
+                app:layout_constraintTop_toBottomOf="@+id/d_findemployees" />
 
             <ProgressBar
                 android:id="@+id/d_progressBar3"
@@ -98,7 +111,7 @@
         android:layout_gravity="start"
         android:background="@android:color/white">
 
-        <include layout="@layout/activity_navigation_bar"/>
+        <include layout="@layout/activity_navigation_bar" />
 
     </RelativeLayout>
 
