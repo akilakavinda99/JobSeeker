@@ -20,9 +20,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-import java.text.ParseException;
-import java.util.Objects;
-
 public class ViewReqJob extends AppCompatActivity {
 
     ImageView ReqJobImage,backbtn_img;
@@ -46,10 +43,10 @@ public class ViewReqJob extends AppCompatActivity {
         ReqJobName = findViewById(R.id.textView6);
         ReqJobAge = findViewById(R.id.textView7);
         ReqJobGender = findViewById(R.id.textView8);
-        ReqJobDescription = findViewById(R.id.textView10);
+        ReqJobDescription = findViewById(R.id.tv_employee_description);
         btn_emaill_jv3 = findViewById(R.id.btn_emaill_jv3);
         btn_call_jvr = findViewById(R.id.btn_call_jvr);
-        textView5 = findViewById(R.id.textView5);
+        textView5 = findViewById(R.id.tv_requested_date);
         edit_reqJob_btn = findViewById(R.id.edit_reqJob_btn);
         tv_emailR = findViewById(R.id.tv_emailR);
         tv_phoneR = findViewById(R.id.tv_phoneR);
@@ -77,8 +74,6 @@ public class ViewReqJob extends AppCompatActivity {
                     textView5.setText(snapshot.child("date").getValue().toString());
 
 
-tv_emailR.setVisibility(View.INVISIBLE);
-tv_phoneR.setVisibility(View.INVISIBLE);
                     imageUrl = (snapshot.child("img").getValue().toString());
 
                     Picasso.get().load(imageUrl).fit().into(ReqJobImage);

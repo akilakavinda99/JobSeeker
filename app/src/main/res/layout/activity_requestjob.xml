@@ -83,8 +83,6 @@
         android:hint="@string/et_descriptionR"
         android:inputType="textMultiLine"
         android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:paddingBottom="50dp"
         android:textColor="#FF4C4C4C"
         android:textColorHint="#FF4C4C4C"
         android:textSize="16sp"
