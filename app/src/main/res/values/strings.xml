@@ -275,6 +275,8 @@
     <string name="tv_editjobreq">Edit Requested Job</string>
     <string name="et_gender_editjobReq">Gender</string>
     <string name="btn_editjobreq">Edit</string>
+    <string name="d_findjobs">Find Your Jobs</string>
+    <string name="d_findemployees">Find Your Employees</string>
 
 
     <string-array name="districts_vp">
