@@ -49,7 +49,7 @@ public class ViewHolder_SaveReqJob extends RecyclerView.Adapter<ViewHolder_SaveR
 
         String imageUrl = null;
         imageUrl = reqJobList.getImg();
-        Picasso.get().load(imageUrl).resize(50,50).centerCrop().into(holder.imageView);
+        Picasso.get().load(imageUrl).fit().centerCrop().into(holder.imageView);
 
     }
 

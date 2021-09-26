@@ -53,7 +53,7 @@ public class ViewHolder_ReqHomepage extends RecyclerView.Adapter<ViewHolder_ReqH
 
         String imageUrl = null;
         imageUrl = reqJobList.getImg();
-        Picasso.get().load(imageUrl).fit().into(holder.imageView);
+        Picasso.get().load(imageUrl).fit().centerCrop().into(holder.imageView);
 
     }
 
@@ -79,7 +79,9 @@ public class ViewHolder_ReqHomepage extends RecyclerView.Adapter<ViewHolder_ReqH
                 String filterPattern = charSequence.toString().toLowerCase().trim();
 
                 for (ReqJobList reqJobList : Hlistfull){
-                    if (reqJobList.getTitle().toLowerCase().contains(filterPattern) || reqJobList.getC_age1().toLowerCase().contains(filterPattern) || reqJobList.getGender().toLowerCase().contains(filterPattern)){
+                    if (reqJobList.getTitle().toLowerCase().contains(filterPattern)
+                            || reqJobList.getC_age1().toLowerCase().contains(filterPattern)
+                            || reqJobList.getGender().toLowerCase().contains(filterPattern)){
                         filteredReqJobList.add(reqJobList);
                     }
                 }
@@ -88,7 +90,6 @@ public class ViewHolder_ReqHomepage extends RecyclerView.Adapter<ViewHolder_ReqH
             filterResults.values = filteredReqJobList;
             filterResults.count = filteredReqJobList.size();
             return filterResults;
-
         }
 
         @Override
