@@ -154,7 +154,7 @@ public class EditProfile extends AppCompatActivity {
                 }
 
 
-                //update email first
+                //update email
                 user.updateEmail(eEmail).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
@@ -185,7 +185,7 @@ public class EditProfile extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(EditProfile.this, "Invalid Email Address", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EditProfile.this, "Email Already Exists", Toast.LENGTH_SHORT).show();
                     }
                 });
 
