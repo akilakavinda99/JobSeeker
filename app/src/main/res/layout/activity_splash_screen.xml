@@ -11,38 +11,45 @@
         android:id="@+id/imageView16"
         android:layout_width="405dp"
         android:layout_height="322dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/js_png" />
-
-    <ImageView
-        android:id="@+id/imageView17"
-        android:layout_width="451dp"
-        android:layout_height="165dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView17"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView16"
-        app:srcCompat="@drawable/jslogo" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.182"
+        app:srcCompat="@drawable/js_png" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="334dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="160dp"
-        android:fontFamily="@font/belleza"
+        android:layout_width="340dp"
+        android:layout_height="62dp"
+        android:layout_marginBottom="200dp"
+        android:fontFamily="@font/roboto"
         android:letterSpacing="0.3"
         android:text="Find Your Dream Job"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/Gray79"
         android:textColorHint="@color/white"
-        android:textSize="24sp"
-        android:textStyle="italic"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:typeface="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView16"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="119dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="244dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView16"
+        app:srcCompat="@drawable/splash" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
