@@ -63,17 +63,17 @@
         app:layout_constraintTop_toBottomOf="@+id/include"/>
 
 
-    <SearchView
-        android:id="@+id/d_search"
-        android:background="#F5FCFF"
-        android:layout_width="216dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="12dp"
-        app:layout_constraintEnd_toStartOf="@+id/d_test_btn"
-        app:layout_constraintHorizontal_bias="0.231"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+            <SearchView
+                android:id="@+id/d_search"
+                android:layout_width="241dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/border2"
+                app:layout_constraintEnd_toStartOf="@+id/d_test_btn"
+                app:layout_constraintHorizontal_bias="0.231"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
     <ProgressBar
         android:id="@+id/d_progressBar4"
