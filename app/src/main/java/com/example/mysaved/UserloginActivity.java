@@ -26,7 +26,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 
 public class UserloginActivity extends AppCompatActivity {
-    FirebaseDatabase rootNode;
     EditText email,password;
     Button signup,login;
     TextView fgt_password;
@@ -50,8 +49,6 @@ public class UserloginActivity extends AppCompatActivity {
 
         //get current instance of firebase authentication
         fAuth = FirebaseAuth.getInstance();
-
-        rootNode=FirebaseDatabase.getInstance();
 
 
         // if the user is not registered

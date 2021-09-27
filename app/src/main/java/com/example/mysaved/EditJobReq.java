@@ -25,7 +25,7 @@ public class EditJobReq extends AppCompatActivity {
     EditText et_jobtitle, et_name, et_age, et_description, et_email, et_phone;
     Spinner et_gender_editjobReq;
     Button btn_editreq;
-    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z0-9]+\\.+[a-z]+";
     String phonePattern = "[0-9]{10}";
     DatabaseReference databaseReference;
     ImageView imageView_deletejobReq, edit_reqjob_back_btn;
