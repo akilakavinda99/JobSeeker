@@ -35,6 +35,7 @@ public class EditProfile extends AppCompatActivity {
     Spinner edit_user_gender_spinner,edit_user_district_spinner;
     Button update_user_btn;
     ImageView edit_user_back_btn,user_delete_btn;
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z0-9]+\\.+[a-z]+";
     String phonePattern = "[0-9]{10}";
 
     FirebaseAuth fAuth;
@@ -148,9 +149,13 @@ public class EditProfile extends AppCompatActivity {
                     return;
                 }
 
-                if (TextUtils.isEmpty(eEmail)) {
-                    edit_user_email.setError("Email is required");
-                    return;
+                if(edit_user_email.getText().toString().isEmpty()) {
+                    edit_user_email.setError("Email is Required");
+                }else {
+                    if (!edit_user_email.getText().toString().trim().matches(emailPattern)) {
+                        edit_user_email.setError("Invalid Email Address");
+                        return;
+                    }
                 }
 
 

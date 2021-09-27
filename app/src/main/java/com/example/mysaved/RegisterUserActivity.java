@@ -35,7 +35,7 @@ public class RegisterUserActivity extends AppCompatActivity {
     Button accountCreate;
     FirebaseAuth fAuth;
     String userID;
-    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z0-9]+\\.+[a-z]+";
     String phonePattern = "[0-9]{10}";
 
 
