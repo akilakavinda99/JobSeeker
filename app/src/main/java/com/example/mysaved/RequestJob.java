@@ -146,14 +146,15 @@ public class RequestJob extends AppCompatActivity {
 
                 //Validations
 
-                if(TextUtils.isEmpty(name)){
+                if(TextUtils.isEmpty(title)){
                     req_title.setError("Job Title is Required");
                     return;
                 }
-                if(TextUtils.isEmpty(title)){
+                if(TextUtils.isEmpty(name)){
                     c_name.setError("Your Name is Required");
                     return;
                 }
+
                 if(TextUtils.isEmpty(c_age1)){
                     c_age.setError("Age is Required");
                     return;

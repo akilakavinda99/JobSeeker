@@ -50,6 +50,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView16"
-        app:srcCompat="@drawable/splash" />
+        app:srcCompat="@drawable/splash1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
